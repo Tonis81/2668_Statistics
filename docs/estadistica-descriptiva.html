@@ -162,6 +162,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="estadistica-descriptiva.html"><a href="estadistica-descriptiva.html#ejercicio-2-1"><i class="fa fa-check"></i><b>2.2</b> Ejercicio 2</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="a-caucus-race-and-a-long-tale.html"><a href="a-caucus-race-and-a-long-tale.html"><i class="fa fa-check"></i><b>3</b> A caucus-race and a long tale</a></li>
+<li class="chapter" data-level="4" data-path="datos.html"><a href="datos.html"><i class="fa fa-check"></i><b>4</b> datos</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -189,27 +190,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span style="color:red; font-size: 20px;"><strong>EJEMPLO</strong></span></p>
 </blockquote>
 <p>Determinar la tabla de frecuencias y varios tipos de gráficos.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="estadistica-descriptiva.html#cb1-1" tabindex="-1"></a><span class="co"># Muestra</span></span>
-<span id="cb1-2"><a href="estadistica-descriptiva.html#cb1-2" tabindex="-1"></a>grades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>)</span>
-<span id="cb1-3"><a href="estadistica-descriptiva.html#cb1-3" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="estadistica-descriptiva.html#cb1-4" tabindex="-1"></a><span class="co"># Crear una tabla de frecuencias utilizando la función table()</span></span>
-<span id="cb1-5"><a href="estadistica-descriptiva.html#cb1-5" tabindex="-1"></a>freq_table <span class="ot">&lt;-</span> <span class="fu">table</span>(grades)</span>
-<span id="cb1-6"><a href="estadistica-descriptiva.html#cb1-6" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="estadistica-descriptiva.html#cb1-7" tabindex="-1"></a><span class="co"># Mostrar la table de frecuencia</span></span>
-<span id="cb1-8"><a href="estadistica-descriptiva.html#cb1-8" tabindex="-1"></a><span class="fu">print</span>(freq_table)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="estadistica-descriptiva.html#cb23-1" tabindex="-1"></a><span class="co"># Muestra</span></span>
+<span id="cb23-2"><a href="estadistica-descriptiva.html#cb23-2" tabindex="-1"></a>grades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>)</span>
+<span id="cb23-3"><a href="estadistica-descriptiva.html#cb23-3" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="estadistica-descriptiva.html#cb23-4" tabindex="-1"></a><span class="co"># Crear una tabla de frecuencias utilizando la función table()</span></span>
+<span id="cb23-5"><a href="estadistica-descriptiva.html#cb23-5" tabindex="-1"></a>freq_table <span class="ot">&lt;-</span> <span class="fu">table</span>(grades)</span>
+<span id="cb23-6"><a href="estadistica-descriptiva.html#cb23-6" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="estadistica-descriptiva.html#cb23-7" tabindex="-1"></a><span class="co"># Mostrar la table de frecuencia</span></span>
+<span id="cb23-8"><a href="estadistica-descriptiva.html#cb23-8" tabindex="-1"></a><span class="fu">print</span>(freq_table)</span></code></pre></div>
 <pre><code>## grades
 ## A B C 
 ## 7 4 3</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="estadistica-descriptiva.html#cb3-1" tabindex="-1"></a><span class="co"># Creat gráfico de barras utilizando barplot()</span></span>
-<span id="cb3-2"><a href="estadistica-descriptiva.html#cb3-2" tabindex="-1"></a><span class="fu">barplot</span>(freq_table, <span class="at">main =</span> <span class="st">&quot;Grade Distribution&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Grades&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Frequency&quot;</span>, <span class="at">col =</span> <span class="st">&quot;skyblue&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="estadistica-descriptiva.html#cb4-1" tabindex="-1"></a><span class="co"># Muestra datos</span></span>
-<span id="cb4-2"><a href="estadistica-descriptiva.html#cb4-2" tabindex="-1"></a>fruits <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Apples&quot;</span>, <span class="st">&quot;Bananas&quot;</span>, <span class="st">&quot;Oranges&quot;</span>, <span class="st">&quot;Grapes&quot;</span>, <span class="st">&quot;Mangoes&quot;</span>)</span>
-<span id="cb4-3"><a href="estadistica-descriptiva.html#cb4-3" tabindex="-1"></a>percentages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">25</span>, <span class="dv">20</span>, <span class="dv">15</span>, <span class="dv">10</span>)</span>
-<span id="cb4-4"><a href="estadistica-descriptiva.html#cb4-4" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="estadistica-descriptiva.html#cb4-5" tabindex="-1"></a><span class="co"># Crear un gráfico circular utilizando pie()</span></span>
-<span id="cb4-6"><a href="estadistica-descriptiva.html#cb4-6" tabindex="-1"></a><span class="fu">pie</span>(percentages, <span class="at">labels =</span> fruits, <span class="at">main =</span> <span class="st">&quot;Fruit Distribution&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="estadistica-descriptiva.html#cb25-1" tabindex="-1"></a><span class="co"># Creat gráfico de barras utilizando barplot()</span></span>
+<span id="cb25-2"><a href="estadistica-descriptiva.html#cb25-2" tabindex="-1"></a><span class="fu">barplot</span>(freq_table, <span class="at">main =</span> <span class="st">&quot;Grade Distribution&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Grades&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Frequency&quot;</span>, <span class="at">col =</span> <span class="st">&quot;skyblue&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="estadistica-descriptiva.html#cb26-1" tabindex="-1"></a><span class="co"># Muestra datos</span></span>
+<span id="cb26-2"><a href="estadistica-descriptiva.html#cb26-2" tabindex="-1"></a>fruits <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Apples&quot;</span>, <span class="st">&quot;Bananas&quot;</span>, <span class="st">&quot;Oranges&quot;</span>, <span class="st">&quot;Grapes&quot;</span>, <span class="st">&quot;Mangoes&quot;</span>)</span>
+<span id="cb26-3"><a href="estadistica-descriptiva.html#cb26-3" tabindex="-1"></a>percentages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">25</span>, <span class="dv">20</span>, <span class="dv">15</span>, <span class="dv">10</span>)</span>
+<span id="cb26-4"><a href="estadistica-descriptiva.html#cb26-4" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="estadistica-descriptiva.html#cb26-5" tabindex="-1"></a><span class="co"># Crear un gráfico circular utilizando pie()</span></span>
+<span id="cb26-6"><a href="estadistica-descriptiva.html#cb26-6" tabindex="-1"></a><span class="fu">pie</span>(percentages, <span class="at">labels =</span> fruits, <span class="at">main =</span> <span class="st">&quot;Fruit Distribution&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 </div>
 <div id="ejercicio-2-1" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Ejercicio 2<a href="estadistica-descriptiva.html#ejercicio-2-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -217,23 +218,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span style="color:red; font-size: 20px;"><strong>EJEMPLO</strong></span></p>
 </blockquote>
 <p>Cálculo de medidas de tendencia central: media, mediana y moda.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="estadistica-descriptiva.html#cb5-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">2.3</span>, <span class="fl">2.15</span>, <span class="fl">3.50</span>, <span class="fl">2.60</span>, <span class="fl">2.75</span>, <span class="fl">2.82</span>, <span class="fl">4.05</span>, <span class="fl">2.25</span>, <span class="fl">2.68</span>, <span class="fl">3.00</span>, <span class="fl">4.2</span>, <span class="fl">2.85</span>)</span>
-<span id="cb5-2"><a href="estadistica-descriptiva.html#cb5-2" tabindex="-1"></a><span class="fu">mean</span>(a)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="estadistica-descriptiva.html#cb27-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">2.3</span>, <span class="fl">2.15</span>, <span class="fl">3.50</span>, <span class="fl">2.60</span>, <span class="fl">2.75</span>, <span class="fl">2.82</span>, <span class="fl">4.05</span>, <span class="fl">2.25</span>, <span class="fl">2.68</span>, <span class="fl">3.00</span>, <span class="fl">4.2</span>, <span class="fl">2.85</span>)</span>
+<span id="cb27-2"><a href="estadistica-descriptiva.html#cb27-2" tabindex="-1"></a><span class="fu">mean</span>(a)</span></code></pre></div>
 <pre><code>## [1] 2.929167</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="estadistica-descriptiva.html#cb7-1" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">2.3</span>, <span class="fl">2.15</span>, <span class="fl">3.50</span>, <span class="fl">2.60</span>, <span class="fl">2.75</span>, <span class="fl">2.82</span>, <span class="fl">4.05</span>, <span class="fl">2.25</span>, <span class="fl">2.68</span>, <span class="fl">3.00</span>, <span class="fl">40.2</span>, <span class="fl">2.85</span>)</span>
-<span id="cb7-2"><a href="estadistica-descriptiva.html#cb7-2" tabindex="-1"></a><span class="fu">mean</span>(b)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="estadistica-descriptiva.html#cb29-1" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">2.3</span>, <span class="fl">2.15</span>, <span class="fl">3.50</span>, <span class="fl">2.60</span>, <span class="fl">2.75</span>, <span class="fl">2.82</span>, <span class="fl">4.05</span>, <span class="fl">2.25</span>, <span class="fl">2.68</span>, <span class="fl">3.00</span>, <span class="fl">40.2</span>, <span class="fl">2.85</span>)</span>
+<span id="cb29-2"><a href="estadistica-descriptiva.html#cb29-2" tabindex="-1"></a><span class="fu">mean</span>(b)</span></code></pre></div>
 <pre><code>## [1] 5.929167</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="estadistica-descriptiva.html#cb9-1" tabindex="-1"></a>a <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">35</span>, <span class="dv">32</span>, <span class="dv">79</span>, <span class="dv">67</span>)</span>
-<span id="cb9-2"><a href="estadistica-descriptiva.html#cb9-2" tabindex="-1"></a><span class="fu">median</span>(a)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="estadistica-descriptiva.html#cb31-1" tabindex="-1"></a>a <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">35</span>, <span class="dv">32</span>, <span class="dv">79</span>, <span class="dv">67</span>)</span>
+<span id="cb31-2"><a href="estadistica-descriptiva.html#cb31-2" tabindex="-1"></a><span class="fu">median</span>(a)</span></code></pre></div>
 <pre><code>## [1] 45</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="estadistica-descriptiva.html#cb11-1" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">35</span>, <span class="dv">32</span>, <span class="dv">79</span>, <span class="dv">79</span>)</span>
-<span id="cb11-2"><a href="estadistica-descriptiva.html#cb11-2" tabindex="-1"></a><span class="fu">median</span>(b)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="estadistica-descriptiva.html#cb33-1" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">35</span>, <span class="dv">32</span>, <span class="dv">79</span>, <span class="dv">79</span>)</span>
+<span id="cb33-2"><a href="estadistica-descriptiva.html#cb33-2" tabindex="-1"></a><span class="fu">median</span>(b)</span></code></pre></div>
 <pre><code>## [1] 45</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="estadistica-descriptiva.html#cb13-1" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">35</span>, <span class="dv">32</span>, <span class="dv">7900</span>, <span class="dv">67</span>)</span>
-<span id="cb13-2"><a href="estadistica-descriptiva.html#cb13-2" tabindex="-1"></a><span class="fu">median</span>(c)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="estadistica-descriptiva.html#cb35-1" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="dv">35</span>, <span class="dv">32</span>, <span class="dv">7900</span>, <span class="dv">67</span>)</span>
+<span id="cb35-2"><a href="estadistica-descriptiva.html#cb35-2" tabindex="-1"></a><span class="fu">median</span>(c)</span></code></pre></div>
 <pre><code>## [1] 45</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="estadistica-descriptiva.html#cb15-1" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">32</span>, <span class="dv">35</span>, <span class="dv">45</span>, <span class="dv">59</span>, <span class="dv">67</span>, <span class="dv">79</span>)</span>
-<span id="cb15-2"><a href="estadistica-descriptiva.html#cb15-2" tabindex="-1"></a><span class="fu">median</span>(d)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="estadistica-descriptiva.html#cb37-1" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">32</span>, <span class="dv">35</span>, <span class="dv">45</span>, <span class="dv">59</span>, <span class="dv">67</span>, <span class="dv">79</span>)</span>
+<span id="cb37-2"><a href="estadistica-descriptiva.html#cb37-2" tabindex="-1"></a><span class="fu">median</span>(d)</span></code></pre></div>
 <pre><code>## [1] 52</code></pre>
 
 </div>
@@ -275,7 +276,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Tonis81/2668_Statistics/edit/main/02-estadistica_descriptiva.Rmd",
+"link": "https://github.com/Tonis81/2668_Statistics/edit/main/02-descriptiva.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -283,7 +284,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/Tonis81/2668_Statistics/blob/main/02-estadistica_descriptiva.Rmd",
+"link": "https://github.com/Tonis81/2668_Statistics/blob/main/02-descriptiva.Rmd",
 "text": null
 },
 "download": null,
