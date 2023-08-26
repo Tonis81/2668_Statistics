@@ -9,6 +9,8 @@ site: bookdown::bookdown_site
 
 ## Ejercicio 1
 
+><span style="color:red; font-size: 20px;">**REALIZAR**</span>
+
 Proporciona el tipo de variables que sería cada una de las que se describen a continuación.
 
 1. Edad:
@@ -92,6 +94,68 @@ Proporciona el tipo de variables que sería cada una de las que se describen a c
 \note{Cuantitativa discreta}
 
 ## Ejercicio 2
+
+><span style="color:red; font-size: 20px;">**REALIZAR**</span>
+
+Leer el artículo [Programming tools: Adventures with R](https://www.nature.com/articles/517109a) y contestar a las siguientes preguntas.
+
+- ¿Cuáles son los beneficios de usar R para el análisis de datos?
+
+\note{R ofrece varios beneficios para el análisis de datos, incluyendo ser gratuito y de código abierto, contar con una comunidad en línea grande y solidaria, y proporcionar una amplia gama de herramientas para análisis estadístico y visualización de datos. R también permite a los usuarios personalizar sus análisis y crear investigaciones reproducibles, lo cual puede ser especialmente útil para la investigación científica.}
+
+- ¿Cómo pueden los científicos aprender a usar R de manera efectiva?
+
+\note{Los científicos pueden aprender a usar R de manera efectiva aprovechando los numerosos recursos en línea disponibles, como foros de discusión y tutoriales. Los principiantes pueden comenzar utilizando paquetes de software preestablecidos que vienen con comandos para análisis estadístico y visualización de datos. Los científicos también pueden tomar cursos o asistir a talleres para aprender R, e incluso algunas universidades ofrecen R como parte de su plan de estudios. Sin embargo, aprender R requiere compromiso y no puede lograrse de la noche a la mañana.}
+
+- ¿Qué tipo de soporte está disponible para los usuarios de R?
+
+\note{R cuenta con una gran comunidad en línea que brinda mucho apoyo, con numerosos foros de discusión y tutoriales disponibles para los usuarios. Es común ver que alguien publique una pregunta y la persona que desarrolló el paquete responda en menos de media hora. Esta respuesta rápida es fundamental para los científicos en investigación básica. Los usuarios también pueden tomar cursos o asistir a talleres para aprender R, e incluso algunas universidades ofrecen R como parte de su plan de estudios.}
+
+- ¿Se puede utilizar R para investigaciones más allá de la genética?
+
+\note{Sí, R se puede utilizar para investigaciones más allá de la genética. De hecho, una proporción creciente de artículos de investigación hace referencia explícita a R o a un paquete de R en una amplia gama de campos, incluyendo ciencias agrícolas y biológicas, bioquímica, genética y biología molecular, ciencias de la tierra y planetarias, ciencias ambientales, inmunología y microbiología, y neurociencia, entre otros. R proporciona una amplia gama de herramientas para análisis estadístico y visualización de datos que pueden ser útiles para muchos tipos diferentes de investigaciones.}
+
+- ¿Cuáles son algunos ejemplos de cómo se utiliza R en investigaciones científicas?
+
+\note{R ha sido utilizado en una amplia variedad de investigaciones científicas, incluyendo genómica y biología molecular, modelado de crecimiento poblacional, predicción de precios de acciones y visualización de datos. Por ejemplo, científicos han utilizado R para comparar el genoma humano y el de un Neandertal, modelar el crecimiento poblacional, predecir precios de acciones y visualizar resultados de investigaciones en gráficos pulidos. Cerca de 1 de cada 100 artículos académicos indexados en la base de datos Scopus de Elsevier del año pasado hace referencia a R o a uno de sus paquetes}
+
+- ¿Existen desventajas al usar R para el análisis de datos?
+
+\note{El artículo no menciona desventajas significativas al usar R para el análisis de datos. Sin embargo, señala que no todos los científicos están entusiasmados por aprender la programación necesaria, a pesar de que R resulta menos intimidante que lenguajes como Python. Algunos científicos pueden preferir interfaces de arrastrar y soltar en lugar de programar. Además, aunque R cuenta con una gran comunidad en línea que brinda apoyo, los usuarios aún pueden necesitar buscar frecuentemente en Internet para encontrar respuestas a sus preguntas.}
+
+ 
+- ¿Cómo afecta el aprendizaje de R al enfoque de un científico en el análisis de datos?
+
+\notes{Aprender R no solo enseña habilidades de programación, sino que también hace que los científicos sean más críticos sobre los análisis de otros científicos. Además, aprender R puede ayudar a los científicos a realizar sus propios análisis de datos de manera más eficiente y efectiva, lo que puede ahorrar tiempo y recursos a largo plazo. Sin embargo, aprender R requiere un compromiso de tiempo y prioridades, y no todos los científicos están entusiasmados con el aprendizaje de programación}
+
+- ¿Cómo se compara R con otros lenguajes de programación?
+
+\notes{Según el artículo, R resulta menos intimidante que lenguajes como Python, y ni hablar de Perl o C. R también está diseñado específicamente para el análisis de datos y cuenta con una gran comunidad en línea que brinda apoyo. Sin embargo, no todos los científicos están entusiasmados por aprender la programación necesaria, y algunos pueden preferir interfaces de arrastrar y soltar en lugar de programar}
+
+## Ejercicio 3
+
+><span style="color:red; font-size: 20px;">**REALIZAR**</span>
+
+Leer el artículo [Inorganic arsenic exposure and neuropsychological development of children of 4-5 years of age living in Spain](https://www.sciencedirect.com/science/article/pii/S0013935119302440?via%3Dihub) y contestar a las siguientes preguntas.
+
+- ¿Cuál es el objetivo del estudio? 
+
+\note{El objetivo del estudio fue evaluar la asociación entre la exposición al iAs, principalmente a través de la dieta, y el desarrollo neuropsicológico de los niños que forman parte de una cohorte bien diseñada. El estudio buscó investigar si la exposición temprana a los niveles de iAs en la dieta afecta adversamente el desarrollo neuropsicológico de los niños.}
+
+- Define la población de estudio.
+
+\note{La población de estudio se refiere al grupo de participantes que fueron incluidos en la investigación. En este caso, la población de estudio se derivó de los participantes del par madre-hijo en el proyecto INMA - INfancia y Medio Ambiente - Medio Ambiente e Infancia, un estudio de cohorte de nacimiento prospectivo basado en la población realizado en varias regiones de España. El estudio se centró en niños de aproximadamente 4-5 años de edad que viven en España y para quienes se espera que la dieta sea la principal fuente de exposición al iAs (arsénico inorgánico).}
+
+
+- Describe la muestra de población utilizada en el estudio.
+
+\note{La muestra de población utilizada en el estudio consistió en 100 niños, distribuidos equitativamente entre niños y niñas, que fueron seleccionados al azar para proporcionar una muestra de orina de cada subcohorte ubicada en las regiones españolas de Asturias, Gipuzkoa, Sabadell y Valencia. Los niños tenían aproximadamente 4-5 años de edad y fueron inscritos al nacer en el proyecto INMA - INfancia y Medio Ambiente - Medio Ambiente e Infancia, un estudio prospectivo de cohorte de nacimiento basado en la población realizado en varias regiones de España. El estudio se centró en niños para quienes se espera que la dieta sea la principal fuente de exposición al iAs (arsénico inorgánico).}
+
+- Enumere las variables principales utilizadas y describa su tipología
+
+\note{Las principales variables utilizadas en el estudio fueron: Exposición al iAs: medida como la suma de arsénico urinario (es decir, arsénico inorgánico y arsénico orgánico), DMA y MMA, que fueron transformadas mediante el logaritmo natural (ln-transformadas) antes del análisis estadístico. Desarrollo neuropsicológico: evaluado utilizando las Escalas McCarthy de Habilidades Infantiles (MSCA), que incluye ocho escalas de funciones neuropsicológicas. Factores de confusión potenciales: ajustados en los modelos de regresión lineal múltiple, incluyendo el nivel educativo más alto alcanzado por la madre, el sexo del niño, el IMC, la edad en el momento de la prueba MSCA y el consumo ajustado de calorías de arroz y pescado/mariscos. La tipología de las variables es la siguiente: Exposición al iAs: variable continua Desarrollo neuropsicológico: variable continua, medida mediante puntuaciones estandarizadas, Factores de confusión potenciales: una mezcla de variables continuas y categóricas, incluyendo el nivel educativo más alto alcanzado por la madre (categórica), el sexo del niño (categórica), IMC (continua), edad en el momento de la prueba MSCA (continua) y consumo ajustado de calorías de arroz y pescado/mariscos (continua).}
+
+## Ejercicio 4
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
@@ -188,9 +252,17 @@ table(is.na(datos))
 
 ><span style="color:darkgreen; font-size: 20px;">*La libreria "Amelia" es muy util para identificar si existen valores perdidos. Los valores perdidos se identifican en color amarillo y los que no son perdidos en color negro.*</span>
 
-```{r}
+```{r, message=FALSE}
 library(Amelia)
 missmap(datos, main="Valores perdidos", col=c("yellow", "black"), legend=FALSE, x.cex = 0.6)
 ```
+
+## Ejercicio 3
+
+><span style="color:red; font-size: 20px;">**REALIZAR**</span>
+
+- 1. Genera una base de datos con 5 variables (3 cuantitativas y 2 cualitativas) de dimensión 10,5.
+- 2. Genera una variable derivada y asígnale un nombre.
+- 3. Genera una variable que contenga valores perdidos.
 
 

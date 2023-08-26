@@ -13,3 +13,6 @@ base-de-datos
 etiquetas
 variable-derivada
 valores-perdidos
+ejercicio-3
+ejercicio-4
+ejercicio-3-1
