@@ -15,3 +15,5 @@ ejercicio-1-1
 ejercicio-2-1
 a-caucus-race-and-a-long-tale
 datos
+análisis-variables-cualitativas
+análisis-variable-cuantitativas
