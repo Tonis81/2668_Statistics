@@ -1,9 +1,196 @@
 --- 
-title: "Estadistica"
-author: "YOUR NAME HERE"
+title: "2668_Estadistica"
+author: "A.J. Signes-Pastor"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-# Down the rabbit-hole
+# Introducción
+
+## Ejercicio 1
+
+Proporciona el tipo de variables que sería cada una de las que se describen a continuación.
+
+1. Edad:
+
+\note{Cuantitativa continua}
+
+2. Género:
+
+\note{Cualitativa nominal}
+
+3. Índice de masa corporal (IMC)
+
+\note{Cuantitativa continua}
+
+4. Estado civil:
+
+\note{Cualitativa nominal}
+
+5. Nivel educativo:
+
+\note{Cualitativa ordinal}
+
+6. Presión arterial:
+
+\note{Cuantitativa continua}
+
+7. Número de hijos:
+
+\note{Cuantitativa discreta}
+
+8. Enfermedad diagnosticada (por ejemplo, diabetes, hipertensión):
+
+\note{Cualitativa nominal}
+
+9. Nivel de ingresos:
+
+\note{Cuantitativa continua}
+
+10. Consumo de tabaco (sí/no):
+
+\note{Cualitativa nominal}
+
+11. Nivel de actividad física:
+
+\note{Cualitativa ordinal}
+
+12. Número de visitas al médico en un año:
+
+\note{Cuantitativa discreta}
+
+13. Acceso a servicios de salud (por ejemplo, seguro médico):
+
+\note{Cualitativa nominal}
+
+14. Grupo étnico:
+
+\note{Cualitativa nominal}
+
+15. Tasa de mortalidad:
+
+\note{Cuantitativa continua}
+
+16. Uso de métodos anticonceptivos:
+
+\note{Cualitativa nominal}
+
+17. Tasa de natalidad:
+
+\note{Cuantitativa continua}
+
+18. Número de vacunas administradas:
+
+\note{Cuantitativa discreta}
+
+19. Tiempo de espera para recibir atención médica:
+
+\note{Cuantitativa continua}
+
+20. Consumo de frutas y verduras diario (porciones):
+
+\note{Cuantitativa discreta}
+
+## Ejercicio 2
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+><span style="color:darkgreen; font-size: 20px;">*El comando "rm(list=ls())" sirve para eliminar todos los análisis y variables previas. Este comendo se recomienda para utilizarlo al inicio de los análisis.*</span>
+
+```{r}
+rm(list=ls())
+```
+
+### Basic R calculation
+
+><span style="color:darkgreen; font-size: 20px;">*Con R se pueden hacer cálculos básicos matermáticos.*</span>
+
+```{r, collapse=TRUE}
+2+2
+
+5-3
+
+4+2*(10/2)
+
+sqrt(9)
+
+a <- 2
+
+2*a
+```
+
+### Construcción de variables
+
+><span style="color:darkgreen; font-size: 20px;">*En este caso para construir la base de datos generamos vectores. Todos los vectores deben de tener el mismo tamaño.*</span>
+
+```{r}
+nombre <- c("Pablo", "Maria", "Patricia", "Lucas", "Emilio", "Julia")
+nombre
+
+peso <- c(60.5, 72.6, 57.7, 90.8, 95.8, 72.9)
+peso
+
+altura <- c(1.60, 1.64, 1.50, 1.70, 1.80, 1.65)
+altura
+
+sexo <- c(1, 0, 0, 1, 1, 0)
+sexo
+
+nivel_estudios <- c("Educación primaria", "Educación primaria", "Educación secundaria", "Educación superior", "Educación superior", "Educación primaria")
+```
+
+### Base de datos
+
+><span style="color:darkgreen; font-size: 20px;">*Con la función data.frame combinamos todas las variables generadas en una base de datos.*</span>
+
+```{r}
+datos <- data.frame(nombre, peso, altura, sexo, nivel_estudios) 
+datos
+```
+
+### Etiquetas
+
+><span style="color:darkgreen; font-size: 20px;">*Las etiquetas van asociadas a cada variable y aportan información adicional. Si finalidad va en línea con el "codebook"*</span>
+
+```{r,message=FALSE}
+library(Hmisc)
+label(datos[["nombre"]]) <- "nombre sin apellidos"
+label(datos[["peso"]]) <- "kg"
+label(datos[["altura"]]) <- "m"
+label(datos[["sexo"]]) <- "mujer = 0 y hombre = 1"
+label(datos[["nivel_estudios"]]) <- "Nivel estudios sistema nacional"
+```
+
+### Variable derivada
+
+><span style="color:darkgreen; font-size: 20px;">*Aquí generamos una variable nueva derivada dentro de la base de datos "datos" llamada "imc". Luego asignamos una etiqueta*</span>
+
+```{r}
+datos$imc <- peso/altura^2
+
+label(datos[["imc"]]) <- "índice de masa corporal"
+```
+
+><span style="color:darkgreen; font-size: 20px;">*La función "str" es muy útil, pues permite de una forma muy rápida analizar la base de datos.*</span>
+
+```{r}
+str(datos)
+```
+
+### Valores perdidos
+
+><span style="color:darkgreen; font-size: 20px;">*La función "is.na()" identifica los valores perdidos mediante TRUE o FALSE. Con la función "table()" se genera la tabla de contingencia idenficando de forma rápida el número de valores perdidos (TRUE). La presencia de valores perdidos puede tener varios orígenes y es necesario tratalos con cuidado*</span>
+
+```{r}
+is.na(datos)
+table(is.na(datos))
+```
+
+><span style="color:darkgreen; font-size: 20px;">*La libreria "Amelia" es muy util para identificar si existen valores perdidos. Los valores perdidos se identifican en color amarillo y los que no son perdidos en color negro.*</span>
+
+```{r}
+library(Amelia)
+missmap(datos, main="Valores perdidos", col=c("yellow", "black"), legend=FALSE, x.cex = 0.6)
+```
+
 

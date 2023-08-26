@@ -1,3 +1,15 @@
 down-the-rabbit-hole
 the-pool-of-tears
 a-caucus-race-and-a-long-tale
+section
+introducción
+tipo-de-variables
+asdsd
+ejercicio-1
+ejercicio-2
+basic-r-calculation
+construcción-de-variables
+base-de-datos
+etiquetas
+variable-derivada
+valores-perdidos
