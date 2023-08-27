@@ -1,0 +1,315 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Base de datos
+
+## Ejercicio 1
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+```{r, include=FALSE}
+rm(list=ls())
+
+library(datasets)
+library(tidyverse)
+library(here)
+```
+
+```{r}
+data(iris)
+help(iris)
+names(iris) <- tolower(names(iris)) #This is to use lowercase names.
+```
+
+```{r}
+iriscsv <- read.csv(here("data", "iriscsv.csv"))
+```
+
+```{r}
+library(readxl)
+irisxlsx <- read_excel(here("data", "irisxlsx.xlsx") , sheet="data", col_names= TRUE)
+```
+
+```{r}
+names(iris) #Nombre de las variables.
+dim(iris)   #Dimensiones de la base de datos.
+#view(iris)  #Ver base de datos
+head(iris)  #Visualización de las 6 primeras entradas
+tail(iris)  #Visualización de las 6 últimas entradas
+
+names(iriscsv)
+dim(iriscsv)
+#view(iriscsv)
+head(iriscsv)
+tail(iriscsv)
+
+names(irisxlsx)
+dim(irisxlsx)
+#view(irisxlsx)
+head(irisxlsx)
+tail(irisxlsx)
+```
+
+También se pueden visualizar variables específicas directamente o mediante indexación:
+
+```{r}
+irisxlsx$sepal.length
+irisxlsx$sepal.width
+```
+
+```{r}
+irisxlsx[,1] 
+irisxlsx[1,1]
+irisxlsx[,2]
+```
+
+Estructura de la base de datos incluyendo la tipología de las variables.
+```{r}
+str(irisxlsx)
+```
+
+Renombrar variables
+```{r}
+names(irisxlsx)[names(irisxlsx) == "sepal.length"] <- "longitud_sepetalos"
+names(irisxlsx)[names(irisxlsx) == "sepal.width"] <- "anchura_sepetalos"
+names(irisxlsx)[names(irisxlsx) == "petal.length"] <- "longitud_petalos"
+names(irisxlsx)[names(irisxlsx) == "petal.width"] <- "anchura_petalos"
+names(irisxlsx)[names(irisxlsx) == "species"] <- "especies"
+
+names(irisxlsx)
+```
+
+Añadir etiquetas de valor.
+```{r}
+attr(irisxlsx$longitud_sepetalos, "label") <- "Longitud de los sépalos in cm"
+irisxlsx$longitud_sepetalos
+attr(irisxlsx$anchura_sepetalos, "label") <- "Anchura de los sépalos in cm"
+irisxlsx$anchura_sepetalos
+attr(irisxlsx$longitud_petalos, "label") <- "Longitud pétalos in cm"
+irisxlsx$longitud_petalos
+attr(irisxlsx$especies, "label") <- "Clase de especie"
+irisxlsx$especies
+```
+
+Selección de sub-bases de datos. En este caso solamente queremos seleccionar la especie virginica y setosa.
+```{r}
+irisxlsx$especies
+
+iris_new <- irisxlsx %>% filter(especies=="virginica" | especies=="setosa")
+
+iris_new$especies
+```
+
+Establecer niveles
+```{r}
+summary(irisxlsx$longitud_sepetalos)
+
+irisxlsx$longitud_sepetalos_ct <- ifelse(irisxlsx$longitud_sepetalos<=5.10, "1Q", 
+                                  ifelse(irisxlsx$longitud_sepetalos>5.10 & irisxlsx$longitud_sepetalos<=5.80, "2Q", 
+                                  ifelse(irisxlsx$longitud_sepetalos>5.80 & irisxlsx$longitud_sepetalos<=6.40, "3Q", "Q4")))
+
+iris_sepaloslargos <- irisxlsx %>% filter(longitud_sepetalos_ct=="Q4")
+summary(iris_sepaloslargos$longitud_sepetalos)
+```
+
+Nueva variables que sea la razón entre las longitudes de sépalos y pétalos.
+```{r}
+razon_long <- irisxlsx$longitud_sepetalos/irisxlsx$longitud_petalos
+```
+
+Análisis descriptivo - Variables categóricas
+```{r}
+tb <- table(irisxlsx$especies)
+tb
+prop.table(tb)
+round(prop.table(tb)*100, 1)
+```
+
+Gráfico de barras
+```{r}
+barplot(tb, xlab = "Especies", ylab = "Frecuencia")
+```
+
+Gráfico de sectores
+```{r}
+pie(tb)
+```
+
+Media
+```{r}
+mean(irisxlsx$longitud_sepetalos)
+```
+
+```{r}
+lapply(irisxlsx, class)# Nos permite ver la clase de las variables.
+irisxlsx_1 <- irisxlsx[,-5:-6]
+todasmedias <- lapply(irisxlsx_1, mean)
+todasmedias
+```
+
+```{r}
+tapply(irisxlsx$longitud_petalos, irisxlsx$especies, mean)
+```
+
+Mediana
+```{r}
+median(irisxlsx$longitud_sepetalos)
+```
+
+Moda
+```{r}
+# Creación de una función
+getmode <- function(v) {
+   uniqv <- unique(v)
+   uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+
+getmode(irisxlsx$longitud_sepetalos)
+```
+
+Varianza
+```{r}
+a <- var(irisxlsx$longitud_sepetalos)
+```
+
+Desviación estándar
+```{r}
+sd(irisxlsx$longitud_sepetalos)
+```
+
+coeficiente de variación
+
+CV = σ / μ
+
+σ: Desviación estandar
+μ: Media
+```{r}
+sd_cal <- sd(irisxlsx$longitud_sepetalos)
+media_cal <- mean(irisxlsx$longitud_sepetalos)
+CV <- sd_cal/media_cal*100
+CV
+```
+
+```{r}
+#Ejemplo de función para calcular el coeficiente de variación
+coefficient_of_variation <- function(x) {
+  if (length(x) <= 1) {
+    stop("Input vector must have more than one element.")
+  }
+  sd_value <- sd(x)
+  mean_value <- mean(x)
+  cv <- (sd_value / mean_value) * 100
+  return(cv)
+}
+
+coefficient_of_variation(irisxlsx$longitud_sepetalos)
+```
+
+Error estandard de la media
+```{r}
+std_error<-sd(irisxlsx$longitud_sepetalos)/sqrt(length(irisxlsx$longitud_sepetalos))
+std_error
+```
+
+Percentiles
+```{r}
+quantile(irisxlsx$longitud_petalos, probs = 0.40)
+quantile(irisxlsx$longitud_petalos, probs = c(0.25,0.50,0.75))
+summary(irisxlsx$longitud_petalos)
+```
+
+Asimetría
+```{r}
+#install.packages("moments")
+library(moments)
+skewness(irisxlsx$longitud_sepetalos)
+```
+
+Curtosis
+```{r}
+kurtosis(irisxlsx$longitud_sepetalos)
+```
+
+Histograma
+```{r}
+hist(irisxlsx$longitud_sepetalos, breaks = 10)
+```
+
+```{r}
+summary(irisxlsx)
+```
+
+```{r}
+boxplot(irisxlsx$longitud_sepetalos, xlab = "longitud sepalos", ylab = "cm")
+```
+
+```{r, echo=FALSE}
+#Ejemple de diagrama de cajas con casos anómalos
+# Create random data with outliers
+set.seed(123)  # To ensure reproducibility
+data <- c(rnorm(50, mean = 20, sd = 5), rnorm(5, mean = 70, sd = 10))
+
+# Create the boxplot with outliers
+boxplot(data, main = "Boxplot with Outliers", ylab = "Values")
+```
+
+Densidad
+```{r}
+den <- density(irisxlsx$longitud_sepetalos)
+plot(den, frame = FALSE, col = "blue",main = "Density plot")
+```
+
+Ordenar datos
+```{r}
+irisxlsx_a <- irisxlsx %>% arrange(longitud_sepetalos)
+irisxlsx_a
+
+irisxlsx_b <- irisxlsx %>% arrange(desc(longitud_sepetalos))
+irisxlsx_b
+```
+
+Eliminar casos perdidos
+```{r}
+dim(irisxlsx)
+table(is.na(irisxlsx))
+
+irisxlsx_NAs <- read_excel(here("data", "irisxlsx_NAs.xlsx") , sheet="data", col_names= TRUE)
+table(is.na(irisxlsx_NAs))
+
+irisxlsx_c <- irisxlsx_NAs %>% drop_na()
+dim(irisxlsx_c)
+```
+
+## Ejercicio 2
+
+><span style="color:red; font-size: 20px;">**REALIZAR**</span>
+
+Utilizando la base de datos "carsxlsx.xlsx" conesta a la siguientes preguntas.
+
+- ¿Cuantas variables tiene la base de datos "carsxlsx", cuales son y qué tipo?
+
+- ¿Qué dimensiones tiene la base de datos "carsxlsx"? Muestra los primeros y últimos valores de la base de datos.
+
+- Cambia el nombre de las dos variables a "Velocidad" y "Distancia
+
+- Añade etiquetas de valor a cada una de las variables
+
+- Calcula el valor mínimo, primer cuartil, mediana, segundo cuartil y máximo para cada una de las variables
+
+- Selecciona los coches que tengan una velocidad superior a 14 mph
+
+- Genera una variable nueva que distribuya las velocidades en cuatro grupos llamada Velocidad_Q
+
+- Cuantos coches hay en cada grupo y qué porcentaje representan
+
+- Dibuja un diagrama de barras de la variable "Velocidad_Q
+
+- Calcula el valor mínimo, primer cuartil, mediana, segundo cuartil y máximo para cada grupo identificado en "Velocidad_Q"
+
+- Son las variables "Velocidad" y "Distancia" simétricas
+
+- ¿Hay valores perdidos en la base de datos "carsxlsx"?
+
+- Sabiendo que 1 mph es igual a 1.60934 km/h, transforma la variable "Velocidad" en km/h
