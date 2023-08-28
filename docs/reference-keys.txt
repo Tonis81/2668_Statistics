@@ -19,3 +19,5 @@ análisis-variables-cualitativas
 análisis-variable-cuantitativas
 base-de-datos-1
 ejercicio-1-2
+probabilidad
+ejercicio-1-3
