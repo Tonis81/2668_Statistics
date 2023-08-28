@@ -28,6 +28,33 @@ P_AyB <- P_A + P_B - P_AoB
 
 ## Ejercicio 2
 
+```{r}
+
+# Se crea la tabla de contingencia
+dat <- matrix(c(60, 8, 68, 140, 792, 932, 200, 800, 1000), nrow = 3, byrow = TRUE)
+
+# Se añaden los nombres a las filas y columnas
+rownames(dat) <- c("Glocosaria", "No Glucosaria", "Total")
+colnames(dat) <- c("Diabetes", "No Diabetes", "Total")
+
+# Visualizamos la tabla
+print(data_matrix)
+
+P_SerDiabetico <- dat[3,1]/ dat[3,3]
+P_SerDiabetico
+
+P_Glucosaria_Diabetico <-  (dat[1,1]/dat[3,3])/(dat[3,1]/dat[3,3])
+P_Glucosaria_Diabetico
+
+P_Glucosaria_No_Diabetico <- (dat[1, 2]/dat[3,3])/(dat[3,2]/dat[3,3])
+P_Glucosaria_No_Diabetico
+
+P_NoGlucosaria_Diabetes <- (dat[2,1]/dat[3,3])/(dat[3,1]/dat[3,3])
+P_NoGlucosaria_Diabetes
+```
+
+## Ejercicio 3
+
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
 Con el siguiente ejemplo vamos a calcular la probabilidad de sacar 1, 2, 3, 4, 5 y 6 en un dado.
@@ -51,8 +78,7 @@ for (i in 1:6) {
 }
 ```
 
-
-## Ejercicio 3
+## Ejercicio 4
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
