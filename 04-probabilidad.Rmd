@@ -28,6 +28,8 @@ P_AyB <- P_A + P_B - P_AoB
 
 ## Ejercicio 2
 
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
 ```{r}
 # Se crea la tabla de contingencia
 dat <- matrix(c(60, 8, 68, 140, 792, 932, 200, 800, 1000), nrow = 3, byrow = TRUE)
@@ -37,7 +39,7 @@ rownames(dat) <- c("Glocosaria", "No Glucosaria", "Total")
 colnames(dat) <- c("Diabetes", "No Diabetes", "Total")
 
 # Visualizamos la tabla
-print(data_matrix)
+print(dat)
 
 P_Glucosaria <- dat[1,3]/ dat[3,3]
 P_Glucosaria
@@ -66,6 +68,52 @@ P_GlucosariayDiabetes
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
+Un médico de pueblo tiene la misma probabilidad de visitar el pueblo A que el B, tras un brote de gripe, en el pueblo A hay gente enferma, incubando con síntomas leves la enfermedad o sana y en el B sólo hay gente enferma y sana. Si el médico solo visita a un paciente de forma aleatoria. Define el especio muestral. Calcular la probabilidad de: a) visitar a un enfermo, b) visitar a un individuo incubando la enfermedad.
+
+```{r, eval = TRUE, out.width="40%", echo=FALSE, fig.align='center'}
+knitr::include_graphics("Gripe.png")
+```
+
+P(E)=(AE,AI,AS,BE,BS)
+
+```{r}
+P_Enfermo <- (1/2) * (65/100) + (1/2) * (37/104)
+P_Enfermo
+
+P_Incubando <- (1/2) * (10/100)
+P_Incubando
+```
+
+## Ejercicio 4
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+```{r, eval = TRUE, out.width="40%", echo=FALSE, fig.align='center'}
+knitr::include_graphics("Fumadores.png")
+```
+
+```{r, eval = TRUE, out.width="40%", echo=FALSE, fig.align='center'}
+knitr::include_graphics("Fumador2.png")
+```
+
+$P(Fumar)= P(Hombre\;|\;Fumar) + P(Mujer\;|\;Fumar) =$
+
+$= P(Fumar\;|\;Hombre)\;x\;P(Hombre)\;+\;P(Fumar\;|\;Mujer)\;x\;P(Mujer)=$
+
+```{r}
+(0.1*0.7) + (0.2*0.3)
+```
+
+$P(Mujer\;|\;Fumar)= \frac{P(Mujer\;\cap\;Fumar)}{P(Fumar)}=\frac{P(Fumar\;|\;Mujer)\;x\;P(Mujer)}{P(Fumar)}$
+
+```{r}
+(0.3*0.2)/((0.1*0.7) + (0.2*0.3))
+```
+
+## Ejercicio 4
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
 Con el siguiente ejemplo vamos a calcular la probabilidad de sacar 1, 2, 3, 4, 5 y 6 en un dado.
 
 ```{r}
@@ -87,7 +135,7 @@ for (i in 1:6) {
 }
 ```
 
-## Ejercicio 4
+## Ejercicio 5
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
