@@ -8,3 +8,26 @@ editor_options:
 
 ## Ejercicio 1
 
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+Con el siguiente ejemplo vamos a calcular la probabilidad de sacar 1, 2, 3, 4, 5 y 6 en un dado.
+
+```{r}
+# Definimos el número de tiradas
+num_rolls <- 10000
+
+# Simulamos en lanzamiento de una dado justo de 6 caras.
+results <- sample(1:6, num_rolls, replace = TRUE)
+
+# Contamos el resultado que obtenemos de cada lanzamiento.
+counts <- table(results)
+
+# Calculamos la probabilidad
+probabilities <- counts / num_rolls
+
+# Presentamos los resultados
+for (i in 1:6) {
+  print(paste("La probabilidad de conseguir un", i, ":", probabilities[i]))
+}
+```
+
