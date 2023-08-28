@@ -15,7 +15,6 @@ rm(list=ls())
 
 library(datasets)
 library(tidyverse)
-library(here)
 ```
 
 ```{r}
@@ -25,12 +24,12 @@ names(iris) <- tolower(names(iris)) #This is to use lowercase names.
 ```
 
 ```{r}
-iriscsv <- read.csv(here("data", "iriscsv.csv"))
+iriscsv <- read.csv("iriscsv.csv")
 ```
 
 ```{r}
 library(readxl)
-irisxlsx <- read_excel(here("data", "irisxlsx.xlsx") , sheet="data", col_names= TRUE)
+irisxlsx <- read_excel("irisxlsx.xlsx" , sheet="data", col_names= TRUE)
 ```
 
 ```{r}
@@ -276,7 +275,7 @@ Eliminar casos perdidos
 dim(irisxlsx)
 table(is.na(irisxlsx))
 
-irisxlsx_NAs <- read_excel(here("data", "irisxlsx_NAs.xlsx") , sheet="data", col_names= TRUE)
+irisxlsx_NAs <- read_excel("irisxlsx_NAs.xlsx" , sheet="data", col_names= TRUE)
 table(is.na(irisxlsx_NAs))
 
 irisxlsx_c <- irisxlsx_NAs %>% drop_na()
