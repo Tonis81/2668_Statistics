@@ -31,3 +31,69 @@ for (i in 1:6) {
 }
 ```
 
+
+## Ejercicio 2
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+a) Ejemplo unión o suma: P(A∪B) = P(A) + P(B) - P(A∩B)
+
+- Evento A: Obtener un número par en un dado justo de seis caras.
+- Evento B: Obtener un número mayor que 3 en el mismo dado.
+
+```{r}
+# Simulando el lanzamiento de un dado justo de seis caras.
+n_simulations <- 100000  # número de simulaciones
+rolls <- sample(1:6, n_simulations, replace = TRUE)
+
+# Definición de los eventos A y B
+event_A <- rolls %% 2 == 0  # números pares
+event_B <- rolls > 3  # números mayores que 3
+
+# Cálculo de probabilidades de eventos A y B
+probability_A <- sum(event_A) / n_simulations
+probability_B <- sum(event_B) / n_simulations
+
+# Cálculo de la interseccón de los eventos A y B
+probability_intersection <- sum(event_A & event_B) / n_simulations
+
+# Utilización de la propiedad P(A∪B) = P(A) + P(B) - P(A∩B) para el cálculo de la suma
+probability_union_formula <- probability_A + probability_B - probability_intersection
+
+# Mostrar resultados
+cat("Probability of A:", probability_A, "\n")
+cat("Probability of B:", probability_B, "\n")
+cat("Probability of (A ∩ B):", probability_intersection, "\n")
+cat("Probability of (A ∪ B) using formula:", probability_union_formula, "\n")
+```
+
+b) Ejemplo intersección o producto: P(A∩B)=P(A)+P(B)−P(A∪B)
+
+```{r}
+# Definir el espacio muestral para un dado individual.
+sample_space <- 1:6
+
+# Definir el Evento A: Obtener un número par en el primer dado.
+event_A <- c(2, 4, 6)
+
+# "Definir el Evento B: Obtener un número mayor que 3 en el segundo dado.
+event_B <- c(4, 5, 6)
+
+# Calcular probabilidades
+P_A <- length(event_A) / length(sample_space)
+P_B <- length(event_B) / length(sample_space)
+
+# Calular la unión de los eventos A y B
+event_union <- union(event_A, event_B)
+P_union <- length(event_union) / length(sample_space)
+
+# Calcular la intersección de los eventos A y B
+P_intersection <- P_A + P_B - P_union
+
+# Mostrar resultados
+cat("P(A) =", P_A, "\n")
+cat("P(B) =", P_B, "\n")
+cat("P(A∪B) =", P_union, "\n")
+cat("P(A∩B) =", P_intersection, "\n")
+```
+
