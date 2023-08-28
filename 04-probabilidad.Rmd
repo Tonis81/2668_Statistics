@@ -10,6 +10,7 @@ editor_options:
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
+```{r}
 Nombre <- c("B.R.", "C.C", "C.G", "G.P", "M.P", "J.L", "L.A", "N.D", "V.C", "V.F", "L.L", "J.N", "J.P", "U.P")
 Sexo <- c("H", "M", "H", "M", "M", "H", "M", "M", "H", "H", "H", "M", "M", "M")
 Edad <- c(18, 19, 19, 20, 21, 20, 21, 21, 22, 19, 18, 21, 21, 18)
@@ -23,6 +24,7 @@ P_A <- sum(dt$Sexo=="H")/length(dt$Sexo)
 P_B <- sum(dt$Edad<20)/length(dt$Edad)
 P_AoB <- sum(dt$Sexo=="H" & dt$Edad<20)/dim(dt)[1]
 P_AyB <- P_A + P_B - P_AoB
+```
 
 ## Ejercicio 2
 
