@@ -27,3 +27,4 @@ ejercicio-3-3
 ejercicio-4-1
 ejercicio-4-2
 ejercicio-5
+ejercicio-6

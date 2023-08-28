@@ -110,7 +110,7 @@ $P(Mujer\;|\;Fumar)= \frac{P(Mujer\;\cap\;Fumar)}{P(Fumar)}=\frac{P(Fumar\;|\;Mu
 (0.3*0.2)/((0.1*0.7) + (0.2*0.3))
 ```
 
-## Ejercicio 4
+## Ejercicio 5
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
@@ -135,7 +135,7 @@ for (i in 1:6) {
 }
 ```
 
-## Ejercicio 5
+## Ejercicio 6
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
