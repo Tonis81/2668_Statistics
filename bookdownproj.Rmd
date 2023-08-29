@@ -1,3 +1,67 @@
+--- 
+title: "2668_Estadistica"
+author: "A.J. Signes-Pastor"
+#date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+---
+
+# Introducción
+
+Placeholder
+
+
+## Ejercicio 1
+## Ejercicio 2
+## Ejercicio 3
+## Ejercicio 4
+### Basic R calculation
+### Construcción de variables
+### Base de datos
+### Etiquetas
+### Variable derivada
+### Valores perdidos
+## Ejercicio 3
+
+<!--chapter:end:index.Rmd-->
+
+
+# Estadistica descriptiva
+
+Placeholder
+
+
+## Ejercicio 1
+### Análisis variables cualitativas
+### Análisis variable cuantitativas
+
+<!--chapter:end:02-descriptiva.Rmd-->
+
+
+# Base de datos
+
+Placeholder
+
+
+## Ejercicio 1
+## Ejercicio 2
+
+<!--chapter:end:03-datos.Rmd-->
+
+
+# Probabilidad
+
+Placeholder
+
+
+## Ejercicio 1
+## Ejercicio 2
+## Ejercicio 3
+## Ejercicio 4
+## Ejercicio 5
+## Ejercicio 6
+
+<!--chapter:end:04-probabilidad.Rmd-->
+
 ---
 output: html_document
 editor_options: 
@@ -53,3 +117,6 @@ tamano_muestral_total <- 2 * tamano_muestral_por_grupo
 cat("El tamaño muestral necesario por grupo es:", ceiling(tamano_muestral_por_grupo), "\n")
 cat("El tamaño muestral total para el estudio (considerando dos grupos) es:", ceiling(tamano_muestral_total), "\n")
 ```
+
+<!--chapter:end:05-contraste.Rmd-->
+
