@@ -30,3 +30,4 @@ ejercicio-5
 ejercicio-6
 contraste-de-hipótesis
 ejercicio-1-4
+ejercicio-2-3

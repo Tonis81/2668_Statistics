@@ -28,7 +28,7 @@ with(estudiantes, (t.test(Edad, alternative="two.sided", mu=22, conf.level=.95))
 
 ## Ejercicio 2
 
-><span style="color:red; font-size: 20px;">**EJEMPLO**</span
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
 Supongamos que estás investigando un nuevo medicamento para reducir la presión arterial en pacientes con hipertensión. Quieres comparar la eficacia del nuevo medicamento (Grupo A1) con el medicamento estándar actualmente utilizado (Grupo A2) en términos de reducción de la presión arterial sistólica. Supones que el nuevo medicamento tendrá un tamaño del efecto de 0.6 desviaciones estándar mayor que el medicamento estándar en el seguimiento de los pacientes. Deseas realizar el estudio con un nivel de significancia del 5% y obtener una potencia del 80%.
 
