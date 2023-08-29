@@ -1,0 +1,29 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Contraste de hipótesis
+
+## Ejercicio 1
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+Imaginemos que queremos comprobar:
+
+$H_{0}:\mu _{Edad}=22$ 
+
+$H_{1}:\mu _{Edad}\neq 22$ 
+
+Para calcular el *p*-valor debemos hacerlo de la siguiente forma:
+
+
+$P-valor=P(x<22)=P(tn-1<\frac{\bar{x}-\mu _{0}}{\frac{s}{\sqrt{n}}})+P(tn-1>\frac{\bar{x}-\mu _{0}}{\frac{s}{\sqrt{n}}})$
+
+
+```{r}
+library(haven)
+estudiantes <- read_spss("Estudiantes1.sav")
+with(estudiantes, (t.test(Edad, alternative="two.sided", mu=22, conf.level=.95)))
+```
