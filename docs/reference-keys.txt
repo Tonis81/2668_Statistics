@@ -28,3 +28,4 @@ contraste-de-hipótesis
 ejercicio-1-4
 ejercicio-2-3
 inference
+ejercicios
