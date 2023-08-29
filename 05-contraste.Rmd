@@ -18,9 +18,7 @@ $H_{1}:\mu _{Edad}\neq 22$
 
 Para calcular el *p*-valor debemos hacerlo de la siguiente forma:
 
-
 $P-valor=P(x<22)=P(tn-1<\frac{\bar{x}-\mu _{0}}{\frac{s}{\sqrt{n}}})+P(tn-1>\frac{\bar{x}-\mu _{0}}{\frac{s}{\sqrt{n}}})$
-
 
 ```{r}
 library(haven)
