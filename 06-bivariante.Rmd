@@ -169,7 +169,7 @@ qqPlot(estudiantes$Edad)
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
-## pie chart
+pie chart
 
 ```{r, warning=FALSE, out.width = '45%'}
 library(tidyverse); library(ggplot2) # Load ggplot2
