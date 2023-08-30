@@ -14,7 +14,7 @@ editor_options:
 ```{r, include=FALSE}
 rm(list=ls())
 library(tidyverse)
-library(here)
+#library(here)
 library(readxl)
 library(kableExtra)
 library(skimr)
@@ -23,7 +23,7 @@ library(skimr)
 *Se nos proporciona una base de datos generada mediante el control de diabetes en pacientes. A continuación se detalla el "codebook" de las variables.*
 
 ```{r, echo=FALSE}
-dt <- read_excel(here("metadata", "Codebook_B1.xlsx") , sheet="Sheet1", col_names= TRUE)
+dt <- read_excel("Codebook_B1.xlsx" , sheet="Sheet1", col_names= TRUE)
 
 options(knitr.kable.NA = '')
 kbl(dt) %>%
@@ -36,7 +36,7 @@ kbl(dt) %>%
 
 ```{r, include=FALSE}
 library(haven)# necesitamos esta paquete para cargar la base de datos en formato SPSS
-diabet2 <- read_spss(here("data", "diabet2.sav"))
+diabet2 <- read_spss("diabet2.sav")
 ```
 
 ```{r, include=FALSE}
@@ -210,7 +210,7 @@ SEM # error estándar de la media
 La base de datos estudiantes1.sav contiene datos estudiantes del campus de ciencias de la salud de la Universidad Miguel Hernández participantes en el Estudio DiSA-UMH. El objetivo del estudio es determinar el estado de nutrición y salud de esta población. A continuación, se muestra la descripción de las variables contenida esta base de datos:  
 
 ```{r, echo=FALSE}
-dt <- read_excel(here("metadata", "Codebook_B2.xlsx") , sheet="Sheet1", col_names= TRUE)
+dt <- read_excel("Codebook_B2.xlsx" , sheet="Sheet1", col_names= TRUE)
 
 options(knitr.kable.NA = '')
 kbl(dt) %>%
@@ -221,7 +221,7 @@ kbl(dt) %>%
 
 ```{r, include=FALSE}
 library(haven)
-dt <- read_spss(here("data", "Estudiantes1.sav"))
+dt <- read_spss("Estudiantes1.sav")
 dim(dt)
 ```
 
@@ -287,7 +287,7 @@ barplot(table(dt$actf36), names.arg = categorias, xlab = "Categorias", col = c("
 La base de datos estudiantes1.sav contiene datos estudiantes del campus de ciencias de la salud de la Universidad Miguel Hernández participantes en el Estudio DiSA-UMH. El objetivo del estudio es determinar el estado de nutrición y salud de esta población. A continuación, se muestra la descripción de las variables contenida esta base de datos:  
 
 ```{r, echo=FALSE}
-dt <- read_excel(here("metadata", "Codebook_C1.xlsx") , sheet="Sheet1", col_names= TRUE)
+dt <- read_excel("Codebook_C1.xlsx" , sheet="Sheet1", col_names= TRUE)
 
 options(knitr.kable.NA = '')
 kbl(dt) %>%
@@ -298,7 +298,7 @@ a) Abre la base de datos estudiantes1.sav (formato SPSS) con R Commander y ponle
 
 ```{r, include=FALSE}
 library(haven)
-datos <- read_spss(here("data", "Estudiantes1.sav"))
+datos <- read_spss("Estudiantes1.sav")
 ```
 
 b) ¿Cuántos casos (filas) y cuántas variables (columnas) contiene nuestra base de datos?
@@ -356,8 +356,8 @@ j) Crea una subase de la base datos que contenga datos sólo para mujeres menore
 
 ```{r, include=FALSE}
 submujer <- datos %>% filter(Edad<25)
-save(submujer, file = here("data", "submujer.Rdata"))
-write.csv(submujer, file = here("data", "submujer.csv"))
+save(submujer, file = "submujer.Rdata")
+write.csv(submujer, file ="submujer.csv")
 ```
 
 ## Ejercicio 4
@@ -367,7 +367,7 @@ write.csv(submujer, file = here("data", "submujer.csv"))
 La base de datos diabet2.sav (en formato SPSS) contiene la información de 144 pacientes que contiene las siguientes variables que participaron en un estudio sobre diabetes:
 
 ```{r, echo=FALSE}
-dt <- read_excel(here("metadata", "Codebook_C2.xlsx") , sheet="Sheet1", col_names= TRUE)
+dt <- read_excel("Codebook_C2.xlsx", sheet="Sheet1", col_names= TRUE)
 
 options(knitr.kable.NA = '')
 kbl(dt) %>%
@@ -378,7 +378,7 @@ kbl(dt) %>%
 
 ```{r, include=FALSE}
 library(haven)
-diab <- read_spss(here("data", "diabet2.sav"))
+diab <- read_spss("diabet2.sav")
 ```
 
 2. Comprueba que las variables de las variables cualitativas están como factor y las cuantitativas como numeric. Si alguna de ellas no es correcta cámbiela. Comprueba que se ha cambiado con estadísticos resumen del conjunto de datos una vez hayas realizado los cambios. 
@@ -462,7 +462,7 @@ table(diab$reflec1)
 subestu <- diab %>% select(id, an_diag, hbac_1, hbac_2)
 names(subestu)
 dim(subestu)
-save(subestu, file = here("data", "subestu.Rdata"))
+save(subestu, file = "subestu.Rdata")
 ```
 
 11. Crea una subase de la base datos que contenga datos sólo para mujeres con tx_ab dieta. Guárdala con el nombre submujerdiet en formato R. ¿Cuántos casos y cuantas variables tiene la nueva base?
@@ -470,8 +470,8 @@ save(subestu, file = here("data", "subestu.Rdata"))
 ```{r, include=FALSE}
 submujerdiet <- diab %>% filter(tx_ab==1)
 dim(submujerdiet)
-save(submujerdiet, file = here("data", "submujerdiet.Rdata"))
-write.csv(submujerdiet, file = here("data", "submujerdiet.Rdata"))
+save(submujerdiet, file = "submujerdiet.Rdata")
+write.csv(submujerdiet, file = "submujerdiet.Rdata")
 ```
 
 ## Ejercicio 5
@@ -482,7 +482,7 @@ write.csv(submujerdiet, file = here("data", "submujerdiet.Rdata"))
 En las bases de datos (Base1.sav y Base2.sav) se presentan los datos del estudio “Dieta, salud y antropometría en población universitaria”, en que se recogió información en el momento basal para 697 estudiantes. La base final de unir la base1 y la base2 incluye las variables que se incluyen en la siguiente tabla.
 
 ```{r, echo=FALSE}
-dt <- read_excel(here("metadata", "Codebook_D1.xlsx") , sheet="Sheet1", col_names= TRUE)
+dt <- read_excel("Codebook_D1.xlsx", sheet="Sheet1", col_names= TRUE)
 
 options(knitr.kable.NA = '')
 kbl(dt) %>%
@@ -493,9 +493,9 @@ kbl(dt) %>%
 
 ```{r, include=FALSE}
 library(haven)
-base1 <- read_spss(here("data", "Base1-3.sav"))
+base1 <- read_spss("Base1-3.sav")
 dim(base1)
-base2 <- read_spss(here("data", "Base2-2.sav"))
+base2 <- read_spss("Base2-2.sav")
 dim(base2)
 names(base1)
 base_conjunta <- merge(base1, base2, by = "codigo")
@@ -565,7 +565,7 @@ b) La variable beb_endul no sigue una distribución normal.
 c) La media del beb_endul redondeada a dos decimales es 222.01, aunque no es correcto calcularla
 d) La mediana del beb_endul redondeada a dos decimales es 145.50.
 
-```{r}
+```{r, include=FALSE}
 base_conjunta$beb_endul <- base_conjunta$refgr + base_conjunta$refsingr + base_conjunta$zuengr
 
 ks.test(base_conjunta$beb_endul, 'pnorm')
@@ -618,7 +618,7 @@ b) La variable rmed por categorías de cals tiene forma mesocúrtica.
 c) La mediana de rmed por categorías de cals son iguales.
 d) Todas son falsas.
 
-```{r}
+```{r, include=FALSE}
 dt_Q1 <- base_conjunta %>% filter(cals_4t=="Q1")
 dt_Q2 <- base_conjunta %>% filter(cals_4t=="Q2")
 dt_Q3 <- base_conjunta %>% filter(cals_4t=="Q3")

@@ -55,6 +55,70 @@
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -1034,6 +1098,13 @@ Adherencia a la dieta Mediterránea
 <li>La variable es asimétrica.</li>
 <li>La mediana de horas al día de televisión es 2.0.</li>
 </ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="ejercicios-práctica.html#cb1-1" tabindex="-1"></a>base_conjunta<span class="sc">$</span>htele_dia <span class="ot">&lt;-</span> base_conjunta<span class="sc">$</span>htele_semana<span class="sc">/</span><span class="dv">7</span></span>
+<span id="cb1-2"><a href="ejercicios-práctica.html#cb1-2" tabindex="-1"></a><span class="fu">summary</span>(base_conjunta<span class="sc">$</span>htele_dia)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+##  0.0000  0.5714  1.1429  1.3526  2.0000 12.1429       3</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="ejercicios-práctica.html#cb3-1" tabindex="-1"></a><span class="fu">hist</span>(base_conjunta<span class="sc">$</span>htele_dia)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="ejercicios-práctica.html#cb4-1" tabindex="-1"></a><span class="co">#d) La mediana de horas al día de televisión es 2.0.</span></span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li>Recategoriza la variable htele_dia en tres categorías &lt;1 hora al día; 1-2 horas al día y &gt;2 horas al día, y llámale htele_dia_3c ¿Cuál de las siguientes respuestas es falsa?</li>
 </ol>
@@ -1115,18 +1186,8 @@ d)El p-valor es &lt;0.001, por lo tanto, la variable no es normal.</li>
 <li>El p-valor del coeficiente de correlación de Spearman no es significativo.</li>
 <li>Todas son correctas.</li>
 </ol>
-<p>Crea una nueva base de datos que incluya a los individuos que tienen &lt;3000 calorías al día, llámale base_conjunta1.</p>
 <ol start="12" style="list-style-type: decimal">
-<li>Señala la respuesta correcta en cuanto a la igualdad de varianzas entre la variable cals según htele_dia_3c en la nueva base.</li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Se puede asumir igualdad de varianzas porque el test de levene es &gt;0.05.</li>
-<li>Se puede asumir igualdad de varianzas porque el test de kolmogorov-sminrov es &gt;0.05.</li>
-<li>No se puede asumir igualdad de varianzas porque el test de levene es &gt;0.05.</li>
-<li>No se puede asumir igualdad de varianzas porque el test de kolmogorov-sminrov es &lt;0.05.</li>
-</ol>
-<ol start="13" style="list-style-type: decimal">
-<li>Señala la respuesta falsa de la base_conjunta1.</li>
+<li>Crea una nueva base de datos que incluya a los individuos que tienen &lt;3000 calorías al día, llámale base_conjunta1.Señala la respuesta falsa de la base_conjunta1.</li>
 </ol>
 <ol style="list-style-type: lower-alpha">
 <li>La nueva base tienen 607 individuos.</li>
