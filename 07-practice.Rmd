@@ -473,7 +473,6 @@ write.csv(submujerdiet, file = "submujerdiet.Rdata")
 
 ><span style="color:red; font-size: 20px;">**REALIZAR**</span>
 
-
 En las bases de datos (Base1.sav y Base2.sav) se presentan los datos del estudio “Dieta, salud y antropometría en población universitaria”, en que se recogió información en el momento basal para 697 estudiantes. La base final de unir la base1 y la base2 incluye las variables que se incluyen en la siguiente tabla.
 
 ```{r, echo=FALSE}
@@ -504,7 +503,7 @@ b) La media de horas al día de televisión es 1.35.
 c) La variable es asimétrica.
 d) La mediana de horas al día de televisión es 2.0.
 
-```{r}
+```{r, include=FALSE}
 base_conjunta$htele_dia <- base_conjunta$htele_semana/7
 summary(base_conjunta$htele_dia)
 hist(base_conjunta$htele_dia)
