@@ -165,7 +165,7 @@ Leer el artículo [Inorganic arsenic exposure and neuropsychological development
 rm(list=ls())
 ```
 
-### Basic R calculation
+Basic R calculation
 
 ><span style="color:darkgreen; font-size: 20px;">*Con R se pueden hacer cálculos básicos matermáticos.*</span>
 
@@ -183,7 +183,7 @@ a <- 2
 2*a
 ```
 
-### Construcción de variables
+Construcción de variables
 
 ><span style="color:darkgreen; font-size: 20px;">*En este caso para construir la base de datos generamos vectores. Todos los vectores deben de tener el mismo tamaño.*</span>
 
@@ -203,7 +203,7 @@ sexo
 nivel_estudios <- c("Educación primaria", "Educación primaria", "Educación secundaria", "Educación superior", "Educación superior", "Educación primaria")
 ```
 
-### Base de datos
+Base de datos
 
 ><span style="color:darkgreen; font-size: 20px;">*Con la función data.frame combinamos todas las variables generadas en una base de datos.*</span>
 
@@ -211,8 +211,7 @@ nivel_estudios <- c("Educación primaria", "Educación primaria", "Educación se
 datos <- data.frame(nombre, peso, altura, sexo, nivel_estudios) 
 datos
 ```
-
-### Etiquetas
+Etiquetas
 
 ><span style="color:darkgreen; font-size: 20px;">*Las etiquetas van asociadas a cada variable y aportan información adicional. Si finalidad va en línea con el "codebook"*</span>
 
@@ -225,7 +224,7 @@ label(datos[["sexo"]]) <- "mujer = 0 y hombre = 1"
 label(datos[["nivel_estudios"]]) <- "Nivel estudios sistema nacional"
 ```
 
-### Variable derivada
+Variable derivada
 
 ><span style="color:darkgreen; font-size: 20px;">*Aquí generamos una variable nueva derivada dentro de la base de datos "datos" llamada "imc". Luego asignamos una etiqueta*</span>
 
@@ -241,7 +240,7 @@ label(datos[["imc"]]) <- "índice de masa corporal"
 str(datos)
 ```
 
-### Valores perdidos
+Valores perdidos
 
 ><span style="color:darkgreen; font-size: 20px;">*La función "is.na()" identifica los valores perdidos mediante TRUE o FALSE. Con la función "table()" se genera la tabla de contingencia idenficando de forma rápida el número de valores perdidos (TRUE). La presencia de valores perdidos puede tener varios orígenes y es necesario tratalos con cuidado*</span>
 
@@ -257,7 +256,7 @@ library(Amelia)
 missmap(datos, main="Valores perdidos", col=c("yellow", "black"), legend=FALSE, x.cex = 0.6)
 ```
 
-## Ejercicio 3
+## Ejercicio 5
 
 ><span style="color:red; font-size: 20px;">**REALIZAR**</span>
 
