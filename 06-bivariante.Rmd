@@ -1,0 +1,440 @@
+# Estadística bivariantes
+
+## Ejercicio 1
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+```{r, include=FALSE}
+rm(list=ls())
+library(tidyverse)
+library(here)
+```
+
+```{r}
+library(haven)
+estudiantes <- read_spss("Estudiantes1.sav")
+
+tb <- table(estudiantes$tabac37, estudiantes$Sexo)
+dimnames(tb) = list( c("No", "Sí"), c("Hombre", "Mujer")) 
+addmargins(tb)
+
+proportion_table <- round(prop.table(tb, margin = 2)*100,1)
+addmargins(proportion_table)
+```
+
+## Ejercicio 2
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+
+```{r, warning=FALSE}
+tb <- table(estudiantes$actf36, estudiantes$Sexo)
+dimnames(tb) = list( c("Sedentario poco activo", "Moderadamente activo", "Activo"),
+                     c("Hombre", "Mujer"))                  
+addmargins(tb)
+
+proportion_table <- round(prop.table(tb, margin = 2)*100,1)
+addmargins(proportion_table)
+```
+
+## Ejercicio 3
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+Por ejemplo si queremos hacer un subanálisis en los que tienen 23 años.
+
+```{r, warning=FALSE}
+estudiantes_23 <- estudiantes %>% filter(Edad==23)
+```
+
+```{r, warning=FALSE}
+tb <- table(estudiantes_23$tabac37, estudiantes_23$Sexo)
+dimnames(tb) = list( c("No", "Sí"), c("Hombre", "Mujer")) 
+addmargins(tb)
+
+proportion_table <- round(prop.table(tb, margin = 2)*100,1)
+addmargins(proportion_table)
+```
+
+
+## Ejercicio 3
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+```{r, warning=FALSE}
+summary(estudiantes$Edad)
+sd(estudiantes$Edad)
+IQR(estudiantes$Edad)
+```
+
+```{r, warning=FALSE}
+with(estudiantes, tapply(Edad, Sexo, summary, na.rm=T))
+```
+
+
+```{r, warning=FALSE}
+summary(estudiantes$PESO)
+sd(estudiantes$PESO)
+IQR(estudiantes$PESO)
+```
+
+```{r, warning=FALSE}
+with(estudiantes, tapply(PESO, Sexo, summary, na.rm=T))
+```
+
+## Ejercicio 4
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+
+```{r, warning=FALSE}
+# Cargar los paquetes necesarias
+library(ggplot2)
+
+# Generar datos para el ejemplo
+set.seed(123)
+x <- seq(1, 10, by = 0.5)
+y_positive <- x + rnorm(length(x), mean = 0, sd = 1)  # Correlación positiva
+y_negative <- -x + rnorm(length(x), mean = 0, sd = 1)  # Correlación negativa
+y_no_corr <- rnorm(length(x), mean = 0, sd = 1)  # Sin correlación
+
+# Calcular las correlaciones
+cor_positive <- cor(x, y_positive, method = "pearson")
+cor_negative <- cor(x, y_negative, method = "pearson")
+cor_no_corr <- cor(x, y_no_corr, method = "pearson")
+
+# Generar los gráficos
+plot_positive <- ggplot(data = data.frame(x, y_positive), aes(x, y_positive)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "blue") +
+  labs(title = paste("Positive Correlation (correlation =", round(cor_positive, 2), ")"))
+
+plot_negative <- ggplot(data = data.frame(x, y_negative), aes(x, y_negative)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "red") +
+  labs(title = paste("Negative Correlation (correlation =", round(cor_negative, 2), ")"))
+
+plot_no_corr <- ggplot(data = data.frame(x, y_no_corr), aes(x, y_no_corr)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "green") +
+  labs(title = paste("No Correlation (correlation =", round(cor_no_corr, 2), ")"))
+
+# Mostrar los gráficos
+print(plot_positive)
+print(plot_negative)
+print(plot_no_corr)
+```
+
+
+## Ejercicio 5
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+```{r, warning=FALSE}
+base <- read_spss("base1.sav")
+with(base, cor.test(peso_m, altura_m, alternative="two.sided", method = "spearman"))
+```
+
+## Ejercicio 6
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+
+```{r, warning=FALSE, message=FALSE}
+shapiro.test(estudiantes$Edad)
+ks.test(estudiantes$Edad, 'pnorm')
+```
+
+R code - histograma
+
+```{r, warning=FALSE}
+# Creating the histogram with ggplot2
+ggplot(estudiantes, aes(x = Edad)) +
+  geom_histogram(binwidth = 1, color = "black", fill = "blue") +
+  labs(title = "Histograma para revisar normalidad",
+       x = "Valores datos",
+       y = "Frecuencia")
+```
+
+R code - gráfico QQ
+```{r, warning=FALSE}
+qqnorm(estudiantes$Edad, pch = 1, frame = FALSE)
+qqline(estudiantes$Edad, col = "steelblue", lwd = 2)
+
+library("car")
+qqPlot(estudiantes$Edad)
+```
+
+## Ejercicio 7
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+## pie chart
+
+```{r, warning=FALSE, out.width = '45%'}
+library(tidyverse); library(ggplot2) # Load ggplot2
+
+data <- data.frame(group=LETTERS[1:5], value=c(13,7,9,21,2)) # Create Data
+
+ggplot(data, aes(x="", y=value, fill=group)) + 
+  geom_bar(stat="identity", width=1, color="white") + 
+  coord_polar("y", start=0) + # Basic piechart
+  theme_void() # remove background, grid, numeric labels
+```
+
+Barplot
+
+```{r, warning=FALSE, out.width = '45%'}
+library(ggplot2) # Load ggplot2
+
+data <- data.frame(name=c("A","B","C","D","E") ,value=c(3,12,5,18,45)) # Create data
+
+ggplot(data, aes(x=name, y=value)) + geom_bar(stat = "identity")# Barplot
+```
+
+Boxplot
+
+```{r, warning=FALSE, out.width = '45%', message=FALSE}
+library(tidyverse); library(hrbrthemes); library(viridis)# Libraries
+
+# create a dataset
+data <- data.frame(
+  name=c( rep("A",500), rep("B",500), rep("B",500), rep("C",20), rep('D', 100)  ),
+  value=c(rnorm(500, 10, 5), rnorm(500, 13, 1), rnorm(500, 18, 1), rnorm(20, 25, 4), 
+          rnorm(100, 12, 1)))
+
+# Plot
+Caja <- data %>%
+  ggplot( aes(x=name, y=value, fill=name)) + geom_boxplot() +
+    scale_fill_viridis(discrete = TRUE, alpha=0.6) +
+    geom_jitter(color="black", size=0.4, alpha=0.9) +
+    theme_ipsum() + theme( legend.position="none", plot.title = element_text(size=11)) +
+    ggtitle("A boxplot with jitter") + xlab("")
+```
+
+Boxplot
+
+```{r, warning=FALSE}
+Caja
+```
+
+Gráficos de dispersión
+
+```{r, warning=FALSE}
+library(ggplot2)
+ 
+# The iris dataset is provided natively by R
+#head(iris)
+ 
+# basic scatterplot
+dispersion <- ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width)) +  geom_point()
+```
+
+## Ejercicio 8
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+- Comparar el hábito tabáquico (si/no) de los que tiene cáncer de pulmón o no. 
+
+```{r, warning=FALSE}
+# Example data
+data <- data.frame(
+  SmokingHabit = c("Yes", "No", "Yes", "No", "Yes", "No", "No", "Yes", "Yes", "No"),
+  LungCancer = c("Yes", "No", "Yes", "No", "Yes", "No", "No", "Yes", "No", "No")
+)
+
+# Create a contingency table
+contingency_table <- table(data$SmokingHabit, data$LungCancer)
+
+# Perform the chi-square test
+chi_square_result <- chisq.test(contingency_table)
+
+# Print the chi-square test result
+print(chi_square_result)
+```
+
+
+## Ejercicio 9
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+```{r, warning=FALSE}
+# Cargar la librería necesaria
+library(stats)
+
+# Ejemplo de datos (reemplaza esto con tus propios datos)
+tratamiento1 <- c(140, 145, 150, 142, 138)
+tratamiento2 <- c(148, 153, 147, 146, 150)
+tratamiento3 <- c(135, 138, 142, 137, 139)
+
+# Realizar el test de Kruskal-Wallis
+kruskal_test <- kruskal.test(list(tratamiento1, tratamiento2, tratamiento3))
+
+# Imprimir los resultados del test
+print(kruskal_test)
+```
+
+
+## Ejercicio 10
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+```{r, warning=FALSE}
+# Cargar la librería necesaria
+library(stats)
+
+# Ejemplo de datos (reemplaza esto con tus propios datos)
+hombres <- c(3.2, 3.4, 3.1, 3.5, 3.0)
+mujeres <- c(2.8, 3.0, 2.9, 3.2, 2.7)
+
+# Realizar el test de Mann-Whitney U
+mann_whitney_test <- wilcox.test(hombres, mujeres)
+
+# Imprimir los resultados del test
+print(mann_whitney_test)
+```
+
+## Ejercicio 11
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+```{r, warning=FALSE}
+# Ejemplo de datos 
+peso <- c(60, 70, 65, 80, 75)
+altura <- c(160, 175, 168, 180, 172)
+
+# Realizar el test de correlación de Pearson
+correlation_test <- cor.test(peso, altura, method = "spearman")
+
+# Imprimir los resultados del test
+print(correlation_test)
+```
+
+## Ejercicio 12
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+```{r, warning=FALSE}
+# Cargar la librería necesaria
+library(stats)
+
+# Ejemplo de datos (reemplaza esto con tus propios datos)
+consumo_alcohol <- c("Sí", "No", "Sí", "No", "Sí", "Sí", "No", "No", "No", "No")
+grupo <- c("Fin de semana", "No bebedores", "Bebedores habituales", "Bebedores habituales", "Fin de semana", "No bebedores", "No bebedores", "Fin de semana", "No bebedores", "Bebedores habituales")
+
+# Crear una tabla de contingencia
+contingency_table <- table(consumo_alcohol, grupo)
+
+# Realizar el test de Chi-Cuadrado de Independencia
+chi_square_test <- chisq.test(contingency_table)
+
+# Imprimir los resultados del test
+print(chi_square_test)
+
+```
+
+## Ejercicio 13
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+```{r, warning=FALSE}
+# Ejemplo de datos (reemplaza esto con tus propios datos)
+peso_inicial <- c(70, 75, 68, 80, 72)
+peso_despues <- c(60, 50, 56, 70, 65)
+
+# Realizar el t-test para muestras relacionadas
+paired_t_test <- t.test(peso_inicial, peso_despues, paired = TRUE)
+
+# Imprimir los resultados del test
+print(paired_t_test)
+```
+
+## Ejercicio 14
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+```{r, warning=FALSE}
+# Ejemplo de datos (reemplaza esto con tus propios datos)
+peso_inicial <- c(70, 75, 68, 80, 72)
+peso_despues <- c(68, 73, 66, 78, 70)
+
+# Realizar el test de Wilcoxon para muestras relacionadas
+wilcoxon_test <- wilcox.test(peso_inicial, peso_despues, paired = TRUE, exact = FALSE)
+
+# Imprimir los resultados del test
+print(wilcoxon_test)
+```
+
+## Ejercicio 15
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+```{r, warning=FALSE}
+# Ejemplo de datos (reemplaza esto con tus propios datos)
+antes <- c("Sí", "No", "No", "Sí", "No", "Sí", "Sí", "No", "Sí", "No")
+despues <- c("Sí", "No", "Sí", "Sí", "No", "Sí", "No", "Sí", "Sí", "Sí")
+
+# Crear una tabla de contingencia 2x2
+tabla_contingencia <- table(antes, despues)
+
+# Realizar el test de McNemar
+mcnemar_test <- mcnemar.test(tabla_contingencia)
+
+# Imprimir los resultados del test
+print(mcnemar_test)
+
+```
+
+## Ejercicio 16
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+ANOVA - posthoc (paramétrico)
+
+```{r}
+# Create a sample dataset
+data <- data.frame(
+  group = rep(c("A", "B", "C"), each = 10),
+  weight = c(76, 77, 78, 70, 71, 72, 75, 76, 79, 73,
+              75, 78, 80, 81, 82, 85, 70, 73, 75, 79,
+              100, 102, 105, 108, 110, 112, 98, 101, 103, 107)
+)
+```
+
+```{r, warning=FALSE}
+
+library("RcmdrMisc")
+
+with(data,numSummary(weight, groups = group, statistics = c("mean", "sd")))
+
+data %>%
+  ggplot(aes(x=group, y=weight, fill=group)) + geom_boxplot() +
+    scale_fill_viridis(discrete = TRUE, alpha=0.6) +
+    geom_jitter(color="black", size=0.4, alpha=0.9) +
+    theme_ipsum() + theme( legend.position="none", plot.title = element_text(size=11)) +
+    ggtitle("A boxplot with jitter") + xlab("")
+```
+
+```{r}
+# Fit a one-way ANOVA model
+model <- aov(weight ~ group, data = data)
+summary(model)
+
+# Perform Tukey's HSD post hoc test
+posthoc <- TukeyHSD(model)
+print(posthoc)
+```
+
+Kruskal Wallis - posthoc (no paramétrico)
+
+```{r, warning=FALSE}
+kruskal.test(weight ~group, data = data)
+```
+
+El p-valor es <0.05 por lo tanto las medianas de peso para los distintos tipos de actividad física son diferentes.
+
+```{r, warning=FALSE}
+library(FSA)
+options(scipen=999)
+dunnTest(weight ~ group, data = data)
+```
