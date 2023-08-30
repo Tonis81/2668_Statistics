@@ -1,4 +1,4 @@
-# Estadística bivariantes
+# Bivariantes
 
 ## Ejercicio 1
 
