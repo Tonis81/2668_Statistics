@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Ejercicios varios | 2668_Estadistica</title>
+  <meta name="description" content="Chapter 7 Ejercicios varios | 2668_Estadistica" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Ejercicios varios | 2668_Estadistica" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Ejercicios varios | 2668_Estadistica" />
+  
+  
+  
+
+<meta name="author" content="A.J. Signes-Pastor" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="estadística-bivariantes.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">2668_Statistics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#ejercicio-1"><i class="fa fa-check"></i><b>1.1</b> Ejercicio 1</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#ejercicio-2"><i class="fa fa-check"></i><b>1.2</b> Ejercicio 2</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#ejercicio-3"><i class="fa fa-check"></i><b>1.3</b> Ejercicio 3</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#ejercicio-4"><i class="fa fa-check"></i><b>1.4</b> Ejercicio 4</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#ejercicio-5"><i class="fa fa-check"></i><b>1.5</b> Ejercicio 5</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#references"><i class="fa fa-check"></i><b>1.6</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html"><i class="fa fa-check"></i><b>2</b> Estadística descriptiva</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#ejercicio-1-1"><i class="fa fa-check"></i><b>2.1</b> Ejercicio 1</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#análisis-variables-cualitativas"><i class="fa fa-check"></i><b>2.1.1</b> Análisis variables cualitativas</a></li>
+<li class="chapter" data-level="2.1.2" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#análisis-variable-cuantitativas"><i class="fa fa-check"></i><b>2.1.2</b> Análisis variable cuantitativas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="base-de-datos.html"><a href="base-de-datos.html"><i class="fa fa-check"></i><b>3</b> Base de datos</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="base-de-datos.html"><a href="base-de-datos.html#ejercicio-1-2"><i class="fa fa-check"></i><b>3.1</b> Ejercicio 1</a></li>
+<li class="chapter" data-level="3.2" data-path="base-de-datos.html"><a href="base-de-datos.html#ejercicio-2-1"><i class="fa fa-check"></i><b>3.2</b> Ejercicio 2</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="probabilidad.html"><a href="probabilidad.html"><i class="fa fa-check"></i><b>4</b> Probabilidad</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="probabilidad.html"><a href="probabilidad.html#ejercicio-1-3"><i class="fa fa-check"></i><b>4.1</b> Ejercicio 1</a></li>
+<li class="chapter" data-level="4.2" data-path="probabilidad.html"><a href="probabilidad.html#ejercicio-2-2"><i class="fa fa-check"></i><b>4.2</b> Ejercicio 2</a></li>
+<li class="chapter" data-level="4.3" data-path="probabilidad.html"><a href="probabilidad.html#ejercicio-3-1"><i class="fa fa-check"></i><b>4.3</b> Ejercicio 3</a></li>
+<li class="chapter" data-level="4.4" data-path="probabilidad.html"><a href="probabilidad.html#ejercicio-4-1"><i class="fa fa-check"></i><b>4.4</b> Ejercicio 4</a></li>
+<li class="chapter" data-level="4.5" data-path="probabilidad.html"><a href="probabilidad.html#ejercicio-5-1"><i class="fa fa-check"></i><b>4.5</b> Ejercicio 5</a></li>
+<li class="chapter" data-level="4.6" data-path="probabilidad.html"><a href="probabilidad.html#ejercicio-6"><i class="fa fa-check"></i><b>4.6</b> Ejercicio 6</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="contraste-de-hipótesis.html"><a href="contraste-de-hipótesis.html"><i class="fa fa-check"></i><b>5</b> Contraste de hipótesis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="contraste-de-hipótesis.html"><a href="contraste-de-hipótesis.html#ejercicio-1-4"><i class="fa fa-check"></i><b>5.1</b> Ejercicio 1</a></li>
+<li class="chapter" data-level="5.2" data-path="contraste-de-hipótesis.html"><a href="contraste-de-hipótesis.html#ejercicio-2-3"><i class="fa fa-check"></i><b>5.2</b> Ejercicio 2</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html"><i class="fa fa-check"></i><b>6</b> Estadística bivariantes</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-1-5"><i class="fa fa-check"></i><b>6.1</b> Ejercicio 1</a></li>
+<li class="chapter" data-level="6.2" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-2-4"><i class="fa fa-check"></i><b>6.2</b> Ejercicio 2</a></li>
+<li class="chapter" data-level="6.3" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-3-2"><i class="fa fa-check"></i><b>6.3</b> Ejercicio 3</a></li>
+<li class="chapter" data-level="6.4" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-3-3"><i class="fa fa-check"></i><b>6.4</b> Ejercicio 3</a></li>
+<li class="chapter" data-level="6.5" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-4-2"><i class="fa fa-check"></i><b>6.5</b> Ejercicio 4</a></li>
+<li class="chapter" data-level="6.6" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-5-2"><i class="fa fa-check"></i><b>6.6</b> Ejercicio 5</a></li>
+<li class="chapter" data-level="6.7" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-6-1"><i class="fa fa-check"></i><b>6.7</b> Ejercicio 6</a></li>
+<li class="chapter" data-level="6.8" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-7"><i class="fa fa-check"></i><b>6.8</b> Ejercicio 7</a></li>
+<li class="chapter" data-level="6.9" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-8"><i class="fa fa-check"></i><b>6.9</b> Ejercicio 8</a></li>
+<li class="chapter" data-level="6.10" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-9"><i class="fa fa-check"></i><b>6.10</b> Ejercicio 9</a></li>
+<li class="chapter" data-level="6.11" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-10"><i class="fa fa-check"></i><b>6.11</b> Ejercicio 10</a></li>
+<li class="chapter" data-level="6.12" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-11"><i class="fa fa-check"></i><b>6.12</b> Ejercicio 11</a></li>
+<li class="chapter" data-level="6.13" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-12"><i class="fa fa-check"></i><b>6.13</b> Ejercicio 12</a></li>
+<li class="chapter" data-level="6.14" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-13"><i class="fa fa-check"></i><b>6.14</b> Ejercicio 13</a></li>
+<li class="chapter" data-level="6.15" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-14"><i class="fa fa-check"></i><b>6.15</b> Ejercicio 14</a></li>
+<li class="chapter" data-level="6.16" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-15"><i class="fa fa-check"></i><b>6.16</b> Ejercicio 15</a></li>
+<li class="chapter" data-level="6.17" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-16"><i class="fa fa-check"></i><b>6.17</b> Ejercicio 16</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html"><i class="fa fa-check"></i><b>7</b> Ejercicios varios</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#ejercicio-1-6"><i class="fa fa-check"></i><b>7.1</b> Ejercicio 1</a></li>
+<li class="chapter" data-level="7.2" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#ejercicio-2-5"><i class="fa fa-check"></i><b>7.2</b> Ejercicio 2</a></li>
+<li class="chapter" data-level="7.3" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#ejercicio-3-4"><i class="fa fa-check"></i><b>7.3</b> Ejercicio 3</a></li>
+<li class="chapter" data-level="7.4" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#ejercicio-4-3"><i class="fa fa-check"></i><b>7.4</b> Ejercicio 4</a></li>
+<li class="chapter" data-level="7.5" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#ejercicio-5-3"><i class="fa fa-check"></i><b>7.5</b> Ejercicio 5</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">2668_Estadistica</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ejercicios-varios" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Ejercicios varios<a href="ejercicios-varios.html#ejercicios-varios" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="ejercicio-1-6" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Ejercicio 1<a href="ejercicios-varios.html#ejercicio-1-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p><span style="color:red; font-size: 20px;"><strong>REALIZAR</strong></span></p>
+</blockquote>
+<p><em>Se nos proporciona una base de datos generada mediante el control de diabetes en pacientes. A continuación se detalla el “codebook” de las variables.</em></p>
+<table class="table table-striped" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:left;">
+Descripción
+</th>
+<th style="text-align:left;">
+Categorias
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+id
+</td>
+<td style="text-align:left;">
+código identificador del paciente
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sexo
+</td>
+<td style="text-align:left;">
+sexo de los pacientes
+</td>
+<td style="text-align:left;">
+0: hombre; 1: mujer
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+n_histo
+</td>
+<td style="text-align:left;">
+número de historia clinica
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+an_diag
+</td>
+<td style="text-align:left;">
+año de diagnóstico de la diabetes
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dondedx
+</td>
+<td style="text-align:left;">
+en qué hospital le diagnosticaron la diabetes
+</td>
+<td style="text-align:left;">
+1: Hospital; 2: Ambulatorio; 3: Endocrino zona; 4: Médico privado; 5: Otras; 6: No lo sabe
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dondectl
+</td>
+<td style="text-align:left;">
+donde se la controlan
+</td>
+<td style="text-align:left;">
+1: Hospital; 2: Ambulatorio; 3: Endocrino zona; 4: Médico privado; 5: Otras; 6: No lo sabe
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+frecvisi
+</td>
+<td style="text-align:left;">
+cada cuanto se la controlan
+</td>
+<td style="text-align:left;">
+1: Semanal; 2: Mensual; 3: Cada 2-3 meses; 4: Dos veces al año; 5: Cada año; 6: No lo sabe
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tx_ab
+</td>
+<td style="text-align:left;">
+tratamiento de reclutamiento
+</td>
+<td style="text-align:left;">
+0: Dieta; 1: ADO; 2: Insulina
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tx_de
+</td>
+<td style="text-align:left;">
+tratamiento al año
+</td>
+<td style="text-align:left;">
+0: Dieta; 1: ADO; 2: Insulina
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+reflec
+</td>
+<td style="text-align:left;">
+tipo relectometro
+</td>
+<td style="text-align:left;">
+1: Ninguno; 2: Accutren Sensor; 3: Glucocard; 4: One touch
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+hbac_1
+</td>
+<td style="text-align:left;">
+Hemoglobina (Hb) Glicosilada antes del tratamiento
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+hbac_2
+</td>
+<td style="text-align:left;">
+Hb. Glicosilada después del segundo tratamiento
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li><p>Abre la base diabet2.sav y ponle el nombre diabet2 ¿Qué tamaño tiene la base de datos? ¿Hay en la base de datos diabet2 datos faltantes para alguna de las variables? Indica para que variables hay datos ausentes y el número datos ausentes en este documento.</p></li>
+<li><p>¿Cuánto vale la media y la mediana de hbac_1?</p></li>
+<li><p>Calcule los percentiles, 5, 20 y 65 de la variable hbac_2 para el total de los individuos. Escribe aquí los resultados y haz un breve comentario de los mismos</p></li>
+<li><p>Genere una nueva variable que sea la diferencia entre hbac_2 y hbac_1. Llame a la nueva variable dhab. Representa esta nueva variable mediante un diagrama de caja ponlo en horizontal, ponle el color verde a la caja y ponle un título adecuado. Deberá entregar el gráfico en este mismo documento</p></li>
+<li><p>Haz un análisis descriptivo univariante sexo (estratificado por sexo) de la base de datos diabet2. Deberá entregar la tabla en este mismo documento.</p></li>
+<li><p>Represente gráficamente la variable dondedx y dondetl de la base de datos diabet2.</p></li>
+</ol>
+<ol start="7" style="list-style-type: decimal">
+<li>¿Es simétrica la variable hbac_1 para los pacientes que tx_ab=Dieta? ¿Es platocurtica la variable hbac_2 en hombres? ¿Es simétrica la variable hbac_2 en mujeres?</li>
+</ol>
+<ol start="8" style="list-style-type: decimal">
+<li>¿Qué variable tiene más dispersión hbac_1 o hbac_2?</li>
+</ol>
+</div>
+<div id="ejercicio-2-5" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Ejercicio 2<a href="ejercicios-varios.html#ejercicio-2-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p><span style="color:red; font-size: 20px;"><strong>REALIZAR</strong></span></p>
+</blockquote>
+<p>La base de datos estudiantes1.sav contiene datos estudiantes del campus de ciencias de la salud de la Universidad Miguel Hernández participantes en el Estudio DiSA-UMH. El objetivo del estudio es determinar el estado de nutrición y salud de esta población. A continuación, se muestra la descripción de las variables contenida esta base de datos:</p>
+<table class="table table-striped" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:left;">
+Descripción
+</th>
+<th style="text-align:left;">
+Categorías
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+codigo
+</td>
+<td style="text-align:left;">
+Identificador del participante
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sexo
+</td>
+<td style="text-align:left;">
+Sexo
+</td>
+<td style="text-align:left;">
+1: Hombre; 2:Mujer
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+edad
+</td>
+<td style="text-align:left;">
+Edad (años)
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+peso
+</td>
+<td style="text-align:left;">
+Peso en Kg
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+talla
+</td>
+<td style="text-align:left;">
+Altura en cm
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pes25
+</td>
+<td style="text-align:left;">
+En general, ¿Cómo dirías que es tu salud?
+</td>
+<td style="text-align:left;">
+1: Muy buena; 2: Buena; 3:Regular/Mala/Muy mala; 9:NS/NC
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tabac37
+</td>
+<td style="text-align:left;">
+¿Has fumado alguna vez en tu vida?
+</td>
+<td style="text-align:left;">
+1: No; 2:Si
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+actf36
+</td>
+<td style="text-align:left;">
+Considerando globalmente tu actividad física (actividad principal, hogar y tiempo libre) ¿Cómo te consideras?
+</td>
+<td style="text-align:left;">
+1: Sedentario-Poco activo; 2:Moderadamente activo; 3: Activo
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Actf28
+</td>
+<td style="text-align:left;">
+¿Cuántas horas ve la televisión a la semana?
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TAS1
+</td>
+<td style="text-align:left;">
+Medición 1 de tensión arterial sistólica
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TAD1
+</td>
+<td style="text-align:left;">
+Medición 1 de tensión arterial diastólica
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TAS2
+</td>
+<td style="text-align:left;">
+Medición 2 de tensión arterial sistólica
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TAD2
+</td>
+<td style="text-align:left;">
+Medición 2 de tensión arterial diastólica
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HDL
+</td>
+<td style="text-align:left;">
+Colesterol HDL en mg/dl
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li><p>Abre la base de datos estudiantes1.sav (formato SPSS) con R y ponle de nombre base1. ¿Cuántas filas y columnas tiene la nueva base?</p></li>
+<li><p>Calcule una nueva variable que contenga la información del ratio peso en kg divido por talla en metros y llámale ratio. A continuación, calcule los percentiles, 15, 30 y 75 de la variable ratio para el total de los individuos. Escribe aquí los resultados y haz un breve comentario de los mismos.</p></li>
+<li><p>Cree una nueva base de datos que solo contenga los casos con los hombres, y calcule los percentiles de la variable ratio, 15, 30 y 75. Escribe aquí los resultados y haz un breve comentario de los mismos</p></li>
+<li><p>Cree una nueva base de datos que solo contenga los casos con las mujeres, y calcule los percentiles de la variable ratio, 15, 30 y 75. Escribe aquí los resultados y haz un breve comentario de los mismos.</p></li>
+<li><p>Haz un análisis descriptivo univariante de la variable tabac37 para el total de los individuos y para los hombres y las mujeres</p></li>
+<li><p>Represente gráficamente la variable ratio de la muestra total con un histograma, ponga el título que estime más oportuno y añada nombres a los ejes y ponga un color.</p></li>
+<li><p>Haga un gráfico adecuado para describir la variable actf36, ponga el título que estime más oportuno y entregue el gráfico en este mismo documento.</p></li>
+</ol>
+</div>
+<div id="ejercicio-3-4" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Ejercicio 3<a href="ejercicios-varios.html#ejercicio-3-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p><span style="color:red; font-size: 20px;"><strong>REALIZAR</strong></span></p>
+</blockquote>
+<p>La base de datos estudiantes1.sav contiene datos estudiantes del campus de ciencias de la salud de la Universidad Miguel Hernández participantes en el Estudio DiSA-UMH. El objetivo del estudio es determinar el estado de nutrición y salud de esta población. A continuación, se muestra la descripción de las variables contenida esta base de datos:</p>
+<table class="table table-striped" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:left;">
+Descripción
+</th>
+<th style="text-align:left;">
+Categorías
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+codigo
+</td>
+<td style="text-align:left;">
+Identificador del participante
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sexo
+</td>
+<td style="text-align:left;">
+Sexo
+</td>
+<td style="text-align:left;">
+1: Hombre; 2:Mujer
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+edad
+</td>
+<td style="text-align:left;">
+Edad (años)
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+peso
+</td>
+<td style="text-align:left;">
+Peso en Kg
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+talla
+</td>
+<td style="text-align:left;">
+Altura en cm
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pes25
+</td>
+<td style="text-align:left;">
+En general, ¿Cómo dirías que es tu salud?
+</td>
+<td style="text-align:left;">
+1: Muy buena; 2: Buena; 3:Regular/Mala/Muy mala; 9:NS/NC
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tabac37
+</td>
+<td style="text-align:left;">
+¿Has fumado alguna vez en tu vida?
+</td>
+<td style="text-align:left;">
+1: No; 2:Si
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+actf36
+</td>
+<td style="text-align:left;">
+Considerando globalmente tu actividad física (actividad principal, hogar y tiempo libre) ¿Cómo te consideras?
+</td>
+<td style="text-align:left;">
+1: Sedentario-Poco activo; 2:Moderadamente activo; 3: Activo
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Actf28
+</td>
+<td style="text-align:left;">
+¿Cuántas horas ve la televisión a la semana?
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TAS1
+</td>
+<td style="text-align:left;">
+Medición 1 de tensión arterial sistólica
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TAD1
+</td>
+<td style="text-align:left;">
+Medición 1 de tensión arterial diastólica
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TAS2
+</td>
+<td style="text-align:left;">
+Medición 2 de tensión arterial sistólica
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TAD2
+</td>
+<td style="text-align:left;">
+Medición 2 de tensión arterial diastólica
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HDL
+</td>
+<td style="text-align:left;">
+Colesterol HDL en mg/dl
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: lower-alpha">
+<li><p>Abre la base de datos estudiantes1.sav (formato SPSS) con R Commander y ponle de nombre datos.</p></li>
+<li><p>¿Cuántos casos (filas) y cuántas variables (columnas) contiene nuestra base de datos?</p></li>
+<li><p>Listado de los nombres de las variables que contiene la base de datos.</p></li>
+<li><p>Cambia el nombre de la variable pes25 y ponle salud.</p></li>
+<li><p>Elimina la variable hdl.</p></li>
+<li><p>Crea una variable que sea la media de las dos variables de tensión sistólica, TAS1 y TAS2 y llámala tasm. Haz lo mismo para la tensión diastólica y llámala tasdm.</p></li>
+<li><p>Crea una variable llamada imc usando las variables talla (cm) y peso (kg) a partir de la siguiente fórmula: IMC= peso (kg)/talla (m2).</p></li>
+<li><p>Recodifica la variable imc en 3 categorías (&lt;25; 25-29.99; &gt;=30), ponle el nombre de imc_3c y ponle las etiquetas de valor 1: normopeso; 2: sobrepeso; 3: obeso</p></li>
+<li><p>Crea una sub-base de la base datos que contenga sólo las variables código, edad, tasm e imc_3c. Guárdala con el nombre subestu en formato R.</p></li>
+<li><p>Crea una subase de la base datos que contenga datos sólo para mujeres menores de 25 años. Guárdala con el nombre submujer en formato R y csv.</p></li>
+</ol>
+</div>
+<div id="ejercicio-4-3" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Ejercicio 4<a href="ejercicios-varios.html#ejercicio-4-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p><span style="color:red; font-size: 20px;"><strong>REALIZAR</strong></span></p>
+</blockquote>
+<p>La base de datos diabet2.sav (en formato SPSS) contiene la información de 144 pacientes que contiene las siguientes variables que participaron en un estudio sobre diabetes:</p>
+<table class="table table-striped" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:left;">
+Descripción
+</th>
+<th style="text-align:left;">
+Categorías
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+id
+</td>
+<td style="text-align:left;">
+código identificador del paciente
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sexo
+</td>
+<td style="text-align:left;">
+sexo de los pacientes
+</td>
+<td style="text-align:left;">
+0: hombre; 1: mujer
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+n_histo
+</td>
+<td style="text-align:left;">
+número de historia clinica
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+an_diag
+</td>
+<td style="text-align:left;">
+año de diagnóstico de la diabetes
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dondedx
+</td>
+<td style="text-align:left;">
+en qué hospital le diagnosticaron la diabetes
+</td>
+<td style="text-align:left;">
+1: Hospital; 2: Ambulatorio; 3: Endocrino zona; 4: Médico privado; 5: Otras; 6: No lo sabe
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dondectl
+</td>
+<td style="text-align:left;">
+donde se la controlan
+</td>
+<td style="text-align:left;">
+1: Hospital; 2: Ambulatorio; 3: Endocrino zona; 4: Médico privado; 5: Otras; 6: No lo sabe
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+frecvisi
+</td>
+<td style="text-align:left;">
+cada cuanto se la controlan
+</td>
+<td style="text-align:left;">
+1: Semanal; 2: Mensual; 3: Cada 2-3 meses; 4: Dos veces al año; 5: Cada año; 6: No lo sabe
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tx_ab
+</td>
+<td style="text-align:left;">
+tratamiento de reclutamiento
+</td>
+<td style="text-align:left;">
+0: Dieta; 1: ADO; 2: Insulina
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tx_de
+</td>
+<td style="text-align:left;">
+tratamiento al año
+</td>
+<td style="text-align:left;">
+0: Dieta; 1: ADO; 2: Insulina
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+reflec
+</td>
+<td style="text-align:left;">
+tipo relectometro
+</td>
+<td style="text-align:left;">
+1: Ninguno; 2: Accutren Sensor; 3: Glucocard; 4: One touch
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+hbac_1
+</td>
+<td style="text-align:left;">
+Hb. Glicosilada antes del tratamiento
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+hbac_2
+</td>
+<td style="text-align:left;">
+Hb. Glicosilada después del segundo tratamiento
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li><p>Abre la base de datos diabet2.sav y póngale el nombre diab. ¿Cuántos casos y variables tiene la base de datos?</p></li>
+<li><p>Comprueba que las variables de las variables cualitativas están como factor y las cuantitativas como numeric. Si alguna de ellas no es correcta cámbiela. Comprueba que se ha cambiado con estadísticos resumen del conjunto de datos una vez hayas realizado los cambios.</p></li>
+<li><p>Haz un listado del nombre de las variables de tu base de datos.</p></li>
+<li><p>Cambia el nombre de la variable dondectl por lugar de la base diab. Comprueba que se ha cambiado con un listado de tus variables de la base de datos.</p></li>
+<li><p>Elimina la variable frecvisi. Comprueba que se ha cambiado con un listado de tus variables de la base de datos.</p></li>
+<li><p>Crea una variable que se llame dif_hbac que se la diferencia entre hbac_2 y hbac_1. Comprueba que se ha creado con estadísticos resumen del conjunto de datos una vez hayas realizado los cambios.</p></li>
+<li><p>Segmenta la variable dif_hbac en tertiles utilizando rangos para etiquetar las variables y llámale dif_hbac_3t. Comprueba que se ha creado con estadísticos resumen del conjunto.</p></li>
+<li><p>Recodifica la variable dif_hbac en tres categorías (&lt;0, 0, &gt;0) y llámale dif_hbac_3c. Etiqueta la variable final. Comprueba que se ha creado y que está bien etiquetada la variable final con estadísticos resumen del conjunto de datos.</p></li>
+<li><p>Segmenta la variable an_diag en tres grupos equidistantes utilizando rangos para etiquetar las variables y llámale an_diag3eq. Comprueba que se ha creado con estadísticos resumen del conjunto.</p></li>
+<li><p>Recodifica la variable reflec en 2 categorías (ninguno; alguno). Etiqueta la variable final. Comprueba que se ha creado y que está bien etiquetada la variable final con estadísticos resumen del conjunto de datos.</p></li>
+<li><p>Crea una subase de la base datos que contenga sólo las variables id, an_diag, hbac1 y hbac2. Guárdala con el nombre subestu en formato R. ¿Cuántos casos y cuantas variables tiene la nueva base?</p></li>
+<li><p>Crea una subase de la base datos que contenga datos sólo para mujeres con tx_ab dieta. Guárdala con el nombre submujerdiet en formato R. ¿Cuántos casos y cuantas variables tiene la nueva base?</p></li>
+</ol>
+</div>
+<div id="ejercicio-5-3" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Ejercicio 5<a href="ejercicios-varios.html#ejercicio-5-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p><span style="color:red; font-size: 20px;"><strong>REALIZAR</strong></span></p>
+</blockquote>
+<p>En las bases de datos (Base1.sav y Base2.sav) se presentan los datos del estudio “Dieta, salud y antropometría en población universitaria”, en que se recogió información en el momento basal para 697 estudiantes. La base final de unir la base1 y la base2 incluye las variables que se incluyen en la siguiente tabla.</p>
+<table class="table table-striped" style="width: auto !important; ">
+<thead>
+<tr>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:left;">
+Descripción
+</th>
+<th style="text-align:left;">
+Categorías
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+codigo
+</td>
+<td style="text-align:left;">
+Código del cuestionario
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sexo
+</td>
+<td style="text-align:left;">
+Sexo
+</td>
+<td style="text-align:left;">
+1: hombre; 2:mujer
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+edad
+</td>
+<td style="text-align:left;">
+Edad en años
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+peso
+</td>
+<td style="text-align:left;">
+¿Cuánto pesas en kg sin zapatos ni ropa de abrigo?
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+altura
+</td>
+<td style="text-align:left;">
+¿Cuánto mides en cm descalzo/a?
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+estado_salud
+</td>
+<td style="text-align:left;">
+En general, ¿Cómo dirías que es tu salud?
+</td>
+<td style="text-align:left;">
+1: muy buena; 2: buena; 3: regular; 4: mala; 5: muy mala; 9:NS/NC
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+htele_semana
+</td>
+<td style="text-align:left;">
+¿Cuantas horas ve la televisión a la semana?
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tabac37
+</td>
+<td style="text-align:left;">
+¿Has fumado alguna vez en tu vida?
+</td>
+<td style="text-align:left;">
+1: No; 2:si
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+vivir_2c
+</td>
+<td style="text-align:left;">
+¿Vives en domicilio familiar?
+</td>
+<td style="text-align:left;">
+1: Si; 2:no
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+refgr
+</td>
+<td style="text-align:left;">
+Ingesta de bebidas carbonatada azucaradas en gramos al día
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+refsingr
+</td>
+<td style="text-align:left;">
+Ingesta de bebidas carbonatada sin azucaradas en gramos al día
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+zuengr
+</td>
+<td style="text-align:left;">
+Ingesta de zumos en gramos al día
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cals
+</td>
+<td style="text-align:left;">
+Ingesta de energía en calorías al día
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rmed
+</td>
+<td style="text-align:left;">
+Adherencia a la dieta Mediterránea
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li><p>Abre ambas bases de datos en R Commander y llámales base1 y base2. A continuación une las dos bases de datos en una base conjunta que contenga a todos los individuos y a todas las variables y ponle base_conjunta. Indica a continuación el número de individuos y de variables que contienen la base1, la base2 y la base_conjunta.</p></li>
+<li><p>Calcula las horas de televisión al día y llámale htele_dia ¿Cuál de las siguientes respuestas es falsa?</p></li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>Hay tres individuos que no tienen datos para esta variable.</li>
+<li>La media de horas al día de televisión es 1.35.</li>
+<li>La variable es asimétrica.</li>
+<li>La mediana de horas al día de televisión es 2.0.</li>
+</ol>
+<ol start="3" style="list-style-type: decimal">
+<li>Recategoriza la variable htele_dia en tres categorías &lt;1 hora al día; 1-2 horas al día y &gt;2 horas al día, y llámale htele_dia_3c ¿Cuál de las siguientes respuestas es falsa?</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>Hay 272 individuos que ven &lt;1 hora al día la televisión.</li>
+<li>Hay 128 individuos que ven ≥ 2 horas al día la televisión.</li>
+<li>El 39.19% de los individuos ven &lt;1 hora al día la televisión.</li>
+<li>Hay un 42.36% de individuos que ven la televisión entre una y dos horas al día.</li>
+</ol>
+<ol start="4" style="list-style-type: decimal">
+<li>Segmenta la variable cals en cuartiles, y llámale cals_4t ¿Cuál de las siguientes afirmaciones es correcta?</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>El primer cuartil engloba el consumo de 1620 calorías.</li>
+<li>El 25% de los individuos consumen entre 1620 y 2000 calorías.</li>
+<li>El tercer cuartil engloba a los que consumen entre 2000 y 2520 calorias.</li>
+<li>a, b y c son correctas.</li>
+</ol>
+<ol start="5" style="list-style-type: decimal">
+<li>Calcula una variable que contenga la información de la suma de las bebidas endulzadas (refgr; refsingr y zuengr), llámale beb_endul. ¿Cuál de las siguientes afirmaciones sobre la variable beb_endul es falsa?</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>El p-valor del test de kolmogorov-sminrov de la variable beb_endul es &lt;0.001.</li>
+<li>La variable beb_endul no sigue una distribución normal.</li>
+<li>La media del beb_endul redondeada a dos decimales es 222.01, aunque no es correcto calcularla</li>
+<li>La mediana del beb_endul redondeada a dos decimales es 145.50.</li>
+</ol>
+<ol start="6" style="list-style-type: decimal">
+<li>¿Cuál de los siguientes resultados no es correcto sobre la descripción analítica de la variable beb_endul por sexos de la base_conjunta?</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>El p-valor del test de kolmogorov-sminrov de la variable beb_endul es &lt;0.001</li>
+<li>La variable beb_endul en hombres y mujeres es simétrica.</li>
+<li>La mediana de beb_endul en hombres es 193 y en las mujeres 136.</li>
+<li>Todas son incorrectas.</li>
+</ol>
+<ol start="7" style="list-style-type: decimal">
+<li>¿Cuál de los siguientes resultados sobre la normalidad de la variable edad en la base_conjunta es cierto?</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>El p-valor es 0.40, por lo tanto, la variable es normal.</li>
+<li>El p-valor es &lt;0.001, por lo tanto, la variable es normal.</li>
+<li>El p-valor es 0.40, por lo tanto, la variable no es normal.
+d)El p-valor es &lt;0.001, por lo tanto, la variable no es normal.</li>
+</ol>
+<ol start="8" style="list-style-type: decimal">
+<li>¿Cuál de las siguientes afirmaciones es falsa?</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>La distribución del rmed por categorias de cals son simétricas.</li>
+<li>La variable rmed por categorías de cals tiene forma mesocúrtica.</li>
+<li>La mediana de rmed por categorías de cals son iguales.</li>
+<li>Todas son falsas.</li>
+</ol>
+<ol start="9" style="list-style-type: decimal">
+<li>¿Cuál de los siguientes resultados sobre la proporción de individuos que ven &lt;1 hora al día la televisión distinguiendo sexo en la base_conjunta es correcto?</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>El p-valor es 0.7142 y se ha calculado con el test exacto de Fisher, pero no se debería haber calculado.</li>
+<li>El p-valor es 0.7094, y se ha calculado con el test chi-cuadrado</li>
+<li>La proporción de los individuos que ven &gt;2 hora al día la televisión es 29.0% en los hombres y del 71.0% en las mujeres.</li>
+<li>Todas son correctas.</li>
+</ol>
+<ol start="10" style="list-style-type: decimal">
+<li>Compara la media o la mediana de la variable rmed según la variable htele_dia_3c ¿Cuánto vale el p-valor y que test se usó para calcularlo?</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>El p-valor es 0.116 y el test ANOVA.</li>
+<li>El p-valor es 0.116 y el test Kruskall-Wallis.</li>
+<li>El p-valor &lt;0.001 y el test ANOVA.</li>
+<li>El p-valor es 0.182 y el test Kruskall-Wallis.</li>
+</ol>
+<ol start="11" style="list-style-type: decimal">
+<li>¿Cuál de los siguientes resultados sobre la correlación entre beb_endul y rmed es correcto?</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>El coeficiente de correlación de Pearson es 0.13, pero no se debería de haber calculado</li>
+<li>El coeficiente de correlación de Spearman es -0.14.</li>
+<li>El p-valor del coeficiente de correlación de Spearman no es significativo.</li>
+<li>Todas son correctas.</li>
+</ol>
+<ol start="12" style="list-style-type: decimal">
+<li>Crea una nueva base de datos que incluya a los individuos que tienen &lt;3000 calorías al día, llámale base_conjunta1.Señala la respuesta falsa de la base_conjunta1.</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>La nueva base tienen 607 individuos.</li>
+<li>La variable cals se distribuye normal.</li>
+<li>La mediana de cals es 1897.838.</li>
+<li>La variable cals es simétrica.</li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="estadística-bivariantes.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/Tonis81/2668_Statistics/edit/main/07-practice.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/Tonis81/2668_Statistics/blob/main/07-practice.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

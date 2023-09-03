@@ -3,10 +3,17 @@ title: "2668_Estadistica"
 author: "A.J. Signes-Pastor"
 #date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
+bibliography: "`r here::here('metadata', 'Library.bib')`"
+csl: "`r here::here('metadata', 'environmental-research.csl')`"
 ---
 
 # Introducción
 
+```{r, include=FALSE}
+rm(list=ls())
+library(tidyverse)
+library(here)
+```
 ## Ejercicio 1
 
 ><span style="color:red; font-size: 20px;">**REALIZAR**</span>
@@ -264,4 +271,7 @@ missmap(datos, main="Valores perdidos", col=c("yellow", "black"), legend=FALSE, 
 - 2. Genera una variable derivada y asígnale un nombre.
 - 3. Genera una variable que contenga valores perdidos.
 
+## References
+
+<div id="refs"></div>
 

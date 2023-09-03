@@ -5,7 +5,7 @@
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
 ```{r, include=FALSE}
-rm(list=ls())
+#rm(list=ls())
 library(tidyverse)
 library(here)
 ```
