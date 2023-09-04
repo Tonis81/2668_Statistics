@@ -2,14 +2,12 @@
 
 ## Ejercicio 1 
 
-\note{INCLUYO LAS SOLUCIONES EN R PERO NO LAS INCLUYO (includ=FALSE) HASTA QUE SE RESUELVAN LOS PROBLEMAS}
-
 ><span style="color:red; font-size: 20px;">**REALIZAR**</span>
 
 ```{r, include=FALSE}
 #rm(list=ls())
-library(tidyverse)
 #library(here)
+library(tidyverse)
 library(readxl)
 library(kableExtra)
 library(skimr)
@@ -163,7 +161,6 @@ if (kurt > 3) {
 print(paste("Kurtosis value:", kurt))
 print(interpretation)
 ```
-
 
 \note{La interpretación de la kurtosis es la siguiente: Si el valor de kurtosis es mayor que 3, la distribución tiene una kurtosis positiva, lo que indica que tiene colas más pesadas y es más puntiaguda en el centro en comparación con una distribución normal. Esto sugiere que hay una mayor concentración de datos en los valores extremos o outliers (Lepticúrtica). Si el varlor de kurtosis es igual a 3, la distribución es mesocúrtica, lo que significa que tiene una forma similar a la distribución normal, con una cantidad moderada de apuntamiento y concentración de datos en el centro. Si el valor de kurtosis es menor que 3, la distribución tiene una kurtosis negativa, lo que indica que tiene colas más ligeras y es más aplanada en el centro en comparación con una distribución normal (Platocúrtica).}
 
@@ -511,14 +508,12 @@ hist(base_conjunta$htele_dia)
 #d) La mediana de horas al día de televisión es 2.0.
 ```
 
-
 3. Recategoriza la variable htele_dia en tres categorías <1 hora al día; 1-2 horas al día y >2 horas al día, y llámale htele_dia_3c ¿Cuál de las siguientes respuestas es falsa?
 
 a) Hay 272 individuos que ven <1 hora al día la televisión.
 b) Hay 128 individuos que ven ≥ 2 horas al día la televisión.
 c) El 39.19% de los individuos ven <1 hora al día la televisión.
 d) Hay un 42.36% de individuos que ven la televisión entre una y dos horas al día.
-
 
 ```{r, include=FALSE}
 base_conjunta$htele_dia_3c <-ifelse(base_conjunta$htele_dia<=0.99, "<1 hora al día", 
@@ -722,6 +717,8 @@ summary(base_conjunta1$cals)
 
 #d) d) La variable cals es simétrica.
 ```
+
+[@Gonzalez2020; @Kabacoff2015]
 
 ## References
 
