@@ -4,10 +4,8 @@
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
-```{r, include=FALSE}
-#rm(list=ls())
+```{r}
 library(tidyverse)
-library(here)
 ```
 
 ```{r}
@@ -56,7 +54,6 @@ proportion_table <- round(prop.table(tb, margin = 2)*100,1)
 addmargins(proportion_table)
 ```
 
-
 ## Ejercicio 3
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
@@ -71,7 +68,6 @@ IQR(estudiantes$Edad)
 with(estudiantes, tapply(Edad, Sexo, summary, na.rm=T))
 ```
 
-
 ```{r, warning=FALSE}
 summary(estudiantes$PESO)
 sd(estudiantes$PESO)
@@ -85,7 +81,6 @@ with(estudiantes, tapply(PESO, Sexo, summary, na.rm=T))
 ## Ejercicio 4
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
-
 
 ```{r, warning=FALSE}
 # Cargar los paquetes necesarias
@@ -125,7 +120,6 @@ print(plot_negative)
 print(plot_no_corr)
 ```
 
-
 ## Ejercicio 5
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
@@ -139,14 +133,12 @@ with(base, cor.test(peso_m, altura_m, alternative="two.sided", method = "spearma
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
-
 ```{r, warning=FALSE, message=FALSE}
 shapiro.test(estudiantes$Edad)
 ks.test(estudiantes$Edad, 'pnorm')
 ```
 
 R code - histograma
-
 ```{r, warning=FALSE}
 # Creating the histogram with ggplot2
 ggplot(estudiantes, aes(x = Edad)) +
@@ -183,7 +175,6 @@ ggplot(data, aes(x="", y=value, fill=group)) +
 ```
 
 Barplot
-
 ```{r, warning=FALSE, out.width = '45%'}
 library(ggplot2) # Load ggplot2
 
@@ -193,7 +184,6 @@ ggplot(data, aes(x=name, y=value)) + geom_bar(stat = "identity")# Barplot
 ```
 
 Boxplot
-
 ```{r, warning=FALSE, out.width = '45%', message=FALSE}
 library(tidyverse); library(hrbrthemes); library(viridis)# Libraries
 
@@ -213,13 +203,11 @@ Caja <- data %>%
 ```
 
 Boxplot
-
 ```{r, warning=FALSE}
 Caja
 ```
 
 Gráficos de dispersión
-
 ```{r, warning=FALSE}
 library(ggplot2)
  
@@ -253,7 +241,6 @@ chi_square_result <- chisq.test(contingency_table)
 print(chi_square_result)
 ```
 
-
 ## Ejercicio 9
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
@@ -273,7 +260,6 @@ kruskal_test <- kruskal.test(list(tratamiento1, tratamiento2, tratamiento3))
 # Imprimir los resultados del test
 print(kruskal_test)
 ```
-
 
 ## Ejercicio 10
 
@@ -316,7 +302,7 @@ print(correlation_test)
 
 ```{r, warning=FALSE}
 # Cargar la librería necesaria
-library(stats)
+#library(stats)
 
 # Ejemplo de datos (reemplaza esto con tus propios datos)
 consumo_alcohol <- c("Sí", "No", "Sí", "No", "Sí", "Sí", "No", "No", "No", "No")
@@ -330,7 +316,6 @@ chi_square_test <- chisq.test(contingency_table)
 
 # Imprimir los resultados del test
 print(chi_square_test)
-
 ```
 
 ## Ejercicio 13
@@ -402,7 +387,6 @@ data <- data.frame(
 ```
 
 ```{r, warning=FALSE}
-
 library("RcmdrMisc")
 
 with(data,numSummary(weight, groups = group, statistics = c("mean", "sd")))
@@ -435,6 +419,12 @@ El p-valor es <0.05 por lo tanto las medianas de peso para los distintos tipos d
 
 ```{r, warning=FALSE}
 library(FSA)
-options(scipen=999)
+options(scipen=999) #Este comando es para desactivar la citación científica
 dunnTest(weight ~ group, data = data)
 ```
+
+[@Gonzalez2020; @Kabacoff2015]
+
+## References
+
+<div id="refs"></div>
