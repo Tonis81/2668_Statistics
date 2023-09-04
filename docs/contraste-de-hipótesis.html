@@ -185,6 +185,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="3.1" data-path="base-de-datos.html"><a href="base-de-datos.html#ejercicio-1-2"><i class="fa fa-check"></i><b>3.1</b> Ejercicio 1</a></li>
 <li class="chapter" data-level="3.2" data-path="base-de-datos.html"><a href="base-de-datos.html#ejercicio-2-1"><i class="fa fa-check"></i><b>3.2</b> Ejercicio 2</a></li>
+<li class="chapter" data-level="3.3" data-path="base-de-datos.html"><a href="base-de-datos.html#references-2"><i class="fa fa-check"></i><b>3.3</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="probabilidad.html"><a href="probabilidad.html"><i class="fa fa-check"></i><b>4</b> Probabilidad</a>
 <ul>
@@ -227,7 +228,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.3" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#ejercicio-3-4"><i class="fa fa-check"></i><b>7.3</b> Ejercicio 3</a></li>
 <li class="chapter" data-level="7.4" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#ejercicio-4-3"><i class="fa fa-check"></i><b>7.4</b> Ejercicio 4</a></li>
 <li class="chapter" data-level="7.5" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#ejercicio-5-3"><i class="fa fa-check"></i><b>7.5</b> Ejercicio 5</a></li>
-<li class="chapter" data-level="7.6" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#references-2"><i class="fa fa-check"></i><b>7.6</b> References</a></li>
+<li class="chapter" data-level="7.6" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#references-3"><i class="fa fa-check"></i><b>7.6</b> References</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -260,9 +261,9 @@ div.csl-indent {
 <p><span class="math inline">\(H_{1}:\mu _{Edad}\neq 22\)</span></p>
 <p>Para calcular el <em>p</em>-valor debemos hacerlo de la siguiente forma:</p>
 <p><span class="math inline">\(P-valor=P(x&lt;22)=P(tn-1&lt;\frac{\bar{x}-\mu _{0}}{\frac{s}{\sqrt{n}}})+P(tn-1&gt;\frac{\bar{x}-\mu _{0}}{\frac{s}{\sqrt{n}}})\)</span></p>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="contraste-de-hipótesis.html#cb212-1" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb212-2"><a href="contraste-de-hipótesis.html#cb212-2" tabindex="-1"></a>estudiantes <span class="ot">&lt;-</span> <span class="fu">read_spss</span>(<span class="st">&quot;Estudiantes1.sav&quot;</span>)</span>
-<span id="cb212-3"><a href="contraste-de-hipótesis.html#cb212-3" tabindex="-1"></a><span class="fu">with</span>(estudiantes, (<span class="fu">t.test</span>(Edad, <span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="at">mu=</span><span class="dv">22</span>, <span class="at">conf.level=</span>.<span class="dv">95</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="contraste-de-hipótesis.html#cb214-1" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb214-2"><a href="contraste-de-hipótesis.html#cb214-2" tabindex="-1"></a>estudiantes <span class="ot">&lt;-</span> <span class="fu">read_spss</span>(<span class="st">&quot;Estudiantes1.sav&quot;</span>)</span>
+<span id="cb214-3"><a href="contraste-de-hipótesis.html#cb214-3" tabindex="-1"></a><span class="fu">with</span>(estudiantes, (<span class="fu">t.test</span>(Edad, <span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="at">mu=</span><span class="dv">22</span>, <span class="at">conf.level=</span>.<span class="dv">95</span>)))</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -281,24 +282,24 @@ div.csl-indent {
 <p><span style="color:red; font-size: 20px;"><strong>EJEMPLO</strong></span></p>
 </blockquote>
 <p>Supongamos que estás investigando un nuevo medicamento para reducir la presión arterial en pacientes con hipertensión. Quieres comparar la eficacia del nuevo medicamento (Grupo A1) con el medicamento estándar actualmente utilizado (Grupo A2) en términos de reducción de la presión arterial sistólica. Supones que el nuevo medicamento tendrá un tamaño del efecto de 0.6 desviaciones estándar mayor que el medicamento estándar en el seguimiento de los pacientes. Deseas realizar el estudio con un nivel de significancia del 5% y obtener una potencia del 80%.</p>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="contraste-de-hipótesis.html#cb214-1" tabindex="-1"></a><span class="co"># Cargamos el paquete pwr</span></span>
-<span id="cb214-2"><a href="contraste-de-hipótesis.html#cb214-2" tabindex="-1"></a><span class="co">#install.packages(&quot;pwr&quot;)</span></span>
-<span id="cb214-3"><a href="contraste-de-hipótesis.html#cb214-3" tabindex="-1"></a><span class="fu">library</span>(pwr)</span>
-<span id="cb214-4"><a href="contraste-de-hipótesis.html#cb214-4" tabindex="-1"></a></span>
-<span id="cb214-5"><a href="contraste-de-hipótesis.html#cb214-5" tabindex="-1"></a><span class="co"># Parámetros del estudio</span></span>
-<span id="cb214-6"><a href="contraste-de-hipótesis.html#cb214-6" tabindex="-1"></a>tamaño_efecto_esperado <span class="ot">&lt;-</span> <span class="fl">0.6</span>   <span class="co"># Tamaño del efecto esperado (medido en desviaciones estándar)</span></span>
-<span id="cb214-7"><a href="contraste-de-hipótesis.html#cb214-7" tabindex="-1"></a>nivel_significancia <span class="ot">&lt;-</span> <span class="fl">0.05</span>     <span class="co"># Nivel de significancia (5%)</span></span>
-<span id="cb214-8"><a href="contraste-de-hipótesis.html#cb214-8" tabindex="-1"></a>potencia_deseada <span class="ot">&lt;-</span> <span class="fl">0.8</span>         <span class="co"># Potencia deseada (80%)</span></span>
-<span id="cb214-9"><a href="contraste-de-hipótesis.html#cb214-9" tabindex="-1"></a></span>
-<span id="cb214-10"><a href="contraste-de-hipótesis.html#cb214-10" tabindex="-1"></a><span class="co"># Realizamos el cálculo del tamaño muestral necesario por grupo</span></span>
-<span id="cb214-11"><a href="contraste-de-hipótesis.html#cb214-11" tabindex="-1"></a>tamano_muestral_por_grupo <span class="ot">&lt;-</span> <span class="fu">pwr.t.test</span>(<span class="at">d =</span> tamaño_efecto_esperado, <span class="at">sig.level =</span> nivel_significancia, <span class="at">power =</span> potencia_deseada)<span class="sc">$</span>n</span>
-<span id="cb214-12"><a href="contraste-de-hipótesis.html#cb214-12" tabindex="-1"></a></span>
-<span id="cb214-13"><a href="contraste-de-hipótesis.html#cb214-13" tabindex="-1"></a><span class="co"># Tamaño muestral total (considerando dos grupos)</span></span>
-<span id="cb214-14"><a href="contraste-de-hipótesis.html#cb214-14" tabindex="-1"></a>tamano_muestral_total <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> tamano_muestral_por_grupo</span>
-<span id="cb214-15"><a href="contraste-de-hipótesis.html#cb214-15" tabindex="-1"></a></span>
-<span id="cb214-16"><a href="contraste-de-hipótesis.html#cb214-16" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;El tamaño muestral necesario por grupo es:&quot;</span>, <span class="fu">ceiling</span>(tamano_muestral_por_grupo), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="contraste-de-hipótesis.html#cb216-1" tabindex="-1"></a><span class="co"># Cargamos el paquete pwr</span></span>
+<span id="cb216-2"><a href="contraste-de-hipótesis.html#cb216-2" tabindex="-1"></a><span class="co">#install.packages(&quot;pwr&quot;)</span></span>
+<span id="cb216-3"><a href="contraste-de-hipótesis.html#cb216-3" tabindex="-1"></a><span class="fu">library</span>(pwr)</span>
+<span id="cb216-4"><a href="contraste-de-hipótesis.html#cb216-4" tabindex="-1"></a></span>
+<span id="cb216-5"><a href="contraste-de-hipótesis.html#cb216-5" tabindex="-1"></a><span class="co"># Parámetros del estudio</span></span>
+<span id="cb216-6"><a href="contraste-de-hipótesis.html#cb216-6" tabindex="-1"></a>tamaño_efecto_esperado <span class="ot">&lt;-</span> <span class="fl">0.6</span>   <span class="co"># Tamaño del efecto esperado (medido en desviaciones estándar)</span></span>
+<span id="cb216-7"><a href="contraste-de-hipótesis.html#cb216-7" tabindex="-1"></a>nivel_significancia <span class="ot">&lt;-</span> <span class="fl">0.05</span>     <span class="co"># Nivel de significancia (5%)</span></span>
+<span id="cb216-8"><a href="contraste-de-hipótesis.html#cb216-8" tabindex="-1"></a>potencia_deseada <span class="ot">&lt;-</span> <span class="fl">0.8</span>         <span class="co"># Potencia deseada (80%)</span></span>
+<span id="cb216-9"><a href="contraste-de-hipótesis.html#cb216-9" tabindex="-1"></a></span>
+<span id="cb216-10"><a href="contraste-de-hipótesis.html#cb216-10" tabindex="-1"></a><span class="co"># Realizamos el cálculo del tamaño muestral necesario por grupo</span></span>
+<span id="cb216-11"><a href="contraste-de-hipótesis.html#cb216-11" tabindex="-1"></a>tamano_muestral_por_grupo <span class="ot">&lt;-</span> <span class="fu">pwr.t.test</span>(<span class="at">d =</span> tamaño_efecto_esperado, <span class="at">sig.level =</span> nivel_significancia, <span class="at">power =</span> potencia_deseada)<span class="sc">$</span>n</span>
+<span id="cb216-12"><a href="contraste-de-hipótesis.html#cb216-12" tabindex="-1"></a></span>
+<span id="cb216-13"><a href="contraste-de-hipótesis.html#cb216-13" tabindex="-1"></a><span class="co"># Tamaño muestral total (considerando dos grupos)</span></span>
+<span id="cb216-14"><a href="contraste-de-hipótesis.html#cb216-14" tabindex="-1"></a>tamano_muestral_total <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> tamano_muestral_por_grupo</span>
+<span id="cb216-15"><a href="contraste-de-hipótesis.html#cb216-15" tabindex="-1"></a></span>
+<span id="cb216-16"><a href="contraste-de-hipótesis.html#cb216-16" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;El tamaño muestral necesario por grupo es:&quot;</span>, <span class="fu">ceiling</span>(tamano_muestral_por_grupo), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## El tamaño muestral necesario por grupo es: 45</code></pre>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="contraste-de-hipótesis.html#cb216-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;El tamaño muestral total para el estudio (considerando dos grupos) es:&quot;</span>, <span class="fu">ceiling</span>(tamano_muestral_total), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="contraste-de-hipótesis.html#cb218-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;El tamaño muestral total para el estudio (considerando dos grupos) es:&quot;</span>, <span class="fu">ceiling</span>(tamano_muestral_total), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## El tamaño muestral total para el estudio (considerando dos grupos) es: 90</code></pre>
 
 </div>

@@ -185,6 +185,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="3.1" data-path="base-de-datos.html"><a href="base-de-datos.html#ejercicio-1-2"><i class="fa fa-check"></i><b>3.1</b> Ejercicio 1</a></li>
 <li class="chapter" data-level="3.2" data-path="base-de-datos.html"><a href="base-de-datos.html#ejercicio-2-1"><i class="fa fa-check"></i><b>3.2</b> Ejercicio 2</a></li>
+<li class="chapter" data-level="3.3" data-path="base-de-datos.html"><a href="base-de-datos.html#references-2"><i class="fa fa-check"></i><b>3.3</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="probabilidad.html"><a href="probabilidad.html"><i class="fa fa-check"></i><b>4</b> Probabilidad</a>
 <ul>
@@ -227,7 +228,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.3" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#ejercicio-3-4"><i class="fa fa-check"></i><b>7.3</b> Ejercicio 3</a></li>
 <li class="chapter" data-level="7.4" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#ejercicio-4-3"><i class="fa fa-check"></i><b>7.4</b> Ejercicio 4</a></li>
 <li class="chapter" data-level="7.5" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#ejercicio-5-3"><i class="fa fa-check"></i><b>7.5</b> Ejercicio 5</a></li>
-<li class="chapter" data-level="7.6" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#references-2"><i class="fa fa-check"></i><b>7.6</b> References</a></li>
+<li class="chapter" data-level="7.6" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#references-3"><i class="fa fa-check"></i><b>7.6</b> References</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -254,6 +255,9 @@ div.csl-indent {
 </div>
 <div id="introducción" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Introducción<a href="index.html#introducción" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>()) <span class="co"># El comando &quot;rm(list=ls())&quot; sirve para eliminar todos los análisis y variables previas. Este comendo se recomienda para utilizarlo al inicio de los análisis.</span></span>
+<span id="cb1-2"><a href="index.html#cb1-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="index.html#cb1-3" tabindex="-1"></a><span class="fu">library</span>(here)</span></code></pre></div>
 <div id="ejercicio-1" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Ejercicio 1<a href="index.html#ejercicio-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <blockquote>
@@ -381,45 +385,45 @@ div.csl-indent {
 <blockquote>
 <p><span style="color:darkgreen; font-size: 20px;"><em>Con R se pueden hacer cálculos básicos matermáticos.</em></span></p>
 </blockquote>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span>
-<span id="cb1-2"><a href="index.html#cb1-2" tabindex="-1"></a><span class="do">## [1] 4</span></span>
-<span id="cb1-3"><a href="index.html#cb1-3" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="index.html#cb1-4" tabindex="-1"></a><span class="dv">5-3</span></span>
-<span id="cb1-5"><a href="index.html#cb1-5" tabindex="-1"></a><span class="do">## [1] 2</span></span>
-<span id="cb1-6"><a href="index.html#cb1-6" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="index.html#cb1-7" tabindex="-1"></a><span class="dv">4</span><span class="sc">+</span><span class="dv">2</span><span class="sc">*</span>(<span class="dv">10</span><span class="sc">/</span><span class="dv">2</span>)</span>
-<span id="cb1-8"><a href="index.html#cb1-8" tabindex="-1"></a><span class="do">## [1] 14</span></span>
-<span id="cb1-9"><a href="index.html#cb1-9" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="index.html#cb1-10" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">9</span>)</span>
-<span id="cb1-11"><a href="index.html#cb1-11" tabindex="-1"></a><span class="do">## [1] 3</span></span>
-<span id="cb1-12"><a href="index.html#cb1-12" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="index.html#cb1-13" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb1-14"><a href="index.html#cb1-14" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="index.html#cb1-15" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span>a</span>
-<span id="cb1-16"><a href="index.html#cb1-16" tabindex="-1"></a><span class="do">## [1] 4</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span>
+<span id="cb2-2"><a href="index.html#cb2-2" tabindex="-1"></a><span class="do">## [1] 4</span></span>
+<span id="cb2-3"><a href="index.html#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="index.html#cb2-4" tabindex="-1"></a><span class="dv">5-3</span></span>
+<span id="cb2-5"><a href="index.html#cb2-5" tabindex="-1"></a><span class="do">## [1] 2</span></span>
+<span id="cb2-6"><a href="index.html#cb2-6" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="index.html#cb2-7" tabindex="-1"></a><span class="dv">4</span><span class="sc">+</span><span class="dv">2</span><span class="sc">*</span>(<span class="dv">10</span><span class="sc">/</span><span class="dv">2</span>)</span>
+<span id="cb2-8"><a href="index.html#cb2-8" tabindex="-1"></a><span class="do">## [1] 14</span></span>
+<span id="cb2-9"><a href="index.html#cb2-9" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="index.html#cb2-10" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">9</span>)</span>
+<span id="cb2-11"><a href="index.html#cb2-11" tabindex="-1"></a><span class="do">## [1] 3</span></span>
+<span id="cb2-12"><a href="index.html#cb2-12" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="index.html#cb2-13" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb2-14"><a href="index.html#cb2-14" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="index.html#cb2-15" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span>a</span>
+<span id="cb2-16"><a href="index.html#cb2-16" tabindex="-1"></a><span class="do">## [1] 4</span></span></code></pre></div>
 <p>Construcción de variables</p>
 <blockquote>
 <p><span style="color:darkgreen; font-size: 20px;"><em>En este caso para construir la base de datos generamos vectores. Todos los vectores deben de tener el mismo tamaño.</em></span></p>
 </blockquote>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" tabindex="-1"></a>nombre <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Pablo&quot;</span>, <span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Patricia&quot;</span>, <span class="st">&quot;Lucas&quot;</span>, <span class="st">&quot;Emilio&quot;</span>, <span class="st">&quot;Julia&quot;</span>)</span>
-<span id="cb2-2"><a href="index.html#cb2-2" tabindex="-1"></a>nombre</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1" tabindex="-1"></a>nombre <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Pablo&quot;</span>, <span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Patricia&quot;</span>, <span class="st">&quot;Lucas&quot;</span>, <span class="st">&quot;Emilio&quot;</span>, <span class="st">&quot;Julia&quot;</span>)</span>
+<span id="cb3-2"><a href="index.html#cb3-2" tabindex="-1"></a>nombre</span></code></pre></div>
 <pre><code>## [1] &quot;Pablo&quot;    &quot;Maria&quot;    &quot;Patricia&quot; &quot;Lucas&quot;    &quot;Emilio&quot;   &quot;Julia&quot;</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="index.html#cb4-1" tabindex="-1"></a>peso <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">60.5</span>, <span class="fl">72.6</span>, <span class="fl">57.7</span>, <span class="fl">90.8</span>, <span class="fl">95.8</span>, <span class="fl">72.9</span>)</span>
-<span id="cb4-2"><a href="index.html#cb4-2" tabindex="-1"></a>peso</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="index.html#cb5-1" tabindex="-1"></a>peso <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">60.5</span>, <span class="fl">72.6</span>, <span class="fl">57.7</span>, <span class="fl">90.8</span>, <span class="fl">95.8</span>, <span class="fl">72.9</span>)</span>
+<span id="cb5-2"><a href="index.html#cb5-2" tabindex="-1"></a>peso</span></code></pre></div>
 <pre><code>## [1] 60.5 72.6 57.7 90.8 95.8 72.9</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="index.html#cb6-1" tabindex="-1"></a>altura <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.60</span>, <span class="fl">1.64</span>, <span class="fl">1.50</span>, <span class="fl">1.70</span>, <span class="fl">1.80</span>, <span class="fl">1.65</span>)</span>
-<span id="cb6-2"><a href="index.html#cb6-2" tabindex="-1"></a>altura</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="index.html#cb7-1" tabindex="-1"></a>altura <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.60</span>, <span class="fl">1.64</span>, <span class="fl">1.50</span>, <span class="fl">1.70</span>, <span class="fl">1.80</span>, <span class="fl">1.65</span>)</span>
+<span id="cb7-2"><a href="index.html#cb7-2" tabindex="-1"></a>altura</span></code></pre></div>
 <pre><code>## [1] 1.60 1.64 1.50 1.70 1.80 1.65</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="index.html#cb8-1" tabindex="-1"></a>sexo <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="cb8-2"><a href="index.html#cb8-2" tabindex="-1"></a>sexo</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="index.html#cb9-1" tabindex="-1"></a>sexo <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb9-2"><a href="index.html#cb9-2" tabindex="-1"></a>sexo</span></code></pre></div>
 <pre><code>## [1] 1 0 0 1 1 0</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="index.html#cb10-1" tabindex="-1"></a>nivel_estudios <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Educación primaria&quot;</span>, <span class="st">&quot;Educación primaria&quot;</span>, <span class="st">&quot;Educación secundaria&quot;</span>, <span class="st">&quot;Educación superior&quot;</span>, <span class="st">&quot;Educación superior&quot;</span>, <span class="st">&quot;Educación primaria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="index.html#cb11-1" tabindex="-1"></a>nivel_estudios <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Educación primaria&quot;</span>, <span class="st">&quot;Educación primaria&quot;</span>, <span class="st">&quot;Educación secundaria&quot;</span>, <span class="st">&quot;Educación superior&quot;</span>, <span class="st">&quot;Educación superior&quot;</span>, <span class="st">&quot;Educación primaria&quot;</span>)</span></code></pre></div>
 <p>Base de datos</p>
 <blockquote>
 <p><span style="color:darkgreen; font-size: 20px;"><em>Con la función data.frame combinamos todas las variables generadas en una base de datos.</em></span></p>
 </blockquote>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="index.html#cb11-1" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(nombre, peso, altura, sexo, nivel_estudios) </span>
-<span id="cb11-2"><a href="index.html#cb11-2" tabindex="-1"></a>datos</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="index.html#cb12-1" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(nombre, peso, altura, sexo, nivel_estudios) </span>
+<span id="cb12-2"><a href="index.html#cb12-2" tabindex="-1"></a>datos</span></code></pre></div>
 <pre><code>##     nombre peso altura sexo       nivel_estudios
 ## 1    Pablo 60.5   1.60    1   Educación primaria
 ## 2    Maria 72.6   1.64    0   Educación primaria
@@ -431,23 +435,23 @@ div.csl-indent {
 <blockquote>
 <p><span style="color:darkgreen; font-size: 20px;"><em>Las etiquetas van asociadas a cada variable y aportan información adicional. Si finalidad va en línea con el “codebook”</em></span></p>
 </blockquote>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="index.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
-<span id="cb13-2"><a href="index.html#cb13-2" tabindex="-1"></a><span class="fu">label</span>(datos[[<span class="st">&quot;nombre&quot;</span>]]) <span class="ot">&lt;-</span> <span class="st">&quot;nombre sin apellidos&quot;</span></span>
-<span id="cb13-3"><a href="index.html#cb13-3" tabindex="-1"></a><span class="fu">label</span>(datos[[<span class="st">&quot;peso&quot;</span>]]) <span class="ot">&lt;-</span> <span class="st">&quot;kg&quot;</span></span>
-<span id="cb13-4"><a href="index.html#cb13-4" tabindex="-1"></a><span class="fu">label</span>(datos[[<span class="st">&quot;altura&quot;</span>]]) <span class="ot">&lt;-</span> <span class="st">&quot;m&quot;</span></span>
-<span id="cb13-5"><a href="index.html#cb13-5" tabindex="-1"></a><span class="fu">label</span>(datos[[<span class="st">&quot;sexo&quot;</span>]]) <span class="ot">&lt;-</span> <span class="st">&quot;mujer = 0 y hombre = 1&quot;</span></span>
-<span id="cb13-6"><a href="index.html#cb13-6" tabindex="-1"></a><span class="fu">label</span>(datos[[<span class="st">&quot;nivel_estudios&quot;</span>]]) <span class="ot">&lt;-</span> <span class="st">&quot;Nivel estudios sistema nacional&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="index.html#cb14-1" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
+<span id="cb14-2"><a href="index.html#cb14-2" tabindex="-1"></a><span class="fu">label</span>(datos[[<span class="st">&quot;nombre&quot;</span>]]) <span class="ot">&lt;-</span> <span class="st">&quot;nombre sin apellidos&quot;</span></span>
+<span id="cb14-3"><a href="index.html#cb14-3" tabindex="-1"></a><span class="fu">label</span>(datos[[<span class="st">&quot;peso&quot;</span>]]) <span class="ot">&lt;-</span> <span class="st">&quot;kg&quot;</span></span>
+<span id="cb14-4"><a href="index.html#cb14-4" tabindex="-1"></a><span class="fu">label</span>(datos[[<span class="st">&quot;altura&quot;</span>]]) <span class="ot">&lt;-</span> <span class="st">&quot;m&quot;</span></span>
+<span id="cb14-5"><a href="index.html#cb14-5" tabindex="-1"></a><span class="fu">label</span>(datos[[<span class="st">&quot;sexo&quot;</span>]]) <span class="ot">&lt;-</span> <span class="st">&quot;mujer = 0 y hombre = 1&quot;</span></span>
+<span id="cb14-6"><a href="index.html#cb14-6" tabindex="-1"></a><span class="fu">label</span>(datos[[<span class="st">&quot;nivel_estudios&quot;</span>]]) <span class="ot">&lt;-</span> <span class="st">&quot;Nivel estudios sistema nacional&quot;</span></span></code></pre></div>
 <p>Variable derivada</p>
 <blockquote>
 <p><span style="color:darkgreen; font-size: 20px;"><em>Aquí generamos una variable nueva derivada dentro de la base de datos “datos” llamada “imc”. Luego asignamos una etiqueta</em></span></p>
 </blockquote>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="index.html#cb14-1" tabindex="-1"></a>datos<span class="sc">$</span>imc <span class="ot">&lt;-</span> peso<span class="sc">/</span>altura<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb14-2"><a href="index.html#cb14-2" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="index.html#cb14-3" tabindex="-1"></a><span class="fu">label</span>(datos[[<span class="st">&quot;imc&quot;</span>]]) <span class="ot">&lt;-</span> <span class="st">&quot;índice de masa corporal&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="index.html#cb15-1" tabindex="-1"></a>datos<span class="sc">$</span>imc <span class="ot">&lt;-</span> peso<span class="sc">/</span>altura<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb15-2"><a href="index.html#cb15-2" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="index.html#cb15-3" tabindex="-1"></a><span class="fu">label</span>(datos[[<span class="st">&quot;imc&quot;</span>]]) <span class="ot">&lt;-</span> <span class="st">&quot;índice de masa corporal&quot;</span></span></code></pre></div>
 <blockquote>
 <p><span style="color:darkgreen; font-size: 20px;"><em>La función “str” es muy útil, pues permite de una forma muy rápida analizar la base de datos.</em></span></p>
 </blockquote>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="index.html#cb15-1" tabindex="-1"></a><span class="fu">str</span>(datos)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="index.html#cb16-1" tabindex="-1"></a><span class="fu">str</span>(datos)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    6 obs. of  6 variables:
 ##  $ nombre        : &#39;labelled&#39; chr  &quot;Pablo&quot; &quot;Maria&quot; &quot;Patricia&quot; &quot;Lucas&quot; ...
 ##   ..- attr(*, &quot;label&quot;)= chr &quot;nombre sin apellidos&quot;
@@ -465,7 +469,7 @@ div.csl-indent {
 <blockquote>
 <p><span style="color:darkgreen; font-size: 20px;"><em>La función “is.na()” identifica los valores perdidos mediante TRUE o FALSE. Con la función “table()” se genera la tabla de contingencia idenficando de forma rápida el número de valores perdidos (TRUE). La presencia de valores perdidos puede tener varios orígenes y es necesario tratalos con cuidado</em></span></p>
 </blockquote>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="index.html#cb17-1" tabindex="-1"></a><span class="fu">is.na</span>(datos)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="index.html#cb18-1" tabindex="-1"></a><span class="fu">is.na</span>(datos)</span></code></pre></div>
 <pre><code>##      nombre  peso altura  sexo nivel_estudios   imc
 ## [1,]  FALSE FALSE  FALSE FALSE          FALSE FALSE
 ## [2,]  FALSE FALSE  FALSE FALSE          FALSE FALSE
@@ -473,15 +477,15 @@ div.csl-indent {
 ## [4,]  FALSE FALSE  FALSE FALSE          FALSE FALSE
 ## [5,]  FALSE FALSE  FALSE FALSE          FALSE FALSE
 ## [6,]  FALSE FALSE  FALSE FALSE          FALSE FALSE</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="index.html#cb19-1" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">is.na</span>(datos))</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="index.html#cb20-1" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">is.na</span>(datos))</span></code></pre></div>
 <pre><code>## 
 ## FALSE 
 ##    36</code></pre>
 <blockquote>
 <p><span style="color:darkgreen; font-size: 20px;"><em>La libreria “Amelia” es muy util para identificar si existen valores perdidos. Los valores perdidos se identifican en color amarillo y los que no son perdidos en color negro.</em></span></p>
 </blockquote>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="index.html#cb21-1" tabindex="-1"></a><span class="fu">library</span>(Amelia)</span>
-<span id="cb21-2"><a href="index.html#cb21-2" tabindex="-1"></a><span class="fu">missmap</span>(datos, <span class="at">main=</span><span class="st">&quot;Valores perdidos&quot;</span>, <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;black&quot;</span>), <span class="at">legend=</span><span class="cn">FALSE</span>, <span class="at">x.cex =</span> <span class="fl">0.6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="index.html#cb22-1" tabindex="-1"></a><span class="fu">library</span>(Amelia)</span>
+<span id="cb22-2"><a href="index.html#cb22-2" tabindex="-1"></a><span class="fu">missmap</span>(datos, <span class="at">main=</span><span class="st">&quot;Valores perdidos&quot;</span>, <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;black&quot;</span>), <span class="at">legend=</span><span class="cn">FALSE</span>, <span class="at">x.cex =</span> <span class="fl">0.6</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p><span class="citation">(Kabacoff, 2015)</span></p>
 </div>
@@ -510,6 +514,9 @@ González, M.Á.M., Villegas, A.S., Atucha, E.T., Fajardo, J.F., 2020. <a href="
 </div>
 <div id="ref-Kabacoff2015" class="csl-entry">
 Kabacoff, R.I., 2015. <a href="http://www.worldcat.org/isbn/9781617291388"><span class="nocase">R in Action</span></a>, Second. ed. Manning.
+</div>
+<div id="ref-RCoreTeam" class="csl-entry">
+Team, R.C., 2023. R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria.
 </div>
 <div id="ref-Tippmann2015" class="csl-entry">
 Tippmann, S., 2015. Programming tools: Adventures with r. Nature 517, 109–110. <a href="https://doi.org/10.1038/517109a">https://doi.org/10.1038/517109a</a>

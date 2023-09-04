@@ -51,6 +51,8 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -183,6 +185,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="3.1" data-path="base-de-datos.html"><a href="base-de-datos.html#ejercicio-1-2"><i class="fa fa-check"></i><b>3.1</b> Ejercicio 1</a></li>
 <li class="chapter" data-level="3.2" data-path="base-de-datos.html"><a href="base-de-datos.html#ejercicio-2-1"><i class="fa fa-check"></i><b>3.2</b> Ejercicio 2</a></li>
+<li class="chapter" data-level="3.3" data-path="base-de-datos.html"><a href="base-de-datos.html#references-2"><i class="fa fa-check"></i><b>3.3</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="probabilidad.html"><a href="probabilidad.html"><i class="fa fa-check"></i><b>4</b> Probabilidad</a>
 <ul>
@@ -225,7 +228,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.3" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#ejercicio-3-4"><i class="fa fa-check"></i><b>7.3</b> Ejercicio 3</a></li>
 <li class="chapter" data-level="7.4" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#ejercicio-4-3"><i class="fa fa-check"></i><b>7.4</b> Ejercicio 4</a></li>
 <li class="chapter" data-level="7.5" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#ejercicio-5-3"><i class="fa fa-check"></i><b>7.5</b> Ejercicio 5</a></li>
-<li class="chapter" data-level="7.6" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#references-2"><i class="fa fa-check"></i><b>7.6</b> References</a></li>
+<li class="chapter" data-level="7.6" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#references-3"><i class="fa fa-check"></i><b>7.6</b> References</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -255,97 +258,97 @@ div.csl-indent {
 </blockquote>
 <div id="análisis-variables-cualitativas" class="section level3 hasAnchor" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> Análisis variables cualitativas<a href="estadística-descriptiva.html#análisis-variables-cualitativas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="estadística-descriptiva.html#cb1-1" tabindex="-1"></a><span class="co"># Muestra</span></span>
-<span id="cb1-2"><a href="estadística-descriptiva.html#cb1-2" tabindex="-1"></a>grades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>)</span>
-<span id="cb1-3"><a href="estadística-descriptiva.html#cb1-3" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="estadística-descriptiva.html#cb1-4" tabindex="-1"></a><span class="co"># Crear una tabla de frecuencias utilizando la función table()</span></span>
-<span id="cb1-5"><a href="estadística-descriptiva.html#cb1-5" tabindex="-1"></a>freq_table <span class="ot">&lt;-</span> <span class="fu">table</span>(grades)</span>
-<span id="cb1-6"><a href="estadística-descriptiva.html#cb1-6" tabindex="-1"></a>freq_table</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="estadística-descriptiva.html#cb23-1" tabindex="-1"></a><span class="co"># Muestra</span></span>
+<span id="cb23-2"><a href="estadística-descriptiva.html#cb23-2" tabindex="-1"></a>grades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>)</span>
+<span id="cb23-3"><a href="estadística-descriptiva.html#cb23-3" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="estadística-descriptiva.html#cb23-4" tabindex="-1"></a><span class="co"># Crear una tabla de frecuencias utilizando la función table()</span></span>
+<span id="cb23-5"><a href="estadística-descriptiva.html#cb23-5" tabindex="-1"></a>freq_table <span class="ot">&lt;-</span> <span class="fu">table</span>(grades)</span>
+<span id="cb23-6"><a href="estadística-descriptiva.html#cb23-6" tabindex="-1"></a>freq_table</span></code></pre></div>
 <pre><code>## grades
 ## A B C 
 ## 7 4 3</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="estadística-descriptiva.html#cb3-1" tabindex="-1"></a><span class="co"># Creat gráfico de barras utilizando barplot()</span></span>
-<span id="cb3-2"><a href="estadística-descriptiva.html#cb3-2" tabindex="-1"></a><span class="fu">barplot</span>(freq_table, <span class="at">main =</span> <span class="st">&quot;Grade Distribution&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Grades&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Frequency&quot;</span>, <span class="at">col =</span> <span class="st">&quot;skyblue&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="estadística-descriptiva.html#cb4-1" tabindex="-1"></a><span class="co"># Muestra datos</span></span>
-<span id="cb4-2"><a href="estadística-descriptiva.html#cb4-2" tabindex="-1"></a>fruits <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Apples&quot;</span>, <span class="st">&quot;Bananas&quot;</span>, <span class="st">&quot;Oranges&quot;</span>, <span class="st">&quot;Grapes&quot;</span>, <span class="st">&quot;Mangoes&quot;</span>)</span>
-<span id="cb4-3"><a href="estadística-descriptiva.html#cb4-3" tabindex="-1"></a>percentages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">25</span>, <span class="dv">20</span>, <span class="dv">15</span>, <span class="dv">10</span>)</span>
-<span id="cb4-4"><a href="estadística-descriptiva.html#cb4-4" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="estadística-descriptiva.html#cb4-5" tabindex="-1"></a><span class="co"># Crear un gráfico circular utilizando pie()</span></span>
-<span id="cb4-6"><a href="estadística-descriptiva.html#cb4-6" tabindex="-1"></a><span class="fu">pie</span>(percentages, <span class="at">labels =</span> fruits, <span class="at">main =</span> <span class="st">&quot;Fruit Distribution&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="estadística-descriptiva.html#cb25-1" tabindex="-1"></a><span class="co"># Creat gráfico de barras utilizando barplot()</span></span>
+<span id="cb25-2"><a href="estadística-descriptiva.html#cb25-2" tabindex="-1"></a><span class="fu">barplot</span>(freq_table, <span class="at">main =</span> <span class="st">&quot;Grade Distribution&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Grades&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Frequency&quot;</span>, <span class="at">col =</span> <span class="st">&quot;skyblue&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="estadística-descriptiva.html#cb26-1" tabindex="-1"></a><span class="co"># Muestra datos</span></span>
+<span id="cb26-2"><a href="estadística-descriptiva.html#cb26-2" tabindex="-1"></a>fruits <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Apples&quot;</span>, <span class="st">&quot;Bananas&quot;</span>, <span class="st">&quot;Oranges&quot;</span>, <span class="st">&quot;Grapes&quot;</span>, <span class="st">&quot;Mangoes&quot;</span>)</span>
+<span id="cb26-3"><a href="estadística-descriptiva.html#cb26-3" tabindex="-1"></a>percentages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">25</span>, <span class="dv">20</span>, <span class="dv">15</span>, <span class="dv">10</span>)</span>
+<span id="cb26-4"><a href="estadística-descriptiva.html#cb26-4" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="estadística-descriptiva.html#cb26-5" tabindex="-1"></a><span class="co"># Crear un gráfico circular utilizando pie()</span></span>
+<span id="cb26-6"><a href="estadística-descriptiva.html#cb26-6" tabindex="-1"></a><span class="fu">pie</span>(percentages, <span class="at">labels =</span> fruits, <span class="at">main =</span> <span class="st">&quot;Fruit Distribution&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 </div>
 <div id="análisis-variable-cuantitativas" class="section level3 hasAnchor" number="2.1.2">
 <h3><span class="header-section-number">2.1.2</span> Análisis variable cuantitativas<a href="estadística-descriptiva.html#análisis-variable-cuantitativas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="estadística-descriptiva.html#cb5-1" tabindex="-1"></a><span class="co"># Datos de muestra (puntuaciones de exámenes)</span></span>
-<span id="cb5-2"><a href="estadística-descriptiva.html#cb5-2" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">78</span>, <span class="dv">95</span>, <span class="dv">89</span>, <span class="dv">84</span>, <span class="dv">90</span>, <span class="dv">86</span>, <span class="dv">93</span>)</span>
-<span id="cb5-3"><a href="estadística-descriptiva.html#cb5-3" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="estadística-descriptiva.html#cb5-4" tabindex="-1"></a><span class="co"># Calcula la puntuación media (promedio)</span></span>
-<span id="cb5-5"><a href="estadística-descriptiva.html#cb5-5" tabindex="-1"></a>mean_score <span class="ot">&lt;-</span> <span class="fu">mean</span>(scores)</span>
-<span id="cb5-6"><a href="estadística-descriptiva.html#cb5-6" tabindex="-1"></a>mean_score</span></code></pre></div>
-<pre><code>## [1] 88</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="estadística-descriptiva.html#cb7-1" tabindex="-1"></a><span class="co"># Calcula la puntuación mediana</span></span>
-<span id="cb7-2"><a href="estadística-descriptiva.html#cb7-2" tabindex="-1"></a>median_score <span class="ot">&lt;-</span> <span class="fu">median</span>(scores)</span>
-<span id="cb7-3"><a href="estadística-descriptiva.html#cb7-3" tabindex="-1"></a>median_score </span></code></pre></div>
-<pre><code>## [1] 88.5</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="estadística-descriptiva.html#cb9-1" tabindex="-1"></a><span class="co"># Calcula las puntuaciones mínimas y máximas</span></span>
-<span id="cb9-2"><a href="estadística-descriptiva.html#cb9-2" tabindex="-1"></a>min_score <span class="ot">&lt;-</span> <span class="fu">min</span>(scores)</span>
-<span id="cb9-3"><a href="estadística-descriptiva.html#cb9-3" tabindex="-1"></a>min_score</span></code></pre></div>
-<pre><code>## [1] 78</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="estadística-descriptiva.html#cb11-1" tabindex="-1"></a>max_score <span class="ot">&lt;-</span> <span class="fu">max</span>(scores)</span>
-<span id="cb11-2"><a href="estadística-descriptiva.html#cb11-2" tabindex="-1"></a>max_score</span></code></pre></div>
-<pre><code>## [1] 95</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="estadística-descriptiva.html#cb13-1" tabindex="-1"></a><span class="co"># Calcula el rango de puntuaciones</span></span>
-<span id="cb13-2"><a href="estadística-descriptiva.html#cb13-2" tabindex="-1"></a>score_range <span class="ot">&lt;-</span> max_score <span class="sc">-</span> min_score</span>
-<span id="cb13-3"><a href="estadística-descriptiva.html#cb13-3" tabindex="-1"></a>score_range</span></code></pre></div>
-<pre><code>## [1] 17</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="estadística-descriptiva.html#cb15-1" tabindex="-1"></a><span class="co"># Calcula la desviación estándar de las puntuaciones</span></span>
-<span id="cb15-2"><a href="estadística-descriptiva.html#cb15-2" tabindex="-1"></a>score_sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(scores)</span>
-<span id="cb15-3"><a href="estadística-descriptiva.html#cb15-3" tabindex="-1"></a>score_sd</span></code></pre></div>
-<pre><code>## [1] 4.988877</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="estadística-descriptiva.html#cb17-1" tabindex="-1"></a><span class="co"># Calcula el primer cuartil (Q1)</span></span>
-<span id="cb17-2"><a href="estadística-descriptiva.html#cb17-2" tabindex="-1"></a>q1 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(scores, <span class="fl">0.25</span>)</span>
-<span id="cb17-3"><a href="estadística-descriptiva.html#cb17-3" tabindex="-1"></a>q1</span></code></pre></div>
-<pre><code>##   25% 
-## 85.25</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="estadística-descriptiva.html#cb19-1" tabindex="-1"></a><span class="co"># Calcula el tercer cuartil (Q3)</span></span>
-<span id="cb19-2"><a href="estadística-descriptiva.html#cb19-2" tabindex="-1"></a>q3 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(scores, <span class="fl">0.75</span>)</span>
-<span id="cb19-3"><a href="estadística-descriptiva.html#cb19-3" tabindex="-1"></a>q3</span></code></pre></div>
-<pre><code>##  75% 
-## 91.5</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="estadística-descriptiva.html#cb21-1" tabindex="-1"></a><span class="co"># Calcula el rango intercuartil (IQR)</span></span>
-<span id="cb21-2"><a href="estadística-descriptiva.html#cb21-2" tabindex="-1"></a>iqr <span class="ot">&lt;-</span> q3 <span class="sc">-</span> q1</span>
-<span id="cb21-3"><a href="estadística-descriptiva.html#cb21-3" tabindex="-1"></a>iqr</span></code></pre></div>
-<pre><code>##  75% 
-## 6.25</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="estadística-descriptiva.html#cb23-1" tabindex="-1"></a><span class="co"># Calcula la varianza</span></span>
-<span id="cb23-2"><a href="estadística-descriptiva.html#cb23-2" tabindex="-1"></a><span class="fu">var</span>(scores)</span></code></pre></div>
-<pre><code>## [1] 24.88889</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="estadística-descriptiva.html#cb25-1" tabindex="-1"></a><span class="co"># calcula el coeficiente de variación</span></span>
-<span id="cb25-2"><a href="estadística-descriptiva.html#cb25-2" tabindex="-1"></a></span>
-<span id="cb25-3"><a href="estadística-descriptiva.html#cb25-3" tabindex="-1"></a>sd_cal <span class="ot">&lt;-</span> <span class="fu">sd</span>(scores)</span>
-<span id="cb25-4"><a href="estadística-descriptiva.html#cb25-4" tabindex="-1"></a>media_cal <span class="ot">&lt;-</span> <span class="fu">mean</span>(scores)</span>
-<span id="cb25-5"><a href="estadística-descriptiva.html#cb25-5" tabindex="-1"></a>CV <span class="ot">&lt;-</span> sd_cal<span class="sc">/</span>media_cal<span class="sc">*</span><span class="dv">100</span></span>
-<span id="cb25-6"><a href="estadística-descriptiva.html#cb25-6" tabindex="-1"></a>CV</span></code></pre></div>
-<pre><code>## [1] 5.669178</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="estadística-descriptiva.html#cb27-1" tabindex="-1"></a><span class="co"># Datos de muestra (puntuaciones de pruebas)</span></span>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="estadística-descriptiva.html#cb27-1" tabindex="-1"></a><span class="co"># Datos de muestra (puntuaciones de exámenes)</span></span>
 <span id="cb27-2"><a href="estadística-descriptiva.html#cb27-2" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">78</span>, <span class="dv">95</span>, <span class="dv">89</span>, <span class="dv">84</span>, <span class="dv">90</span>, <span class="dv">86</span>, <span class="dv">93</span>)</span>
 <span id="cb27-3"><a href="estadística-descriptiva.html#cb27-3" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="estadística-descriptiva.html#cb27-4" tabindex="-1"></a><span class="co"># Calcular la media de la muestra</span></span>
-<span id="cb27-5"><a href="estadística-descriptiva.html#cb27-5" tabindex="-1"></a>sample_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(scores)</span>
-<span id="cb27-6"><a href="estadística-descriptiva.html#cb27-6" tabindex="-1"></a></span>
-<span id="cb27-7"><a href="estadística-descriptiva.html#cb27-7" tabindex="-1"></a><span class="co"># Calcular el tamaño de la muestra</span></span>
-<span id="cb27-8"><a href="estadística-descriptiva.html#cb27-8" tabindex="-1"></a>sample_size <span class="ot">&lt;-</span> <span class="fu">length</span>(scores)</span>
-<span id="cb27-9"><a href="estadística-descriptiva.html#cb27-9" tabindex="-1"></a></span>
-<span id="cb27-10"><a href="estadística-descriptiva.html#cb27-10" tabindex="-1"></a><span class="co"># Calcular la desviación estándar de la muestra</span></span>
-<span id="cb27-11"><a href="estadística-descriptiva.html#cb27-11" tabindex="-1"></a>sample_sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(scores)</span>
-<span id="cb27-12"><a href="estadística-descriptiva.html#cb27-12" tabindex="-1"></a></span>
-<span id="cb27-13"><a href="estadística-descriptiva.html#cb27-13" tabindex="-1"></a><span class="co"># Calcular el erro estándar de la muestra (SEM)</span></span>
-<span id="cb27-14"><a href="estadística-descriptiva.html#cb27-14" tabindex="-1"></a>SEM <span class="ot">&lt;-</span> sample_sd <span class="sc">/</span> <span class="fu">sqrt</span>(sample_size)</span>
-<span id="cb27-15"><a href="estadística-descriptiva.html#cb27-15" tabindex="-1"></a></span>
-<span id="cb27-16"><a href="estadística-descriptiva.html#cb27-16" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Media de la muestra:&quot;</span>, sample_mean, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<span id="cb27-4"><a href="estadística-descriptiva.html#cb27-4" tabindex="-1"></a><span class="co"># Calcula la puntuación media (promedio)</span></span>
+<span id="cb27-5"><a href="estadística-descriptiva.html#cb27-5" tabindex="-1"></a>mean_score <span class="ot">&lt;-</span> <span class="fu">mean</span>(scores)</span>
+<span id="cb27-6"><a href="estadística-descriptiva.html#cb27-6" tabindex="-1"></a>mean_score</span></code></pre></div>
+<pre><code>## [1] 88</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="estadística-descriptiva.html#cb29-1" tabindex="-1"></a><span class="co"># Calcula la puntuación mediana</span></span>
+<span id="cb29-2"><a href="estadística-descriptiva.html#cb29-2" tabindex="-1"></a>median_score <span class="ot">&lt;-</span> <span class="fu">median</span>(scores)</span>
+<span id="cb29-3"><a href="estadística-descriptiva.html#cb29-3" tabindex="-1"></a>median_score </span></code></pre></div>
+<pre><code>## [1] 88.5</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="estadística-descriptiva.html#cb31-1" tabindex="-1"></a><span class="co"># Calcula las puntuaciones mínimas y máximas</span></span>
+<span id="cb31-2"><a href="estadística-descriptiva.html#cb31-2" tabindex="-1"></a>min_score <span class="ot">&lt;-</span> <span class="fu">min</span>(scores)</span>
+<span id="cb31-3"><a href="estadística-descriptiva.html#cb31-3" tabindex="-1"></a>min_score</span></code></pre></div>
+<pre><code>## [1] 78</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="estadística-descriptiva.html#cb33-1" tabindex="-1"></a>max_score <span class="ot">&lt;-</span> <span class="fu">max</span>(scores)</span>
+<span id="cb33-2"><a href="estadística-descriptiva.html#cb33-2" tabindex="-1"></a>max_score</span></code></pre></div>
+<pre><code>## [1] 95</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="estadística-descriptiva.html#cb35-1" tabindex="-1"></a><span class="co"># Calcula el rango de puntuaciones</span></span>
+<span id="cb35-2"><a href="estadística-descriptiva.html#cb35-2" tabindex="-1"></a>score_range <span class="ot">&lt;-</span> max_score <span class="sc">-</span> min_score</span>
+<span id="cb35-3"><a href="estadística-descriptiva.html#cb35-3" tabindex="-1"></a>score_range</span></code></pre></div>
+<pre><code>## [1] 17</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="estadística-descriptiva.html#cb37-1" tabindex="-1"></a><span class="co"># Calcula la desviación estándar de las puntuaciones</span></span>
+<span id="cb37-2"><a href="estadística-descriptiva.html#cb37-2" tabindex="-1"></a>score_sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(scores)</span>
+<span id="cb37-3"><a href="estadística-descriptiva.html#cb37-3" tabindex="-1"></a>score_sd</span></code></pre></div>
+<pre><code>## [1] 4.988877</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="estadística-descriptiva.html#cb39-1" tabindex="-1"></a><span class="co"># Calcula el primer cuartil (Q1)</span></span>
+<span id="cb39-2"><a href="estadística-descriptiva.html#cb39-2" tabindex="-1"></a>q1 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(scores, <span class="fl">0.25</span>)</span>
+<span id="cb39-3"><a href="estadística-descriptiva.html#cb39-3" tabindex="-1"></a>q1</span></code></pre></div>
+<pre><code>##   25% 
+## 85.25</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="estadística-descriptiva.html#cb41-1" tabindex="-1"></a><span class="co"># Calcula el tercer cuartil (Q3)</span></span>
+<span id="cb41-2"><a href="estadística-descriptiva.html#cb41-2" tabindex="-1"></a>q3 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(scores, <span class="fl">0.75</span>)</span>
+<span id="cb41-3"><a href="estadística-descriptiva.html#cb41-3" tabindex="-1"></a>q3</span></code></pre></div>
+<pre><code>##  75% 
+## 91.5</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="estadística-descriptiva.html#cb43-1" tabindex="-1"></a><span class="co"># Calcula el rango intercuartil (IQR)</span></span>
+<span id="cb43-2"><a href="estadística-descriptiva.html#cb43-2" tabindex="-1"></a>iqr <span class="ot">&lt;-</span> q3 <span class="sc">-</span> q1</span>
+<span id="cb43-3"><a href="estadística-descriptiva.html#cb43-3" tabindex="-1"></a>iqr</span></code></pre></div>
+<pre><code>##  75% 
+## 6.25</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="estadística-descriptiva.html#cb45-1" tabindex="-1"></a><span class="co"># Calcula la varianza</span></span>
+<span id="cb45-2"><a href="estadística-descriptiva.html#cb45-2" tabindex="-1"></a><span class="fu">var</span>(scores)</span></code></pre></div>
+<pre><code>## [1] 24.88889</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="estadística-descriptiva.html#cb47-1" tabindex="-1"></a><span class="co"># calcula el coeficiente de variación</span></span>
+<span id="cb47-2"><a href="estadística-descriptiva.html#cb47-2" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="estadística-descriptiva.html#cb47-3" tabindex="-1"></a>sd_cal <span class="ot">&lt;-</span> <span class="fu">sd</span>(scores)</span>
+<span id="cb47-4"><a href="estadística-descriptiva.html#cb47-4" tabindex="-1"></a>media_cal <span class="ot">&lt;-</span> <span class="fu">mean</span>(scores)</span>
+<span id="cb47-5"><a href="estadística-descriptiva.html#cb47-5" tabindex="-1"></a>CV <span class="ot">&lt;-</span> sd_cal<span class="sc">/</span>media_cal<span class="sc">*</span><span class="dv">100</span></span>
+<span id="cb47-6"><a href="estadística-descriptiva.html#cb47-6" tabindex="-1"></a>CV</span></code></pre></div>
+<pre><code>## [1] 5.669178</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="estadística-descriptiva.html#cb49-1" tabindex="-1"></a><span class="co"># Datos de muestra (puntuaciones de pruebas)</span></span>
+<span id="cb49-2"><a href="estadística-descriptiva.html#cb49-2" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">78</span>, <span class="dv">95</span>, <span class="dv">89</span>, <span class="dv">84</span>, <span class="dv">90</span>, <span class="dv">86</span>, <span class="dv">93</span>)</span>
+<span id="cb49-3"><a href="estadística-descriptiva.html#cb49-3" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="estadística-descriptiva.html#cb49-4" tabindex="-1"></a><span class="co"># Calcular la media de la muestra</span></span>
+<span id="cb49-5"><a href="estadística-descriptiva.html#cb49-5" tabindex="-1"></a>sample_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(scores)</span>
+<span id="cb49-6"><a href="estadística-descriptiva.html#cb49-6" tabindex="-1"></a></span>
+<span id="cb49-7"><a href="estadística-descriptiva.html#cb49-7" tabindex="-1"></a><span class="co"># Calcular el tamaño de la muestra</span></span>
+<span id="cb49-8"><a href="estadística-descriptiva.html#cb49-8" tabindex="-1"></a>sample_size <span class="ot">&lt;-</span> <span class="fu">length</span>(scores)</span>
+<span id="cb49-9"><a href="estadística-descriptiva.html#cb49-9" tabindex="-1"></a></span>
+<span id="cb49-10"><a href="estadística-descriptiva.html#cb49-10" tabindex="-1"></a><span class="co"># Calcular la desviación estándar de la muestra</span></span>
+<span id="cb49-11"><a href="estadística-descriptiva.html#cb49-11" tabindex="-1"></a>sample_sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(scores)</span>
+<span id="cb49-12"><a href="estadística-descriptiva.html#cb49-12" tabindex="-1"></a></span>
+<span id="cb49-13"><a href="estadística-descriptiva.html#cb49-13" tabindex="-1"></a><span class="co"># Calcular el erro estándar de la muestra (SEM)</span></span>
+<span id="cb49-14"><a href="estadística-descriptiva.html#cb49-14" tabindex="-1"></a>SEM <span class="ot">&lt;-</span> sample_sd <span class="sc">/</span> <span class="fu">sqrt</span>(sample_size)</span>
+<span id="cb49-15"><a href="estadística-descriptiva.html#cb49-15" tabindex="-1"></a></span>
+<span id="cb49-16"><a href="estadística-descriptiva.html#cb49-16" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Media de la muestra:&quot;</span>, sample_mean, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Media de la muestra: 88</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="estadística-descriptiva.html#cb29-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Error estandard de la media (SEM):&quot;</span>, SEM)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="estadística-descriptiva.html#cb51-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Error estandard de la media (SEM):&quot;</span>, SEM)</span></code></pre></div>
 <pre><code>## Error estandard de la media (SEM): 1.577621</code></pre>
 <p><span class="citation">(González et al., 2020; Kabacoff, 2015)</span></p>
 </div>
@@ -353,11 +356,17 @@ div.csl-indent {
 <div id="references-1" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> References<a href="estadística-descriptiva.html#references-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="refs" class="references csl-bib-body hanging-indent">
-<div class="csl-entry">
+<div id="ref-Gonzalez2020" class="csl-entry">
 González, M.Á.M., Villegas, A.S., Atucha, E.T., Fajardo, J.F., 2020. <a href="https://books.google.es/books?id=C8rSDwAAQBAJ">Bioestad<span>ı́</span>stica amigable</a>. Elsevier Health Sciences.
 </div>
-<div class="csl-entry">
+<div id="ref-Kabacoff2015" class="csl-entry">
 Kabacoff, R.I., 2015. <a href="http://www.worldcat.org/isbn/9781617291388"><span class="nocase">R in Action</span></a>, Second. ed. Manning.
+</div>
+<div id="ref-RCoreTeam" class="csl-entry">
+Team, R.C., 2023. R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria.
+</div>
+<div id="ref-Tippmann2015" class="csl-entry">
+Tippmann, S., 2015. Programming tools: Adventures with r. Nature 517, 109–110. <a href="https://doi.org/10.1038/517109a">https://doi.org/10.1038/517109a</a>
 </div>
 </div>
 
@@ -423,6 +432,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

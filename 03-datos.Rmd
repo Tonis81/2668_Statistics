@@ -5,7 +5,10 @@
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
 ```{r, include=FALSE}
-#rm(list=ls())
+#rm(list=ls()) # these have been included in index.html. I do not need to include them again and it may cause probelms. However, it seems I need to call all libraries withing each chapter.
+```
+
+```{r}
 library(datasets)
 library(tidyverse)
 ```
@@ -178,6 +181,7 @@ CV = σ / μ
 
 σ: Desviación estandar
 μ: Media
+
 ```{r}
 sd_cal <- sd(irisxlsx$longitud_sepetalos)
 media_cal <- mean(irisxlsx$longitud_sepetalos)
@@ -306,3 +310,9 @@ Utilizando la base de datos "carsxlsx.xlsx" conesta a la siguientes preguntas.
 - ¿Hay valores perdidos en la base de datos "carsxlsx"?
 
 - Sabiendo que 1 mph es igual a 1.60934 km/h, transforma la variable "Velocidad" en km/h
+
+[@RCoreTeam]
+
+## References
+
+<div id="refs"></div>
