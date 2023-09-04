@@ -110,6 +110,3 @@ SEM <- sample_sd / sqrt(sample_size)
 cat("Sample Mean:", sample_mean, "\n")
 cat("Standard Error of the Mean (SEM):", SEM)
 ```
-
-
-

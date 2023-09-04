@@ -10,10 +10,11 @@ csl: "`r here::here('metadata', 'environmental-research.csl')`"
 # Introducción
 
 ```{r, include=FALSE}
-rm(list=ls())
+rm(list=ls()) # El comando "rm(list=ls())" sirve para eliminar todos los análisis y variables previas. Este comendo se recomienda para utilizarlo al inicio de los análisis.
 library(tidyverse)
 library(here)
 ```
+
 ## Ejercicio 1
 
 ><span style="color:red; font-size: 20px;">**REALIZAR**</span>
@@ -100,11 +101,13 @@ Proporciona el tipo de variables que sería cada una de las que se describen a c
 
 \note{Cuantitativa discreta}
 
+[@Gonzalez2020]
+
 ## Ejercicio 2
 
 ><span style="color:red; font-size: 20px;">**REALIZAR**</span>
 
-Leer el artículo [Programming tools: Adventures with R](https://www.nature.com/articles/517109a) y contestar a las siguientes preguntas.
+Leer el artículo [Programming tools: Adventures with R](https://www.nature.com/articles/517109a) y contestar a las siguientes preguntas [@Tippmann2015].
 
 - ¿Cuáles son los beneficios de usar R para el análisis de datos?
 
@@ -130,7 +133,6 @@ Leer el artículo [Programming tools: Adventures with R](https://www.nature.com/
 
 \note{El artículo no menciona desventajas significativas al usar R para el análisis de datos. Sin embargo, señala que no todos los científicos están entusiasmados por aprender la programación necesaria, a pesar de que R resulta menos intimidante que lenguajes como Python. Algunos científicos pueden preferir interfaces de arrastrar y soltar en lugar de programar. Además, aunque R cuenta con una gran comunidad en línea que brinda apoyo, los usuarios aún pueden necesitar buscar frecuentemente en Internet para encontrar respuestas a sus preguntas.}
 
- 
 - ¿Cómo afecta el aprendizaje de R al enfoque de un científico en el análisis de datos?
 
 \notes{Aprender R no solo enseña habilidades de programación, sino que también hace que los científicos sean más críticos sobre los análisis de otros científicos. Además, aprender R puede ayudar a los científicos a realizar sus propios análisis de datos de manera más eficiente y efectiva, lo que puede ahorrar tiempo y recursos a largo plazo. Sin embargo, aprender R requiere un compromiso de tiempo y prioridades, y no todos los científicos están entusiasmados con el aprendizaje de programación}
@@ -153,7 +155,6 @@ Leer el artículo [Inorganic arsenic exposure and neuropsychological development
 
 \note{La población de estudio se refiere al grupo de participantes que fueron incluidos en la investigación. En este caso, la población de estudio se derivó de los participantes del par madre-hijo en el proyecto INMA - INfancia y Medio Ambiente - Medio Ambiente e Infancia, un estudio de cohorte de nacimiento prospectivo basado en la población realizado en varias regiones de España. El estudio se centró en niños de aproximadamente 4-5 años de edad que viven en España y para quienes se espera que la dieta sea la principal fuente de exposición al iAs (arsénico inorgánico).}
 
-
 - Describe la muestra de población utilizada en el estudio.
 
 \note{La muestra de población utilizada en el estudio consistió en 100 niños, distribuidos equitativamente entre niños y niñas, que fueron seleccionados al azar para proporcionar una muestra de orina de cada subcohorte ubicada en las regiones españolas de Asturias, Gipuzkoa, Sabadell y Valencia. Los niños tenían aproximadamente 4-5 años de edad y fueron inscritos al nacer en el proyecto INMA - INfancia y Medio Ambiente - Medio Ambiente e Infancia, un estudio prospectivo de cohorte de nacimiento basado en la población realizado en varias regiones de España. El estudio se centró en niños para quienes se espera que la dieta sea la principal fuente de exposición al iAs (arsénico inorgánico).}
@@ -166,13 +167,7 @@ Leer el artículo [Inorganic arsenic exposure and neuropsychological development
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
-><span style="color:darkgreen; font-size: 20px;">*El comando "rm(list=ls())" sirve para eliminar todos los análisis y variables previas. Este comendo se recomienda para utilizarlo al inicio de los análisis.*</span>
-
-```{r}
-rm(list=ls())
-```
-
-Basic R calculation
+Cálculos básicos con R. 
 
 ><span style="color:darkgreen; font-size: 20px;">*Con R se pueden hacer cálculos básicos matermáticos.*</span>
 
@@ -218,6 +213,7 @@ Base de datos
 datos <- data.frame(nombre, peso, altura, sexo, nivel_estudios) 
 datos
 ```
+
 Etiquetas
 
 ><span style="color:darkgreen; font-size: 20px;">*Las etiquetas van asociadas a cada variable y aportan información adicional. Si finalidad va en línea con el "codebook"*</span>
@@ -263,6 +259,8 @@ library(Amelia)
 missmap(datos, main="Valores perdidos", col=c("yellow", "black"), legend=FALSE, x.cex = 0.6)
 ```
 
+[@Kabacoff2015]
+
 ## Ejercicio 5
 
 ><span style="color:red; font-size: 20px;">**REALIZAR**</span>
@@ -274,4 +272,5 @@ missmap(datos, main="Valores perdidos", col=c("yellow", "black"), legend=FALSE, 
 ## References
 
 <div id="refs"></div>
+
 
