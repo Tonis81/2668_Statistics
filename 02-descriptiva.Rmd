@@ -107,6 +107,14 @@ sample_sd <- sd(scores)
 # Calcular el erro estándar de la muestra (SEM)
 SEM <- sample_sd / sqrt(sample_size)
 
-cat("Sample Mean:", sample_mean, "\n")
-cat("Standard Error of the Mean (SEM):", SEM)
+cat("Media de la muestra:", sample_mean, "\n")
+cat("Error estandard de la media (SEM):", SEM)
 ```
+
+[@Gonzalez2020; @Kabacoff2015]
+
+## References
+
+<div id="refs"></div>
+
+

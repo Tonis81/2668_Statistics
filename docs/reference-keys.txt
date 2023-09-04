@@ -9,6 +9,7 @@ estadística-descriptiva
 ejercicio-1-1
 análisis-variables-cualitativas
 análisis-variable-cuantitativas
+references-1
 base-de-datos
 ejercicio-1-2
 ejercicio-2-1
@@ -46,4 +47,4 @@ ejercicio-2-5
 ejercicio-3-4
 ejercicio-4-3
 ejercicio-5-3
-references-1
+references-2
