@@ -11,7 +11,7 @@ editor_options:
 
 # Introducción
 
-```{r}
+```{r, message=FALSE}
 rm(list=ls()) # El comando "rm(list=ls())" sirve para eliminar todos los análisis y variables previas. Este comendo se recomienda para utilizarlo al inicio de los análisis.
 library(tidyverse)
 library(here)
