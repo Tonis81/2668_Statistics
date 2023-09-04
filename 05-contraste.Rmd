@@ -28,7 +28,7 @@ Supongamos que estás investigando un nuevo medicamento para reducir la presión
 
 ```{r}
 # Cargamos el paquete pwr
-#install.packages("pwr")
+#install.packages("pwr") #Es importante recordar que una vez se ha instado el paquete una vez no es necesario volverlo a instalar; sin embargo, en cada sesión hay que cargarlos con la función library ()
 library(pwr)
 
 # Parámetros del estudio
@@ -45,3 +45,9 @@ tamano_muestral_total <- 2 * tamano_muestral_por_grupo
 cat("El tamaño muestral necesario por grupo es:", ceiling(tamano_muestral_por_grupo), "\n")
 cat("El tamaño muestral total para el estudio (considerando dos grupos) es:", ceiling(tamano_muestral_total), "\n")
 ```
+
+[@Gonzalez2020; @Kabacoff2015]
+
+## References
+
+<div id="refs"></div>

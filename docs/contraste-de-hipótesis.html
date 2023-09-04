@@ -201,6 +201,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="5.1" data-path="contraste-de-hipótesis.html"><a href="contraste-de-hipótesis.html#ejercicio-1-4"><i class="fa fa-check"></i><b>5.1</b> Ejercicio 1</a></li>
 <li class="chapter" data-level="5.2" data-path="contraste-de-hipótesis.html"><a href="contraste-de-hipótesis.html#ejercicio-2-3"><i class="fa fa-check"></i><b>5.2</b> Ejercicio 2</a></li>
+<li class="chapter" data-level="5.3" data-path="contraste-de-hipótesis.html"><a href="contraste-de-hipótesis.html#references-4"><i class="fa fa-check"></i><b>5.3</b> References</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html"><i class="fa fa-check"></i><b>6</b> Estadística bivariantes</a>
 <ul>
@@ -229,7 +230,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.3" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#ejercicio-3-4"><i class="fa fa-check"></i><b>7.3</b> Ejercicio 3</a></li>
 <li class="chapter" data-level="7.4" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#ejercicio-4-3"><i class="fa fa-check"></i><b>7.4</b> Ejercicio 4</a></li>
 <li class="chapter" data-level="7.5" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#ejercicio-5-3"><i class="fa fa-check"></i><b>7.5</b> Ejercicio 5</a></li>
-<li class="chapter" data-level="7.6" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#references-4"><i class="fa fa-check"></i><b>7.6</b> References</a></li>
+<li class="chapter" data-level="7.6" data-path="ejercicios-varios.html"><a href="ejercicios-varios.html#references-5"><i class="fa fa-check"></i><b>7.6</b> References</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -284,7 +285,7 @@ div.csl-indent {
 </blockquote>
 <p>Supongamos que estás investigando un nuevo medicamento para reducir la presión arterial en pacientes con hipertensión. Quieres comparar la eficacia del nuevo medicamento (Grupo A1) con el medicamento estándar actualmente utilizado (Grupo A2) en términos de reducción de la presión arterial sistólica. Supones que el nuevo medicamento tendrá un tamaño del efecto de 0.6 desviaciones estándar mayor que el medicamento estándar en el seguimiento de los pacientes. Deseas realizar el estudio con un nivel de significancia del 5% y obtener una potencia del 80%.</p>
 <div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="contraste-de-hipótesis.html#cb216-1" tabindex="-1"></a><span class="co"># Cargamos el paquete pwr</span></span>
-<span id="cb216-2"><a href="contraste-de-hipótesis.html#cb216-2" tabindex="-1"></a><span class="co">#install.packages(&quot;pwr&quot;)</span></span>
+<span id="cb216-2"><a href="contraste-de-hipótesis.html#cb216-2" tabindex="-1"></a><span class="co">#install.packages(&quot;pwr&quot;) #Es importante recordar que una vez se ha instado el paquete una vez no es necesario volverlo a instalar; sin embargo, en cada sesión hay que cargarlos con la función library ()</span></span>
 <span id="cb216-3"><a href="contraste-de-hipótesis.html#cb216-3" tabindex="-1"></a><span class="fu">library</span>(pwr)</span>
 <span id="cb216-4"><a href="contraste-de-hipótesis.html#cb216-4" tabindex="-1"></a></span>
 <span id="cb216-5"><a href="contraste-de-hipótesis.html#cb216-5" tabindex="-1"></a><span class="co"># Parámetros del estudio</span></span>
@@ -302,6 +303,24 @@ div.csl-indent {
 <pre><code>## El tamaño muestral necesario por grupo es: 45</code></pre>
 <div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="contraste-de-hipótesis.html#cb218-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;El tamaño muestral total para el estudio (considerando dos grupos) es:&quot;</span>, <span class="fu">ceiling</span>(tamano_muestral_total), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## El tamaño muestral total para el estudio (considerando dos grupos) es: 90</code></pre>
+<p><span class="citation">(González et al., 2020; Kabacoff, 2015)</span></p>
+</div>
+<div id="references-4" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> References<a href="contraste-de-hipótesis.html#references-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Gonzalez2020" class="csl-entry">
+González, M.Á.M., Villegas, A.S., Atucha, E.T., Fajardo, J.F., 2020. <a href="https://books.google.es/books?id=C8rSDwAAQBAJ">Bioestad<span>ı́</span>stica amigable</a>. Elsevier Health Sciences.
+</div>
+<div id="ref-Kabacoff2015" class="csl-entry">
+Kabacoff, R.I., 2015. <a href="http://www.worldcat.org/isbn/9781617291388"><span class="nocase">R in Action</span></a>, Second. ed. Manning.
+</div>
+<div id="ref-RCoreTeam" class="csl-entry">
+Team, R.C., 2023. R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria.
+</div>
+<div id="ref-Tippmann2015" class="csl-entry">
+Tippmann, S., 2015. Programming tools: Adventures with r. Nature 517, 109–110. <a href="https://doi.org/10.1038/517109a">https://doi.org/10.1038/517109a</a>
+</div>
+</div>
 
 </div>
 </div>
