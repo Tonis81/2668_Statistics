@@ -158,10 +158,10 @@ probability_intersection <- sum(event_A & event_B) / n_simulations
 probability_union_formula <- probability_A + probability_B - probability_intersection
 
 # Mostrar resultados
-cat("Probability of A:", probability_A, "\n")
-cat("Probability of B:", probability_B, "\n")
-cat("Probability of (A ∩ B):", probability_intersection, "\n")
-cat("Probability of (A ∪ B) using formula:", probability_union_formula, "\n")
+cat("Probabilidad de A:", probability_A, "\n")
+cat("Probabilidad de B:", probability_B, "\n")
+cat("Probabilidad de (A ∩ B):", probability_intersection, "\n")
+cat("Probabilidad de (A ∪ B) utilizando la formula:", probability_union_formula, "\n")
 ```
 
 b) Ejemplo intersección o producto: P(A∩B)=P(A)+P(B)−P(A∪B)
@@ -194,3 +194,8 @@ cat("P(A∪B) =", P_union, "\n")
 cat("P(A∩B) =", P_intersection, "\n")
 ```
 
+[@Gonzalez2020]
+
+## References
+
+<div id="refs"></div>
