@@ -16,7 +16,7 @@ library(tidyverse)
 ```{r}
 data(iris)
 help(iris)
-names(iris) <- tolower(names(iris)) #This is to use lowercase names.
+names(iris) <- tolower(names(iris)) #Esta función es para transformar en minúsculas.
 ```
 
 ```{r}
