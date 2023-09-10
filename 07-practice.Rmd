@@ -720,6 +720,3 @@ summary(base_conjunta1$cals)
 
 [@Gonzalez2020; @Kabacoff2015]
 
-## References
-
-<div id="refs"></div>

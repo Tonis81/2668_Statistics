@@ -196,6 +196,3 @@ cat("P(A∩B) =", P_intersection, "\n")
 
 [@Gonzalez2020]
 
-## References
-
-<div id="refs"></div>

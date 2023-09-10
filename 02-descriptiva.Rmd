@@ -113,8 +113,3 @@ cat("Error estandard de la media (SEM):", SEM)
 
 [@Gonzalez2020; @Kabacoff2015]
 
-## References
-
-<div id="refs"></div>
-
-

@@ -312,7 +312,3 @@ Utilizando la base de datos "carsxlsx.xlsx" conesta a la siguientes preguntas.
 - Sabiendo que 1 mph es igual a 1.60934 km/h, transforma la variable "Velocidad" en km/h
 
 [@RCoreTeam]
-
-## References
-
-<div id="refs"></div>

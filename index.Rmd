@@ -271,7 +271,3 @@ missmap(datos, main="Valores perdidos", col=c("yellow", "black"), legend=FALSE, 
 - 2. Genera una variable derivada y asígnale un nombre.
 - 3. Genera una variable que contenga valores perdidos.
 
-## References
-
-<div id="refs"></div>
-

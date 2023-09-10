@@ -47,7 +47,3 @@ cat("El tamaño muestral total para el estudio (considerando dos grupos) es:", c
 ```
 
 [@Gonzalez2020; @Kabacoff2015]
-
-## References
-
-<div id="refs"></div>

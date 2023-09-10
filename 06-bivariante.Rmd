@@ -424,7 +424,3 @@ dunnTest(weight ~ group, data = data)
 ```
 
 [@Gonzalez2020; @Kabacoff2015]
-
-## References
-
-<div id="refs"></div>
