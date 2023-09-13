@@ -113,3 +113,8 @@ cat("Error estandard de la media (SEM):", SEM)
 
 [@Gonzalez2020; @Kabacoff2015]
 
+## Ejercicio 2
+
+><span style="color:red; font-size: 20px;">**REALIZAR**</span>
+
+Realizar un ánálisis descriptivo (analítico y gráfico) de las variables cualitativas y cuantitativas generadas en el ejercicio "1.5. Ejercicio 5" de la introducción 
