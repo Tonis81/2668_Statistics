@@ -104,7 +104,39 @@ $P(Mujer\;|\;Fumar)= \frac{P(Mujer\;\cap\;Fumar)}{P(Fumar)}=\frac{P(Fumar\;|\;Mu
 (0.3*0.2)/((0.1*0.7) + (0.2*0.3))
 ```
 
+
 ## Ejercicio 5
+
+><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
+
+Calcular: sensibilidad, especificidad, valor predictivo positivo y valor predictivo negativo. 
+
+```{r}
+# Se crea la tabla de contingencia
+dat <- matrix(c(15, 4, 19, 5, 34, 39, 20, 38, 58), nrow = 3, byrow = TRUE)
+
+# Se añaden los nombres a las filas y columnas
+rownames(dat) <- c("Positive RX", "Negativo RX", "Total")
+colnames(dat) <- c("Cáncer", "No cáncer", "Total")
+
+# Visualizamos la tabla
+print(dat)
+
+P_TestPos_Enfermo <- (dat[1,1]/dat[3,3])/(dat[3,1]/dat[3,3])
+P_TestPos_Enfermo # la prueba tiene una sensibilidad del 75%
+
+P_TestNeg_NoEnfermo <- (dat[2,2]/dat[3,3])/(dat[3,2]/dat[3,3])
+P_TestNeg_NoEnfermo # la prueba tiene una especificidad del 89%
+
+P_Enfermo_TestPos_VPP <- (dat[1,1]/dat[3,3])/(dat[1,3]/dat[3,3])
+P_Enfermo_TestPos_VPP # la prueba tiene una especificidad del 89%
+
+P_NoEnfermo_TestNeg_VPN <- (dat[2,2]/dat[3,3])/(dat[2,3]/dat[3,3])
+P_NoEnfermo_TestNeg_VPN # la prueba tiene una especificidad del 89%
+
+```
+
+## Ejercicio 6
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
@@ -129,7 +161,7 @@ for (i in 1:6) {
 }
 ```
 
-## Ejercicio 6
+## Ejercicio 7
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
