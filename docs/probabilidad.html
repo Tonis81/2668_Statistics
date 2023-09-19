@@ -193,6 +193,7 @@ div.csl-indent {
 <li class="chapter" data-level="4.4" data-path="probabilidad.html"><a href="probabilidad.html#ejercicio-4-1"><i class="fa fa-check"></i><b>4.4</b> Ejercicio 4</a></li>
 <li class="chapter" data-level="4.5" data-path="probabilidad.html"><a href="probabilidad.html#ejercicio-5-1"><i class="fa fa-check"></i><b>4.5</b> Ejercicio 5</a></li>
 <li class="chapter" data-level="4.6" data-path="probabilidad.html"><a href="probabilidad.html#ejercicio-6"><i class="fa fa-check"></i><b>4.6</b> Ejercicio 6</a></li>
+<li class="chapter" data-level="4.7" data-path="probabilidad.html"><a href="probabilidad.html#ejercicio-7"><i class="fa fa-check"></i><b>4.7</b> Ejercicio 7</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="contraste-de-hipótesis.html"><a href="contraste-de-hipótesis.html"><i class="fa fa-check"></i><b>5</b> Contraste de hipótesis</a>
 <ul>
@@ -208,7 +209,7 @@ div.csl-indent {
 <li class="chapter" data-level="6.5" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-4-2"><i class="fa fa-check"></i><b>6.5</b> Ejercicio 4</a></li>
 <li class="chapter" data-level="6.6" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-5-2"><i class="fa fa-check"></i><b>6.6</b> Ejercicio 5</a></li>
 <li class="chapter" data-level="6.7" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-6-1"><i class="fa fa-check"></i><b>6.7</b> Ejercicio 6</a></li>
-<li class="chapter" data-level="6.8" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-7"><i class="fa fa-check"></i><b>6.8</b> Ejercicio 7</a></li>
+<li class="chapter" data-level="6.8" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-7-1"><i class="fa fa-check"></i><b>6.8</b> Ejercicio 7</a></li>
 <li class="chapter" data-level="6.9" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-8"><i class="fa fa-check"></i><b>6.9</b> Ejercicio 8</a></li>
 <li class="chapter" data-level="6.10" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-9"><i class="fa fa-check"></i><b>6.10</b> Ejercicio 9</a></li>
 <li class="chapter" data-level="6.11" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-10"><i class="fa fa-check"></i><b>6.11</b> Ejercicio 10</a></li>
@@ -345,23 +346,55 @@ div.csl-indent {
 <blockquote>
 <p><span style="color:red; font-size: 20px;"><strong>EJEMPLO</strong></span></p>
 </blockquote>
-<p>Con el siguiente ejemplo vamos a calcular la probabilidad de sacar 1, 2, 3, 4, 5 y 6 en un dado.</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="probabilidad.html#cb196-1" tabindex="-1"></a><span class="co"># Definimos el número de tiradas</span></span>
-<span id="cb196-2"><a href="probabilidad.html#cb196-2" tabindex="-1"></a>num_rolls <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<p>Calcular: sensibilidad, especificidad, valor predictivo positivo y valor predictivo negativo.</p>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="probabilidad.html#cb196-1" tabindex="-1"></a><span class="co"># Se crea la tabla de contingencia</span></span>
+<span id="cb196-2"><a href="probabilidad.html#cb196-2" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">4</span>, <span class="dv">19</span>, <span class="dv">5</span>, <span class="dv">34</span>, <span class="dv">39</span>, <span class="dv">20</span>, <span class="dv">38</span>, <span class="dv">58</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb196-3"><a href="probabilidad.html#cb196-3" tabindex="-1"></a></span>
-<span id="cb196-4"><a href="probabilidad.html#cb196-4" tabindex="-1"></a><span class="co"># Simulamos en lanzamiento de una dado justo de 6 caras.</span></span>
-<span id="cb196-5"><a href="probabilidad.html#cb196-5" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, num_rolls, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb196-6"><a href="probabilidad.html#cb196-6" tabindex="-1"></a></span>
-<span id="cb196-7"><a href="probabilidad.html#cb196-7" tabindex="-1"></a><span class="co"># Contamos el resultado que obtenemos de cada lanzamiento.</span></span>
-<span id="cb196-8"><a href="probabilidad.html#cb196-8" tabindex="-1"></a>counts <span class="ot">&lt;-</span> <span class="fu">table</span>(results)</span>
-<span id="cb196-9"><a href="probabilidad.html#cb196-9" tabindex="-1"></a></span>
-<span id="cb196-10"><a href="probabilidad.html#cb196-10" tabindex="-1"></a><span class="co"># Calculamos la probabilidad</span></span>
-<span id="cb196-11"><a href="probabilidad.html#cb196-11" tabindex="-1"></a>probabilities <span class="ot">&lt;-</span> counts <span class="sc">/</span> num_rolls</span>
-<span id="cb196-12"><a href="probabilidad.html#cb196-12" tabindex="-1"></a></span>
-<span id="cb196-13"><a href="probabilidad.html#cb196-13" tabindex="-1"></a><span class="co"># Presentamos los resultados</span></span>
-<span id="cb196-14"><a href="probabilidad.html#cb196-14" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>) {</span>
-<span id="cb196-15"><a href="probabilidad.html#cb196-15" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;La probabilidad de conseguir un&quot;</span>, i, <span class="st">&quot;:&quot;</span>, probabilities[i]))</span>
-<span id="cb196-16"><a href="probabilidad.html#cb196-16" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb196-4"><a href="probabilidad.html#cb196-4" tabindex="-1"></a><span class="co"># Se añaden los nombres a las filas y columnas</span></span>
+<span id="cb196-5"><a href="probabilidad.html#cb196-5" tabindex="-1"></a><span class="fu">rownames</span>(dat) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Positive RX&quot;</span>, <span class="st">&quot;Negativo RX&quot;</span>, <span class="st">&quot;Total&quot;</span>)</span>
+<span id="cb196-6"><a href="probabilidad.html#cb196-6" tabindex="-1"></a><span class="fu">colnames</span>(dat) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Cáncer&quot;</span>, <span class="st">&quot;No cáncer&quot;</span>, <span class="st">&quot;Total&quot;</span>)</span>
+<span id="cb196-7"><a href="probabilidad.html#cb196-7" tabindex="-1"></a></span>
+<span id="cb196-8"><a href="probabilidad.html#cb196-8" tabindex="-1"></a><span class="co"># Visualizamos la tabla</span></span>
+<span id="cb196-9"><a href="probabilidad.html#cb196-9" tabindex="-1"></a><span class="fu">print</span>(dat)</span></code></pre></div>
+<pre><code>##             Cáncer No cáncer Total
+## Positive RX     15         4    19
+## Negativo RX      5        34    39
+## Total           20        38    58</code></pre>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="probabilidad.html#cb198-1" tabindex="-1"></a>P_TestPos_Enfermo <span class="ot">&lt;-</span> (dat[<span class="dv">1</span>,<span class="dv">1</span>]<span class="sc">/</span>dat[<span class="dv">3</span>,<span class="dv">3</span>])<span class="sc">/</span>(dat[<span class="dv">3</span>,<span class="dv">1</span>]<span class="sc">/</span>dat[<span class="dv">3</span>,<span class="dv">3</span>])</span>
+<span id="cb198-2"><a href="probabilidad.html#cb198-2" tabindex="-1"></a>P_TestPos_Enfermo <span class="co"># la prueba tiene una sensibilidad del 75%</span></span></code></pre></div>
+<pre><code>## [1] 0.75</code></pre>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="probabilidad.html#cb200-1" tabindex="-1"></a>P_TestNeg_NoEnfermo <span class="ot">&lt;-</span> (dat[<span class="dv">2</span>,<span class="dv">2</span>]<span class="sc">/</span>dat[<span class="dv">3</span>,<span class="dv">3</span>])<span class="sc">/</span>(dat[<span class="dv">3</span>,<span class="dv">2</span>]<span class="sc">/</span>dat[<span class="dv">3</span>,<span class="dv">3</span>])</span>
+<span id="cb200-2"><a href="probabilidad.html#cb200-2" tabindex="-1"></a>P_TestNeg_NoEnfermo <span class="co"># la prueba tiene una especificidad del 89%</span></span></code></pre></div>
+<pre><code>## [1] 0.8947368</code></pre>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="probabilidad.html#cb202-1" tabindex="-1"></a>P_Enfermo_TestPos_VPP <span class="ot">&lt;-</span> (dat[<span class="dv">1</span>,<span class="dv">1</span>]<span class="sc">/</span>dat[<span class="dv">3</span>,<span class="dv">3</span>])<span class="sc">/</span>(dat[<span class="dv">1</span>,<span class="dv">3</span>]<span class="sc">/</span>dat[<span class="dv">3</span>,<span class="dv">3</span>])</span>
+<span id="cb202-2"><a href="probabilidad.html#cb202-2" tabindex="-1"></a>P_Enfermo_TestPos_VPP <span class="co"># la prueba tiene una especificidad del 89%</span></span></code></pre></div>
+<pre><code>## [1] 0.7894737</code></pre>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="probabilidad.html#cb204-1" tabindex="-1"></a>P_NoEnfermo_TestNeg_VPN <span class="ot">&lt;-</span> (dat[<span class="dv">2</span>,<span class="dv">2</span>]<span class="sc">/</span>dat[<span class="dv">3</span>,<span class="dv">3</span>])<span class="sc">/</span>(dat[<span class="dv">2</span>,<span class="dv">3</span>]<span class="sc">/</span>dat[<span class="dv">3</span>,<span class="dv">3</span>])</span>
+<span id="cb204-2"><a href="probabilidad.html#cb204-2" tabindex="-1"></a>P_NoEnfermo_TestNeg_VPN <span class="co"># la prueba tiene una especificidad del 89%</span></span></code></pre></div>
+<pre><code>## [1] 0.8717949</code></pre>
+</div>
+<div id="ejercicio-6" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Ejercicio 6<a href="probabilidad.html#ejercicio-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p><span style="color:red; font-size: 20px;"><strong>EJEMPLO</strong></span></p>
+</blockquote>
+<p>Con el siguiente ejemplo vamos a calcular la probabilidad de sacar 1, 2, 3, 4, 5 y 6 en un dado.</p>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="probabilidad.html#cb206-1" tabindex="-1"></a><span class="co"># Definimos el número de tiradas</span></span>
+<span id="cb206-2"><a href="probabilidad.html#cb206-2" tabindex="-1"></a>num_rolls <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb206-3"><a href="probabilidad.html#cb206-3" tabindex="-1"></a></span>
+<span id="cb206-4"><a href="probabilidad.html#cb206-4" tabindex="-1"></a><span class="co"># Simulamos en lanzamiento de una dado justo de 6 caras.</span></span>
+<span id="cb206-5"><a href="probabilidad.html#cb206-5" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, num_rolls, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb206-6"><a href="probabilidad.html#cb206-6" tabindex="-1"></a></span>
+<span id="cb206-7"><a href="probabilidad.html#cb206-7" tabindex="-1"></a><span class="co"># Contamos el resultado que obtenemos de cada lanzamiento.</span></span>
+<span id="cb206-8"><a href="probabilidad.html#cb206-8" tabindex="-1"></a>counts <span class="ot">&lt;-</span> <span class="fu">table</span>(results)</span>
+<span id="cb206-9"><a href="probabilidad.html#cb206-9" tabindex="-1"></a></span>
+<span id="cb206-10"><a href="probabilidad.html#cb206-10" tabindex="-1"></a><span class="co"># Calculamos la probabilidad</span></span>
+<span id="cb206-11"><a href="probabilidad.html#cb206-11" tabindex="-1"></a>probabilities <span class="ot">&lt;-</span> counts <span class="sc">/</span> num_rolls</span>
+<span id="cb206-12"><a href="probabilidad.html#cb206-12" tabindex="-1"></a></span>
+<span id="cb206-13"><a href="probabilidad.html#cb206-13" tabindex="-1"></a><span class="co"># Presentamos los resultados</span></span>
+<span id="cb206-14"><a href="probabilidad.html#cb206-14" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>) {</span>
+<span id="cb206-15"><a href="probabilidad.html#cb206-15" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;La probabilidad de conseguir un&quot;</span>, i, <span class="st">&quot;:&quot;</span>, probabilities[i]))</span>
+<span id="cb206-16"><a href="probabilidad.html#cb206-16" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## [1] &quot;La probabilidad de conseguir un 1 : 0.171&quot;
 ## [1] &quot;La probabilidad de conseguir un 2 : 0.1721&quot;
 ## [1] &quot;La probabilidad de conseguir un 3 : 0.1668&quot;
@@ -369,8 +402,8 @@ div.csl-indent {
 ## [1] &quot;La probabilidad de conseguir un 5 : 0.1663&quot;
 ## [1] &quot;La probabilidad de conseguir un 6 : 0.165&quot;</code></pre>
 </div>
-<div id="ejercicio-6" class="section level2 hasAnchor" number="4.6">
-<h2><span class="header-section-number">4.6</span> Ejercicio 6<a href="probabilidad.html#ejercicio-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ejercicio-7" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Ejercicio 7<a href="probabilidad.html#ejercicio-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <blockquote>
 <p><span style="color:red; font-size: 20px;"><strong>EJEMPLO</strong></span></p>
 </blockquote>
@@ -381,64 +414,64 @@ div.csl-indent {
 <li>Evento A: Obtener un número par en un dado justo de seis caras.</li>
 <li>Evento B: Obtener un número mayor que 3 en el mismo dado.</li>
 </ul>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="probabilidad.html#cb198-1" tabindex="-1"></a><span class="co"># Simulando el lanzamiento de un dado justo de seis caras.</span></span>
-<span id="cb198-2"><a href="probabilidad.html#cb198-2" tabindex="-1"></a>n_simulations <span class="ot">&lt;-</span> <span class="dv">100000</span>  <span class="co"># número de simulaciones</span></span>
-<span id="cb198-3"><a href="probabilidad.html#cb198-3" tabindex="-1"></a>rolls <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, n_simulations, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb198-4"><a href="probabilidad.html#cb198-4" tabindex="-1"></a></span>
-<span id="cb198-5"><a href="probabilidad.html#cb198-5" tabindex="-1"></a><span class="co"># Definición de los eventos A y B</span></span>
-<span id="cb198-6"><a href="probabilidad.html#cb198-6" tabindex="-1"></a>event_A <span class="ot">&lt;-</span> rolls <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>  <span class="co"># números pares</span></span>
-<span id="cb198-7"><a href="probabilidad.html#cb198-7" tabindex="-1"></a>event_B <span class="ot">&lt;-</span> rolls <span class="sc">&gt;</span> <span class="dv">3</span>  <span class="co"># números mayores que 3</span></span>
-<span id="cb198-8"><a href="probabilidad.html#cb198-8" tabindex="-1"></a></span>
-<span id="cb198-9"><a href="probabilidad.html#cb198-9" tabindex="-1"></a><span class="co"># Cálculo de probabilidades de eventos A y B</span></span>
-<span id="cb198-10"><a href="probabilidad.html#cb198-10" tabindex="-1"></a>probability_A <span class="ot">&lt;-</span> <span class="fu">sum</span>(event_A) <span class="sc">/</span> n_simulations</span>
-<span id="cb198-11"><a href="probabilidad.html#cb198-11" tabindex="-1"></a>probability_B <span class="ot">&lt;-</span> <span class="fu">sum</span>(event_B) <span class="sc">/</span> n_simulations</span>
-<span id="cb198-12"><a href="probabilidad.html#cb198-12" tabindex="-1"></a></span>
-<span id="cb198-13"><a href="probabilidad.html#cb198-13" tabindex="-1"></a><span class="co"># Cálculo de la interseccón de los eventos A y B</span></span>
-<span id="cb198-14"><a href="probabilidad.html#cb198-14" tabindex="-1"></a>probability_intersection <span class="ot">&lt;-</span> <span class="fu">sum</span>(event_A <span class="sc">&amp;</span> event_B) <span class="sc">/</span> n_simulations</span>
-<span id="cb198-15"><a href="probabilidad.html#cb198-15" tabindex="-1"></a></span>
-<span id="cb198-16"><a href="probabilidad.html#cb198-16" tabindex="-1"></a><span class="co"># Utilización de la propiedad P(A∪B) = P(A) + P(B) - P(A∩B) para el cálculo de la suma</span></span>
-<span id="cb198-17"><a href="probabilidad.html#cb198-17" tabindex="-1"></a>probability_union_formula <span class="ot">&lt;-</span> probability_A <span class="sc">+</span> probability_B <span class="sc">-</span> probability_intersection</span>
-<span id="cb198-18"><a href="probabilidad.html#cb198-18" tabindex="-1"></a></span>
-<span id="cb198-19"><a href="probabilidad.html#cb198-19" tabindex="-1"></a><span class="co"># Mostrar resultados</span></span>
-<span id="cb198-20"><a href="probabilidad.html#cb198-20" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probabilidad de A:&quot;</span>, probability_A, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="probabilidad.html#cb208-1" tabindex="-1"></a><span class="co"># Simulando el lanzamiento de un dado justo de seis caras.</span></span>
+<span id="cb208-2"><a href="probabilidad.html#cb208-2" tabindex="-1"></a>n_simulations <span class="ot">&lt;-</span> <span class="dv">100000</span>  <span class="co"># número de simulaciones</span></span>
+<span id="cb208-3"><a href="probabilidad.html#cb208-3" tabindex="-1"></a>rolls <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, n_simulations, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb208-4"><a href="probabilidad.html#cb208-4" tabindex="-1"></a></span>
+<span id="cb208-5"><a href="probabilidad.html#cb208-5" tabindex="-1"></a><span class="co"># Definición de los eventos A y B</span></span>
+<span id="cb208-6"><a href="probabilidad.html#cb208-6" tabindex="-1"></a>event_A <span class="ot">&lt;-</span> rolls <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>  <span class="co"># números pares</span></span>
+<span id="cb208-7"><a href="probabilidad.html#cb208-7" tabindex="-1"></a>event_B <span class="ot">&lt;-</span> rolls <span class="sc">&gt;</span> <span class="dv">3</span>  <span class="co"># números mayores que 3</span></span>
+<span id="cb208-8"><a href="probabilidad.html#cb208-8" tabindex="-1"></a></span>
+<span id="cb208-9"><a href="probabilidad.html#cb208-9" tabindex="-1"></a><span class="co"># Cálculo de probabilidades de eventos A y B</span></span>
+<span id="cb208-10"><a href="probabilidad.html#cb208-10" tabindex="-1"></a>probability_A <span class="ot">&lt;-</span> <span class="fu">sum</span>(event_A) <span class="sc">/</span> n_simulations</span>
+<span id="cb208-11"><a href="probabilidad.html#cb208-11" tabindex="-1"></a>probability_B <span class="ot">&lt;-</span> <span class="fu">sum</span>(event_B) <span class="sc">/</span> n_simulations</span>
+<span id="cb208-12"><a href="probabilidad.html#cb208-12" tabindex="-1"></a></span>
+<span id="cb208-13"><a href="probabilidad.html#cb208-13" tabindex="-1"></a><span class="co"># Cálculo de la interseccón de los eventos A y B</span></span>
+<span id="cb208-14"><a href="probabilidad.html#cb208-14" tabindex="-1"></a>probability_intersection <span class="ot">&lt;-</span> <span class="fu">sum</span>(event_A <span class="sc">&amp;</span> event_B) <span class="sc">/</span> n_simulations</span>
+<span id="cb208-15"><a href="probabilidad.html#cb208-15" tabindex="-1"></a></span>
+<span id="cb208-16"><a href="probabilidad.html#cb208-16" tabindex="-1"></a><span class="co"># Utilización de la propiedad P(A∪B) = P(A) + P(B) - P(A∩B) para el cálculo de la suma</span></span>
+<span id="cb208-17"><a href="probabilidad.html#cb208-17" tabindex="-1"></a>probability_union_formula <span class="ot">&lt;-</span> probability_A <span class="sc">+</span> probability_B <span class="sc">-</span> probability_intersection</span>
+<span id="cb208-18"><a href="probabilidad.html#cb208-18" tabindex="-1"></a></span>
+<span id="cb208-19"><a href="probabilidad.html#cb208-19" tabindex="-1"></a><span class="co"># Mostrar resultados</span></span>
+<span id="cb208-20"><a href="probabilidad.html#cb208-20" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probabilidad de A:&quot;</span>, probability_A, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Probabilidad de A: 0.49917</code></pre>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="probabilidad.html#cb200-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probabilidad de B:&quot;</span>, probability_B, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="probabilidad.html#cb210-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probabilidad de B:&quot;</span>, probability_B, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Probabilidad de B: 0.49869</code></pre>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="probabilidad.html#cb202-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probabilidad de (A ∩ B):&quot;</span>, probability_intersection, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="probabilidad.html#cb212-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probabilidad de (A ∩ B):&quot;</span>, probability_intersection, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Probabilidad de (A ∩ B): 0.33091</code></pre>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="probabilidad.html#cb204-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probabilidad de (A ∪ B) utilizando la formula:&quot;</span>, probability_union_formula, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="probabilidad.html#cb214-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Probabilidad de (A ∪ B) utilizando la formula:&quot;</span>, probability_union_formula, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Probabilidad de (A ∪ B) utilizando la formula: 0.66695</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>Ejemplo intersección o producto: P(A∩B)=P(A)+P(B)−P(A∪B)</li>
 </ol>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="probabilidad.html#cb206-1" tabindex="-1"></a><span class="co"># Definir el espacio muestral para un dado individual.</span></span>
-<span id="cb206-2"><a href="probabilidad.html#cb206-2" tabindex="-1"></a>sample_space <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
-<span id="cb206-3"><a href="probabilidad.html#cb206-3" tabindex="-1"></a></span>
-<span id="cb206-4"><a href="probabilidad.html#cb206-4" tabindex="-1"></a><span class="co"># Definir el Evento A: Obtener un número par en el primer dado.</span></span>
-<span id="cb206-5"><a href="probabilidad.html#cb206-5" tabindex="-1"></a>event_A <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>)</span>
-<span id="cb206-6"><a href="probabilidad.html#cb206-6" tabindex="-1"></a></span>
-<span id="cb206-7"><a href="probabilidad.html#cb206-7" tabindex="-1"></a><span class="co"># &quot;Definir el Evento B: Obtener un número mayor que 3 en el segundo dado.</span></span>
-<span id="cb206-8"><a href="probabilidad.html#cb206-8" tabindex="-1"></a>event_B <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
-<span id="cb206-9"><a href="probabilidad.html#cb206-9" tabindex="-1"></a></span>
-<span id="cb206-10"><a href="probabilidad.html#cb206-10" tabindex="-1"></a><span class="co"># Calcular probabilidades</span></span>
-<span id="cb206-11"><a href="probabilidad.html#cb206-11" tabindex="-1"></a>P_A <span class="ot">&lt;-</span> <span class="fu">length</span>(event_A) <span class="sc">/</span> <span class="fu">length</span>(sample_space)</span>
-<span id="cb206-12"><a href="probabilidad.html#cb206-12" tabindex="-1"></a>P_B <span class="ot">&lt;-</span> <span class="fu">length</span>(event_B) <span class="sc">/</span> <span class="fu">length</span>(sample_space)</span>
-<span id="cb206-13"><a href="probabilidad.html#cb206-13" tabindex="-1"></a></span>
-<span id="cb206-14"><a href="probabilidad.html#cb206-14" tabindex="-1"></a><span class="co"># Calular la unión de los eventos A y B</span></span>
-<span id="cb206-15"><a href="probabilidad.html#cb206-15" tabindex="-1"></a>event_union <span class="ot">&lt;-</span> <span class="fu">union</span>(event_A, event_B)</span>
-<span id="cb206-16"><a href="probabilidad.html#cb206-16" tabindex="-1"></a>P_union <span class="ot">&lt;-</span> <span class="fu">length</span>(event_union) <span class="sc">/</span> <span class="fu">length</span>(sample_space)</span>
-<span id="cb206-17"><a href="probabilidad.html#cb206-17" tabindex="-1"></a></span>
-<span id="cb206-18"><a href="probabilidad.html#cb206-18" tabindex="-1"></a><span class="co"># Calcular la intersección de los eventos A y B</span></span>
-<span id="cb206-19"><a href="probabilidad.html#cb206-19" tabindex="-1"></a>P_intersection <span class="ot">&lt;-</span> P_A <span class="sc">+</span> P_B <span class="sc">-</span> P_union</span>
-<span id="cb206-20"><a href="probabilidad.html#cb206-20" tabindex="-1"></a></span>
-<span id="cb206-21"><a href="probabilidad.html#cb206-21" tabindex="-1"></a><span class="co"># Mostrar resultados</span></span>
-<span id="cb206-22"><a href="probabilidad.html#cb206-22" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;P(A) =&quot;</span>, P_A, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="probabilidad.html#cb216-1" tabindex="-1"></a><span class="co"># Definir el espacio muestral para un dado individual.</span></span>
+<span id="cb216-2"><a href="probabilidad.html#cb216-2" tabindex="-1"></a>sample_space <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
+<span id="cb216-3"><a href="probabilidad.html#cb216-3" tabindex="-1"></a></span>
+<span id="cb216-4"><a href="probabilidad.html#cb216-4" tabindex="-1"></a><span class="co"># Definir el Evento A: Obtener un número par en el primer dado.</span></span>
+<span id="cb216-5"><a href="probabilidad.html#cb216-5" tabindex="-1"></a>event_A <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>)</span>
+<span id="cb216-6"><a href="probabilidad.html#cb216-6" tabindex="-1"></a></span>
+<span id="cb216-7"><a href="probabilidad.html#cb216-7" tabindex="-1"></a><span class="co"># &quot;Definir el Evento B: Obtener un número mayor que 3 en el segundo dado.</span></span>
+<span id="cb216-8"><a href="probabilidad.html#cb216-8" tabindex="-1"></a>event_B <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb216-9"><a href="probabilidad.html#cb216-9" tabindex="-1"></a></span>
+<span id="cb216-10"><a href="probabilidad.html#cb216-10" tabindex="-1"></a><span class="co"># Calcular probabilidades</span></span>
+<span id="cb216-11"><a href="probabilidad.html#cb216-11" tabindex="-1"></a>P_A <span class="ot">&lt;-</span> <span class="fu">length</span>(event_A) <span class="sc">/</span> <span class="fu">length</span>(sample_space)</span>
+<span id="cb216-12"><a href="probabilidad.html#cb216-12" tabindex="-1"></a>P_B <span class="ot">&lt;-</span> <span class="fu">length</span>(event_B) <span class="sc">/</span> <span class="fu">length</span>(sample_space)</span>
+<span id="cb216-13"><a href="probabilidad.html#cb216-13" tabindex="-1"></a></span>
+<span id="cb216-14"><a href="probabilidad.html#cb216-14" tabindex="-1"></a><span class="co"># Calular la unión de los eventos A y B</span></span>
+<span id="cb216-15"><a href="probabilidad.html#cb216-15" tabindex="-1"></a>event_union <span class="ot">&lt;-</span> <span class="fu">union</span>(event_A, event_B)</span>
+<span id="cb216-16"><a href="probabilidad.html#cb216-16" tabindex="-1"></a>P_union <span class="ot">&lt;-</span> <span class="fu">length</span>(event_union) <span class="sc">/</span> <span class="fu">length</span>(sample_space)</span>
+<span id="cb216-17"><a href="probabilidad.html#cb216-17" tabindex="-1"></a></span>
+<span id="cb216-18"><a href="probabilidad.html#cb216-18" tabindex="-1"></a><span class="co"># Calcular la intersección de los eventos A y B</span></span>
+<span id="cb216-19"><a href="probabilidad.html#cb216-19" tabindex="-1"></a>P_intersection <span class="ot">&lt;-</span> P_A <span class="sc">+</span> P_B <span class="sc">-</span> P_union</span>
+<span id="cb216-20"><a href="probabilidad.html#cb216-20" tabindex="-1"></a></span>
+<span id="cb216-21"><a href="probabilidad.html#cb216-21" tabindex="-1"></a><span class="co"># Mostrar resultados</span></span>
+<span id="cb216-22"><a href="probabilidad.html#cb216-22" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;P(A) =&quot;</span>, P_A, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## P(A) = 0.5</code></pre>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="probabilidad.html#cb208-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;P(B) =&quot;</span>, P_B, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="probabilidad.html#cb218-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;P(B) =&quot;</span>, P_B, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## P(B) = 0.5</code></pre>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="probabilidad.html#cb210-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;P(A∪B) =&quot;</span>, P_union, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="probabilidad.html#cb220-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;P(A∪B) =&quot;</span>, P_union, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## P(A∪B) = 0.6666667</code></pre>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="probabilidad.html#cb212-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;P(A∩B) =&quot;</span>, P_intersection, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="probabilidad.html#cb222-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;P(A∩B) =&quot;</span>, P_intersection, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## P(A∩B) = 0.3333333</code></pre>
 <p><span class="citation">(González et al., 2020)</span></p>
 

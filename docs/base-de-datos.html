@@ -193,6 +193,7 @@ div.csl-indent {
 <li class="chapter" data-level="4.4" data-path="probabilidad.html"><a href="probabilidad.html#ejercicio-4-1"><i class="fa fa-check"></i><b>4.4</b> Ejercicio 4</a></li>
 <li class="chapter" data-level="4.5" data-path="probabilidad.html"><a href="probabilidad.html#ejercicio-5-1"><i class="fa fa-check"></i><b>4.5</b> Ejercicio 5</a></li>
 <li class="chapter" data-level="4.6" data-path="probabilidad.html"><a href="probabilidad.html#ejercicio-6"><i class="fa fa-check"></i><b>4.6</b> Ejercicio 6</a></li>
+<li class="chapter" data-level="4.7" data-path="probabilidad.html"><a href="probabilidad.html#ejercicio-7"><i class="fa fa-check"></i><b>4.7</b> Ejercicio 7</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="contraste-de-hipótesis.html"><a href="contraste-de-hipótesis.html"><i class="fa fa-check"></i><b>5</b> Contraste de hipótesis</a>
 <ul>
@@ -208,7 +209,7 @@ div.csl-indent {
 <li class="chapter" data-level="6.5" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-4-2"><i class="fa fa-check"></i><b>6.5</b> Ejercicio 4</a></li>
 <li class="chapter" data-level="6.6" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-5-2"><i class="fa fa-check"></i><b>6.6</b> Ejercicio 5</a></li>
 <li class="chapter" data-level="6.7" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-6-1"><i class="fa fa-check"></i><b>6.7</b> Ejercicio 6</a></li>
-<li class="chapter" data-level="6.8" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-7"><i class="fa fa-check"></i><b>6.8</b> Ejercicio 7</a></li>
+<li class="chapter" data-level="6.8" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-7-1"><i class="fa fa-check"></i><b>6.8</b> Ejercicio 7</a></li>
 <li class="chapter" data-level="6.9" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-8"><i class="fa fa-check"></i><b>6.9</b> Ejercicio 8</a></li>
 <li class="chapter" data-level="6.10" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-9"><i class="fa fa-check"></i><b>6.10</b> Ejercicio 9</a></li>
 <li class="chapter" data-level="6.11" data-path="estadística-bivariantes.html"><a href="estadística-bivariantes.html#ejercicio-10"><i class="fa fa-check"></i><b>6.11</b> Ejercicio 10</a></li>
@@ -331,19 +332,19 @@ div.csl-indent {
 ## 6          5.9         3            5.1         1.8 virginica</code></pre>
 <p>También se pueden visualizar variables específicas directamente o mediante indexación:</p>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="base-de-datos.html#cb81-1" tabindex="-1"></a>irisxlsx<span class="sc">$</span>sepal.length</span></code></pre></div>
-<pre><code>##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0
-##  [28] 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5
-##  [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5
-##  [82] 5.5 5.8 6.0 5.4 6.0 6.7 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3
-## [109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1
-## [136] 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7 6.7 6.3 6.5 6.2 5.9</code></pre>
+<pre><code>##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2
+##  [29] 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5 6.5 5.7
+##  [57] 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0
+##  [85] 5.4 6.0 6.7 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3 6.7 7.2 6.5 6.4
+## [113] 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9
+## [141] 6.7 6.9 5.8 6.8 6.7 6.7 6.3 6.5 6.2 5.9</code></pre>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="base-de-datos.html#cb83-1" tabindex="-1"></a>irisxlsx<span class="sc">$</span>sepal.width</span></code></pre></div>
-<pre><code>##   [1] 3.5 3.0 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 3.7 3.4 3.0 3.0 4.0 4.4 3.9 3.5 3.8 3.8 3.4 3.7 3.6 3.3 3.4 3.0 3.4
-##  [28] 3.5 3.4 3.2 3.1 3.4 4.1 4.2 3.1 3.2 3.5 3.6 3.0 3.4 3.5 2.3 3.2 3.5 3.8 3.0 3.8 3.2 3.7 3.3 3.2 3.2 3.1 2.3
-##  [55] 2.8 2.8 3.3 2.4 2.9 2.7 2.0 3.0 2.2 2.9 2.9 3.1 3.0 2.7 2.2 2.5 3.2 2.8 2.5 2.8 2.9 3.0 2.8 3.0 2.9 2.6 2.4
-##  [82] 2.4 2.7 2.7 3.0 3.4 3.1 2.3 3.0 2.5 2.6 3.0 2.6 2.3 2.7 3.0 2.9 2.9 2.5 2.8 3.3 2.7 3.0 2.9 3.0 3.0 2.5 2.9
-## [109] 2.5 3.6 3.2 2.7 3.0 2.5 2.8 3.2 3.0 3.8 2.6 2.2 3.2 2.8 2.8 2.7 3.3 3.2 2.8 3.0 2.8 3.0 2.8 3.8 2.8 2.8 2.6
-## [136] 3.0 3.4 3.1 3.0 3.1 3.1 3.1 2.7 3.2 3.3 3.0 2.5 3.0 3.4 3.0</code></pre>
+<pre><code>##   [1] 3.5 3.0 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 3.7 3.4 3.0 3.0 4.0 4.4 3.9 3.5 3.8 3.8 3.4 3.7 3.6 3.3 3.4 3.0 3.4 3.5
+##  [29] 3.4 3.2 3.1 3.4 4.1 4.2 3.1 3.2 3.5 3.6 3.0 3.4 3.5 2.3 3.2 3.5 3.8 3.0 3.8 3.2 3.7 3.3 3.2 3.2 3.1 2.3 2.8 2.8
+##  [57] 3.3 2.4 2.9 2.7 2.0 3.0 2.2 2.9 2.9 3.1 3.0 2.7 2.2 2.5 3.2 2.8 2.5 2.8 2.9 3.0 2.8 3.0 2.9 2.6 2.4 2.4 2.7 2.7
+##  [85] 3.0 3.4 3.1 2.3 3.0 2.5 2.6 3.0 2.6 2.3 2.7 3.0 2.9 2.9 2.5 2.8 3.3 2.7 3.0 2.9 3.0 3.0 2.5 2.9 2.5 3.6 3.2 2.7
+## [113] 3.0 2.5 2.8 3.2 3.0 3.8 2.6 2.2 3.2 2.8 2.8 2.7 3.3 3.2 2.8 3.0 2.8 3.0 2.8 3.8 2.8 2.8 2.6 3.0 3.4 3.1 3.0 3.1
+## [141] 3.1 3.1 2.7 3.2 3.3 3.0 2.5 3.0 3.4 3.0</code></pre>
 <div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="base-de-datos.html#cb85-1" tabindex="-1"></a>irisxlsx[,<span class="dv">1</span>] </span></code></pre></div>
 <pre><code>## # A tibble: 150 × 1
 ##    sepal.length
@@ -399,32 +400,32 @@ div.csl-indent {
 <p>Añadir etiquetas de valor.</p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="base-de-datos.html#cb95-1" tabindex="-1"></a><span class="fu">attr</span>(irisxlsx<span class="sc">$</span>longitud_sepetalos, <span class="st">&quot;label&quot;</span>) <span class="ot">&lt;-</span> <span class="st">&quot;Longitud de los sépalos in cm&quot;</span></span>
 <span id="cb95-2"><a href="base-de-datos.html#cb95-2" tabindex="-1"></a>irisxlsx<span class="sc">$</span>longitud_sepetalos</span></code></pre></div>
-<pre><code>##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0
-##  [28] 5.2 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5
-##  [55] 6.5 5.7 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5
-##  [82] 5.5 5.8 6.0 5.4 6.0 6.7 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3
-## [109] 6.7 7.2 6.5 6.4 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1
-## [136] 7.7 6.3 6.4 6.0 6.9 6.7 6.9 5.8 6.8 6.7 6.7 6.3 6.5 6.2 5.9
+<pre><code>##   [1] 5.1 4.9 4.7 4.6 5.0 5.4 4.6 5.0 4.4 4.9 5.4 4.8 4.8 4.3 5.8 5.7 5.4 5.1 5.7 5.1 5.4 5.1 4.6 5.1 4.8 5.0 5.0 5.2
+##  [29] 5.2 4.7 4.8 5.4 5.2 5.5 4.9 5.0 5.5 4.9 4.4 5.1 5.0 4.5 4.4 5.0 5.1 4.8 5.1 4.6 5.3 5.0 7.0 6.4 6.9 5.5 6.5 5.7
+##  [57] 6.3 4.9 6.6 5.2 5.0 5.9 6.0 6.1 5.6 6.7 5.6 5.8 6.2 5.6 5.9 6.1 6.3 6.1 6.4 6.6 6.8 6.7 6.0 5.7 5.5 5.5 5.8 6.0
+##  [85] 5.4 6.0 6.7 6.3 5.6 5.5 5.5 6.1 5.8 5.0 5.6 5.7 5.7 6.2 5.1 5.7 6.3 5.8 7.1 6.3 6.5 7.6 4.9 7.3 6.7 7.2 6.5 6.4
+## [113] 6.8 5.7 5.8 6.4 6.5 7.7 7.7 6.0 6.9 5.6 7.7 6.3 6.7 7.2 6.2 6.1 6.4 7.2 7.4 7.9 6.4 6.3 6.1 7.7 6.3 6.4 6.0 6.9
+## [141] 6.7 6.9 5.8 6.8 6.7 6.7 6.3 6.5 6.2 5.9
 ## attr(,&quot;label&quot;)
 ## [1] &quot;Longitud de los sépalos in cm&quot;</code></pre>
 <div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="base-de-datos.html#cb97-1" tabindex="-1"></a><span class="fu">attr</span>(irisxlsx<span class="sc">$</span>anchura_sepetalos, <span class="st">&quot;label&quot;</span>) <span class="ot">&lt;-</span> <span class="st">&quot;Anchura de los sépalos in cm&quot;</span></span>
 <span id="cb97-2"><a href="base-de-datos.html#cb97-2" tabindex="-1"></a>irisxlsx<span class="sc">$</span>anchura_sepetalos</span></code></pre></div>
-<pre><code>##   [1] 3.5 3.0 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 3.7 3.4 3.0 3.0 4.0 4.4 3.9 3.5 3.8 3.8 3.4 3.7 3.6 3.3 3.4 3.0 3.4
-##  [28] 3.5 3.4 3.2 3.1 3.4 4.1 4.2 3.1 3.2 3.5 3.6 3.0 3.4 3.5 2.3 3.2 3.5 3.8 3.0 3.8 3.2 3.7 3.3 3.2 3.2 3.1 2.3
-##  [55] 2.8 2.8 3.3 2.4 2.9 2.7 2.0 3.0 2.2 2.9 2.9 3.1 3.0 2.7 2.2 2.5 3.2 2.8 2.5 2.8 2.9 3.0 2.8 3.0 2.9 2.6 2.4
-##  [82] 2.4 2.7 2.7 3.0 3.4 3.1 2.3 3.0 2.5 2.6 3.0 2.6 2.3 2.7 3.0 2.9 2.9 2.5 2.8 3.3 2.7 3.0 2.9 3.0 3.0 2.5 2.9
-## [109] 2.5 3.6 3.2 2.7 3.0 2.5 2.8 3.2 3.0 3.8 2.6 2.2 3.2 2.8 2.8 2.7 3.3 3.2 2.8 3.0 2.8 3.0 2.8 3.8 2.8 2.8 2.6
-## [136] 3.0 3.4 3.1 3.0 3.1 3.1 3.1 2.7 3.2 3.3 3.0 2.5 3.0 3.4 3.0
+<pre><code>##   [1] 3.5 3.0 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 3.7 3.4 3.0 3.0 4.0 4.4 3.9 3.5 3.8 3.8 3.4 3.7 3.6 3.3 3.4 3.0 3.4 3.5
+##  [29] 3.4 3.2 3.1 3.4 4.1 4.2 3.1 3.2 3.5 3.6 3.0 3.4 3.5 2.3 3.2 3.5 3.8 3.0 3.8 3.2 3.7 3.3 3.2 3.2 3.1 2.3 2.8 2.8
+##  [57] 3.3 2.4 2.9 2.7 2.0 3.0 2.2 2.9 2.9 3.1 3.0 2.7 2.2 2.5 3.2 2.8 2.5 2.8 2.9 3.0 2.8 3.0 2.9 2.6 2.4 2.4 2.7 2.7
+##  [85] 3.0 3.4 3.1 2.3 3.0 2.5 2.6 3.0 2.6 2.3 2.7 3.0 2.9 2.9 2.5 2.8 3.3 2.7 3.0 2.9 3.0 3.0 2.5 2.9 2.5 3.6 3.2 2.7
+## [113] 3.0 2.5 2.8 3.2 3.0 3.8 2.6 2.2 3.2 2.8 2.8 2.7 3.3 3.2 2.8 3.0 2.8 3.0 2.8 3.8 2.8 2.8 2.6 3.0 3.4 3.1 3.0 3.1
+## [141] 3.1 3.1 2.7 3.2 3.3 3.0 2.5 3.0 3.4 3.0
 ## attr(,&quot;label&quot;)
 ## [1] &quot;Anchura de los sépalos in cm&quot;</code></pre>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="base-de-datos.html#cb99-1" tabindex="-1"></a><span class="fu">attr</span>(irisxlsx<span class="sc">$</span>longitud_petalos, <span class="st">&quot;label&quot;</span>) <span class="ot">&lt;-</span> <span class="st">&quot;Longitud pétalos in cm&quot;</span></span>
 <span id="cb99-2"><a href="base-de-datos.html#cb99-2" tabindex="-1"></a>irisxlsx<span class="sc">$</span>longitud_petalos</span></code></pre></div>
-<pre><code>##   [1] 1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 1.5 1.6 1.4 1.1 1.2 1.5 1.3 1.4 1.7 1.5 1.7 1.5 1.0 1.7 1.9 1.6 1.6
-##  [28] 1.5 1.4 1.6 1.6 1.5 1.5 1.4 1.5 1.2 1.3 1.4 1.3 1.5 1.3 1.3 1.3 1.6 1.9 1.4 1.6 1.4 1.5 1.4 4.7 4.5 4.9 4.0
-##  [55] 4.6 4.5 4.7 3.3 4.6 3.9 3.5 4.2 4.0 4.7 3.6 4.4 4.5 4.1 4.5 3.9 4.8 4.0 4.9 4.7 4.3 4.4 4.8 5.0 4.5 3.5 3.8
-##  [82] 3.7 3.9 5.1 4.5 4.5 4.7 4.4 4.1 4.0 4.4 4.6 4.0 3.3 4.2 4.2 4.2 4.3 3.0 4.1 6.0 5.1 5.9 5.6 5.8 6.6 4.5 6.3
-## [109] 5.8 6.1 5.1 5.3 5.5 5.0 5.1 5.3 5.5 6.7 6.9 5.0 5.7 4.9 6.7 4.9 5.7 6.0 4.8 4.9 5.6 5.8 6.1 6.4 5.6 5.1 5.6
-## [136] 6.1 5.6 5.5 4.8 5.4 5.6 5.1 5.1 5.9 5.7 5.2 5.0 5.2 5.4 5.1
+<pre><code>##   [1] 1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 1.5 1.6 1.4 1.1 1.2 1.5 1.3 1.4 1.7 1.5 1.7 1.5 1.0 1.7 1.9 1.6 1.6 1.5
+##  [29] 1.4 1.6 1.6 1.5 1.5 1.4 1.5 1.2 1.3 1.4 1.3 1.5 1.3 1.3 1.3 1.6 1.9 1.4 1.6 1.4 1.5 1.4 4.7 4.5 4.9 4.0 4.6 4.5
+##  [57] 4.7 3.3 4.6 3.9 3.5 4.2 4.0 4.7 3.6 4.4 4.5 4.1 4.5 3.9 4.8 4.0 4.9 4.7 4.3 4.4 4.8 5.0 4.5 3.5 3.8 3.7 3.9 5.1
+##  [85] 4.5 4.5 4.7 4.4 4.1 4.0 4.4 4.6 4.0 3.3 4.2 4.2 4.2 4.3 3.0 4.1 6.0 5.1 5.9 5.6 5.8 6.6 4.5 6.3 5.8 6.1 5.1 5.3
+## [113] 5.5 5.0 5.1 5.3 5.5 6.7 6.9 5.0 5.7 4.9 6.7 4.9 5.7 6.0 4.8 4.9 5.6 5.8 6.1 6.4 5.6 5.1 5.6 6.1 5.6 5.5 4.8 5.4
+## [141] 5.6 5.1 5.1 5.9 5.7 5.2 5.0 5.2 5.4 5.1
 ## attr(,&quot;label&quot;)
 ## [1] &quot;Longitud pétalos in cm&quot;</code></pre>
 <div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="base-de-datos.html#cb101-1" tabindex="-1"></a><span class="fu">attr</span>(irisxlsx<span class="sc">$</span>especies, <span class="st">&quot;label&quot;</span>) <span class="ot">&lt;-</span> <span class="st">&quot;Clase de especie&quot;</span></span>
