@@ -54,7 +54,7 @@ proportion_table <- round(prop.table(tb, margin = 2)*100,1)
 addmargins(proportion_table)
 ```
 
-## Ejercicio 3
+## Ejercicio 4
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
@@ -78,7 +78,7 @@ IQR(estudiantes$PESO)
 with(estudiantes, tapply(PESO, Sexo, summary, na.rm=T))
 ```
 
-## Ejercicio 4
+## Ejercicio 5
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
@@ -120,7 +120,7 @@ print(plot_negative)
 print(plot_no_corr)
 ```
 
-## Ejercicio 5
+## Ejercicio 6
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
@@ -129,7 +129,7 @@ base <- read_spss("base1.sav")
 with(base, cor.test(peso_m, altura_m, alternative="two.sided", method = "spearman"))
 ```
 
-## Ejercicio 6
+## Ejercicio 7
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
@@ -157,7 +157,7 @@ library("car")
 qqPlot(estudiantes$Edad)
 ```
 
-## Ejercicio 7
+## Ejercicio 8
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
@@ -218,7 +218,7 @@ library(ggplot2)
 dispersion <- ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width)) +  geom_point()
 ```
 
-## Ejercicio 8
+## Ejercicio 9
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
@@ -241,7 +241,7 @@ chi_square_result <- chisq.test(contingency_table)
 print(chi_square_result)
 ```
 
-## Ejercicio 9
+## Ejercicio 10
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
@@ -261,7 +261,7 @@ kruskal_test <- kruskal.test(list(tratamiento1, tratamiento2, tratamiento3))
 print(kruskal_test)
 ```
 
-## Ejercicio 10
+## Ejercicio 11
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
@@ -280,7 +280,7 @@ mann_whitney_test <- wilcox.test(hombres, mujeres)
 print(mann_whitney_test)
 ```
 
-## Ejercicio 11
+## Ejercicio 12
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
@@ -296,7 +296,7 @@ correlation_test <- cor.test(peso, altura, method = "spearman")
 print(correlation_test)
 ```
 
-## Ejercicio 12
+## Ejercicio 13
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
@@ -318,7 +318,7 @@ chi_square_test <- chisq.test(contingency_table)
 print(chi_square_test)
 ```
 
-## Ejercicio 13
+## Ejercicio 14
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
@@ -334,7 +334,7 @@ paired_t_test <- t.test(peso_inicial, peso_despues, paired = TRUE)
 print(paired_t_test)
 ```
 
-## Ejercicio 14
+## Ejercicio 15
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
@@ -350,7 +350,7 @@ wilcoxon_test <- wilcox.test(peso_inicial, peso_despues, paired = TRUE, exact = 
 print(wilcoxon_test)
 ```
 
-## Ejercicio 15
+## Ejercicio 16
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
@@ -370,7 +370,7 @@ print(mcnemar_test)
 
 ```
 
-## Ejercicio 16
+## Ejercicio 17
 
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
