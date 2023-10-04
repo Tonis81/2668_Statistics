@@ -355,7 +355,7 @@ print(wilcoxon_test)
 ><span style="color:red; font-size: 20px;">**EJEMPLO**</span>
 
 ```{r, warning=FALSE}
-# Ejemplo de datos (reemplaza esto con tus propios datos)
+# Ejemplo de datos
 antes <- c("Sí", "No", "No", "Sí", "No", "Sí", "Sí", "No", "Sí", "No")
 despues <- c("Sí", "No", "Sí", "Sí", "No", "Sí", "No", "Sí", "Sí", "Sí")
 
