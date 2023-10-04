@@ -27,7 +27,6 @@ estadística-bivariantes
 ejercicio-1-5
 ejercicio-2-5
 ejercicio-3-2
-ejercicio-3-3
 ejercicio-4-2
 ejercicio-5-2
 ejercicio-6-1
@@ -41,10 +40,11 @@ ejercicio-13
 ejercicio-14
 ejercicio-15
 ejercicio-16
+ejercicio-17
 ejercicios-varios
 ejercicio-1-6
 ejercicio-2-6
-ejercicio-3-4
+ejercicio-3-3
 ejercicio-4-3
 ejercicio-5-3
 referencias
