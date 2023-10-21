@@ -480,7 +480,7 @@ kbl(dt) %>%
   kable_styling(bootstrap_options = "striped", full_width = F, position = "left")
 ```
 
-1. Abre ambas bases de datos en R Commander y llámales base1 y base2. A continuación une las dos bases de datos en una base conjunta que contenga a todos los individuos y a todas las variables y ponle base_conjunta. Indica a continuación el número de individuos y de variables que contienen la base1, la base2 y la base_conjunta.
+1. Abre ambas bases de datos en R y llámales base1 y base2. A continuación une las dos bases de datos en una base conjunta que contenga a todos los individuos y a todas las variables y ponle base_conjunta. Indica a continuación el número de individuos y de variables que contienen la base1, la base2 y la base_conjunta.
 
 ```{r, include=FALSE}
 library(haven)
